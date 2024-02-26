@@ -156,5 +156,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 917e82769ce265542949085dd0a5a01a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 0
-  torque: 0
+  force: 5
+  torque: 5
