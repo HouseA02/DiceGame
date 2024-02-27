@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Die : MonoBehaviour
 {
@@ -8,7 +10,9 @@ public class Die : MonoBehaviour
     float force;
     [SerializeField]
     float torque;
-
+    [SerializeField]
+    public BoxCollider[] faceChecks;
+    public int value;
     Rigidbody rb;
 
     private void Awake()
@@ -30,5 +34,17 @@ public class Die : MonoBehaviour
         Vector3 dir = target - transform.position;
         rb.AddForce(dir * force, ForceMode.Impulse);
         rb.AddTorque(Random.insideUnitSphere * torque, ForceMode.Impulse);
+        StartCoroutine("WaitForResult");
     }
+    private IEnumerator WaitForResult()
+    {
+        yield return new WaitUntil(rb.IsSleeping);
+        Debug.Log($"You rolled {value}!");
+        if(value == -1)
+        {
+            value= 0;
+            Roll();
+        }
+    }
+
 }
