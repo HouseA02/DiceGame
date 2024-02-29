@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class AbilityDie : Die
 {
-    public AbilityFace[] abilities;
+    public Ability[] abilities;
 
     public override void Activate(int value)
     {

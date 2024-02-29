@@ -8,13 +8,13 @@ using UnityEngine.WSA;
 public class Die : MonoBehaviour
 {
     [SerializeField]
-    float force;
+    public float force;
     [SerializeField]
-    float torque;
+    public float torque;
     [SerializeField]
     public BoxCollider[] faceChecks;
     public int value;
-    Rigidbody rb;
+    public Rigidbody rb;
 
     private void Awake()
     {
@@ -29,7 +29,7 @@ public class Die : MonoBehaviour
         }
     }
 
-    private void Roll()
+    public virtual void Roll()
     {
         Vector3 target = new Vector3(Random.Range(-2f, 2f), 5f, Random.Range(-2f, 2f));
         Vector3 dir = target - transform.position;
