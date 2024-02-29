@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.WSA;
 
 public class Die : MonoBehaviour
 {
@@ -36,15 +37,24 @@ public class Die : MonoBehaviour
         rb.AddTorque(Random.insideUnitSphere * torque, ForceMode.Impulse);
         StartCoroutine("WaitForResult");
     }
-    private IEnumerator WaitForResult()
+    public virtual IEnumerator WaitForResult()
     {
         yield return new WaitUntil(rb.IsSleeping);
-        Debug.Log($"You rolled {value}!");
         if(value == -1)
         {
             value= 0;
             Roll();
         }
+        else
+        {
+            Activate(value);
+        }
+        yield return null;
+    }
+
+    public virtual void Activate(int value)
+    {
+        Debug.Log($"You rolled {value}!");
     }
 
 }
