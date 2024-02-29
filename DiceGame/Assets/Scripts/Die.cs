@@ -21,14 +21,6 @@ public class Die : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    private void Update()
-    {
-        if(Input.GetMouseButtonDown(0))
-        {
-            Roll();
-        }
-    }
-
     public virtual void Roll()
     {
         Vector3 target = new Vector3(Random.Range(-2f, 2f), 5f, Random.Range(-2f, 2f));

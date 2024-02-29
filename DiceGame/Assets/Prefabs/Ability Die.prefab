@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6036138258210958901}
   - component: {fileID: 4326925941049351007}
-  - component: {fileID: 1425229417975075921}
+  - component: {fileID: 6866522391597792531}
   m_Layer: 0
   m_Name: Decal3
   m_TagString: Untagged
@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0.1}
   m_Size: {x: 1, y: 1, z: 0.2}
   m_FadeFactor: 1
---- !u!114 &1425229417975075921
+--- !u!114 &6866522391597792531
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -66,11 +66,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 409212610744585887}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 522cc4b53025553499673594da224e9a, type: 3}
+  m_Script: {fileID: 11500000, guid: 22ed2531114c7934eb9a23f42f373df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 2100000, guid: 0a1466e1db37f9c47a1ecb68a9377db7, type: 2}
-  debugText: Sword
+  image: {fileID: 0}
+  decal: {fileID: 0}
+  debugText: 
 --- !u!1 &843358820652271688
 GameObject:
   m_ObjectHideFlags: 0
@@ -81,7 +82,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8381827643990731486}
   - component: {fileID: 2892429774758881462}
-  - component: {fileID: 6146724874093569581}
+  - component: {fileID: 7818108404825358428}
   m_Layer: 0
   m_Name: Decal6
   m_TagString: Untagged
@@ -128,7 +129,7 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0.1}
   m_Size: {x: 1, y: 1, z: 0.2}
   m_FadeFactor: 1
---- !u!114 &6146724874093569581
+--- !u!114 &7818108404825358428
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,11 +138,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 843358820652271688}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 522cc4b53025553499673594da224e9a, type: 3}
+  m_Script: {fileID: 11500000, guid: 22ed2531114c7934eb9a23f42f373df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 2100000, guid: 0a1466e1db37f9c47a1ecb68a9377db7, type: 2}
-  debugText: Sword
+  image: {fileID: 0}
+  decal: {fileID: 0}
+  debugText: 
 --- !u!1 &894463907763685173
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,7 +325,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8071287389624792340}
   - component: {fileID: 1674963251617941874}
-  - component: {fileID: 2281237542932170689}
+  - component: {fileID: 2663796003805077234}
   m_Layer: 0
   m_Name: Decal5
   m_TagString: Untagged
@@ -370,7 +372,7 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0.1}
   m_Size: {x: 1, y: 1, z: 0.2}
   m_FadeFactor: 1
---- !u!114 &2281237542932170689
+--- !u!114 &2663796003805077234
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -379,11 +381,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3406490585747963267}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 522cc4b53025553499673594da224e9a, type: 3}
+  m_Script: {fileID: 11500000, guid: 22ed2531114c7934eb9a23f42f373df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 2100000, guid: 0a1466e1db37f9c47a1ecb68a9377db7, type: 2}
-  debugText: Sword
+  image: {fileID: 0}
+  decal: {fileID: 0}
+  debugText: 
 --- !u!1 &3431357823445282579
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,7 +397,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7162717888814829659}
   - component: {fileID: 535640887350661957}
-  - component: {fileID: 5378736520846424921}
+  - component: {fileID: 5968343738479124320}
   m_Layer: 0
   m_Name: Decal4
   m_TagString: Untagged
@@ -441,7 +444,7 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0.1}
   m_Size: {x: 1, y: 1, z: 0.2}
   m_FadeFactor: 1
---- !u!114 &5378736520846424921
+--- !u!114 &5968343738479124320
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -450,11 +453,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3431357823445282579}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 522cc4b53025553499673594da224e9a, type: 3}
+  m_Script: {fileID: 11500000, guid: 22ed2531114c7934eb9a23f42f373df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 2100000, guid: 0a1466e1db37f9c47a1ecb68a9377db7, type: 2}
-  debugText: Sword
+  image: {fileID: 0}
+  decal: {fileID: 0}
+  debugText: 
 --- !u!1 &3483207913367653613
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,7 +536,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1462304024459803829}
   - component: {fileID: 6217802146737342371}
-  - component: {fileID: 2474871633952488201}
+  - component: {fileID: 498803367288053974}
   m_Layer: 0
   m_Name: Decal1
   m_TagString: Untagged
@@ -579,7 +583,7 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0.1}
   m_Size: {x: 1, y: 1, z: 0.2}
   m_FadeFactor: 1
---- !u!114 &2474871633952488201
+--- !u!114 &498803367288053974
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -588,11 +592,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3781662616898937917}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 522cc4b53025553499673594da224e9a, type: 3}
+  m_Script: {fileID: 11500000, guid: 22ed2531114c7934eb9a23f42f373df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 2100000, guid: 0a1466e1db37f9c47a1ecb68a9377db7, type: 2}
-  debugText: Sword
+  image: {fileID: 0}
+  decal: {fileID: 0}
+  debugText: 
 --- !u!1 &5181952297182331090
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,7 +608,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7143900069663734010}
   - component: {fileID: 7179110586827787196}
-  - component: {fileID: 657824337565569097}
+  - component: {fileID: 4111325471169894825}
   m_Layer: 0
   m_Name: Decal2
   m_TagString: Untagged
@@ -650,7 +655,7 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0.1}
   m_Size: {x: 1, y: 1, z: 0.2}
   m_FadeFactor: 1
---- !u!114 &657824337565569097
+--- !u!114 &4111325471169894825
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -659,11 +664,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5181952297182331090}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 522cc4b53025553499673594da224e9a, type: 3}
+  m_Script: {fileID: 11500000, guid: 22ed2531114c7934eb9a23f42f373df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 2100000, guid: 0a1466e1db37f9c47a1ecb68a9377db7, type: 2}
-  debugText: Sword
+  image: {fileID: 0}
+  decal: {fileID: 0}
+  debugText: 
 --- !u!1 &5200847452651206193
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,17 +933,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 31fc8cbe82b70ba4ca86014d7df73c1d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.3725133
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 31fc8cbe82b70ba4ca86014d7df73c1d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.45
+      value: 2.205808
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 31fc8cbe82b70ba4ca86014d7df73c1d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.0505579
+      value: 0.7508111
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 31fc8cbe82b70ba4ca86014d7df73c1d,
         type: 3}
@@ -1082,9 +1088,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 5
   torque: 5
-  faceChecks: []
+  faceChecks:
+  - {fileID: 3892245126643688788}
+  - {fileID: 2900630843899473695}
+  - {fileID: 8417143087106331939}
+  - {fileID: 7296362130549328485}
+  - {fileID: 2071614909490172880}
+  - {fileID: 8199494956505346888}
   value: 0
-  abilities: []
+  rb: {fileID: 0}
+  abilities:
+  - {fileID: 498803367288053974}
+  - {fileID: 4111325471169894825}
+  - {fileID: 6866522391597792531}
+  - {fileID: 5968343738479124320}
+  - {fileID: 2663796003805077234}
+  - {fileID: 7818108404825358428}
 --- !u!4 &8743819316722395808 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 31fc8cbe82b70ba4ca86014d7df73c1d,

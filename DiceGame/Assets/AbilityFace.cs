@@ -10,7 +10,7 @@ public class AbilityFace : MonoBehaviour
     private void Awake()
     {
         material = GetComponent<Material>();
-        if (ability != null) { material = ability.image; }
+        //if (ability != null) { material = ability.image; }
     }
 
     public void Activate()
