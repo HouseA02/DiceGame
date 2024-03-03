@@ -56,6 +56,11 @@ PrefabInstance:
       propertyPath: debugText
       value: Attack
       objectReference: {fileID: 0}
+    - target: {fileID: 4597255273898579344, guid: d35d4e0f185c83c48b7d692c8fb22112,
+        type: 3}
+      propertyPath: abilities.Array.data[3]
+      value: 
+      objectReference: {fileID: 4479705457810689696}
     - target: {fileID: 5968343738479124320, guid: d35d4e0f185c83c48b7d692c8fb22112,
         type: 3}
       propertyPath: image
@@ -159,8 +164,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5968343738479124320, guid: d35d4e0f185c83c48b7d692c8fb22112, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3431357823445282579, guid: d35d4e0f185c83c48b7d692c8fb22112,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4479705457810689696}
   m_SourcePrefab: {fileID: 100100000, guid: d35d4e0f185c83c48b7d692c8fb22112, type: 3}
+--- !u!1 &5599516622245040576 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3431357823445282579, guid: d35d4e0f185c83c48b7d692c8fb22112,
+    type: 3}
+  m_PrefabInstance: {fileID: 7073988922077429459}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4479705457810689696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5599516622245040576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acced62494eb22418e11e65e195d5a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 2100000, guid: 708329228375b6d45be4426606b02c23, type: 2}
+  UIImage: {fileID: 21300000, guid: ef252b6e57ea81f43bfe3878c31f3202, type: 3}
+  decal: {fileID: 0}
+  debugText: Bow
+  gameManager: {fileID: 0}
+  characterReference: {fileID: 0}
+  validTargets: []
+  targetsEnemy: 1
+  targetsAlly: 0

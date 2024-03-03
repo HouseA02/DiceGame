@@ -44,6 +44,7 @@ public class Die : MonoBehaviour
         yield return null;
     }
 
+
     public virtual void Activate(int value)
     {
         Debug.Log($"You rolled {value}!");

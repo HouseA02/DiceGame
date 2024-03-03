@@ -70,6 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 0}
+  UIImage: {fileID: 0}
   decal: {fileID: 0}
   debugText: 
 --- !u!1 &843358820652271688
@@ -142,6 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 0}
+  UIImage: {fileID: 0}
   decal: {fileID: 0}
   debugText: 
 --- !u!1 &894463907763685173
@@ -385,6 +387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 0}
+  UIImage: {fileID: 0}
   decal: {fileID: 0}
   debugText: 
 --- !u!1 &3431357823445282579
@@ -457,6 +460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 0}
+  UIImage: {fileID: 0}
   decal: {fileID: 0}
   debugText: 
 --- !u!1 &3483207913367653613
@@ -596,6 +600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 0}
+  UIImage: {fileID: 0}
   decal: {fileID: 0}
   debugText: 
 --- !u!1 &5181952297182331090
@@ -668,6 +673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 0}
+  UIImage: {fileID: 0}
   decal: {fileID: 0}
   debugText: 
 --- !u!1 &5200847452651206193
@@ -984,7 +990,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 3e3fe7d08624f594bb8e96487091bd1a, type: 2}
+      objectReference: {fileID: 2100000, guid: 0a0e824bb4341ed4ba3b8ae57b9eee43, type: 2}
     - target: {fileID: 919132149155446097, guid: 31fc8cbe82b70ba4ca86014d7df73c1d,
         type: 3}
       propertyPath: m_Name
@@ -1104,6 +1110,7 @@ MonoBehaviour:
   - {fileID: 5968343738479124320}
   - {fileID: 2663796003805077234}
   - {fileID: 7818108404825358428}
+  characterReference: {fileID: 0}
 --- !u!4 &8743819316722395808 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 31fc8cbe82b70ba4ca86014d7df73c1d,

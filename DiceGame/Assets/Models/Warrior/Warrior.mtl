@@ -1,0 +1,14 @@
+# Made in Blockbench 4.9.4
+newmtl m_c380278d-1fd6-a570-889e-9c6e17b12e40
+map_Kd Warrior.png
+newmtl m_1fd3ab1e-d2c8-315c-16d5-1be859a87bbc
+map_Kd ArmourNoise.png
+newmtl m_11377bc6-ca1a-439c-22e5-8d40da2f5ff9
+map_Kd MiscNoise.png
+newmtl m_66b9d9a0-64cf-c986-402f-e37177382116
+map_Kd WarriorFace.png
+newmtl m_b62a2d70-4c95-4228-81b5-d73b3f3fab60
+map_Kd HelmetNoise.png
+newmtl m_144fa02d-e34c-df79-c79b-0a81579b084d
+map_Kd EquipmentNoise.png
+newmtl none

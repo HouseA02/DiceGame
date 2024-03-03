@@ -24,7 +24,18 @@ public class CharacterPanel : MonoBehaviour
             portraitSlot.transform.Translate(character.spriteOffset);
         }
         background.color = character.mainColor;
-        character.characterPanel = this;
+    }
+
+    public void SetHP(int value)
+    {
+        HPText.text = value.ToString();
+    }
+    public void UseAbility()
+    {
+        if (character.currentAbility != null)
+        {
+            character.PrimeAbility();
+        }
     }
 
 }

@@ -13,14 +13,15 @@ public class Ability : MonoBehaviour
     public DecalProjector decal;
     [SerializeField]
     public string debugText;
+    public GameManager gameManager;
+    public Character characterReference;
     public virtual void Activate()
     {
-        Debug.Log(debugText);
+        
     }
 
     private void Awake()
     {
-        decal = GetComponent<DecalProjector>();
-        decal.material = image;
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 }
