@@ -98,7 +98,7 @@ PrefabInstance:
     - target: {fileID: 8514071621138783448, guid: 1fc89c03347ec4245858eb78b21a5f0e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.6916933
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8514071621138783448, guid: 1fc89c03347ec4245858eb78b21a5f0e,
         type: 3}
@@ -108,7 +108,7 @@ PrefabInstance:
     - target: {fileID: 8514071621138783448, guid: 1fc89c03347ec4245858eb78b21a5f0e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.011973381
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8514071621138783448, guid: 1fc89c03347ec4245858eb78b21a5f0e,
         type: 3}
@@ -145,7 +145,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5321965223089869473, guid: 1fc89c03347ec4245858eb78b21a5f0e, type: 3}
     m_RemovedGameObjects:
     - {fileID: 5991891116200132441, guid: 1fc89c03347ec4245858eb78b21a5f0e, type: 3}
     m_AddedGameObjects:
@@ -157,11 +158,33 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2875720839482132080, guid: 1fc89c03347ec4245858eb78b21a5f0e,
         type: 3}
       insertIndex: -1
+      addedObject: {fileID: 6586101286054787311}
+    - targetCorrespondingSourceObject: {fileID: 2875720839482132080, guid: 1fc89c03347ec4245858eb78b21a5f0e,
+        type: 3}
+      insertIndex: -1
       addedObject: {fileID: 2826540163473414655}
   m_SourcePrefab: {fileID: 100100000, guid: 1fc89c03347ec4245858eb78b21a5f0e, type: 3}
+--- !u!114 &3313201928708467157 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8376347378912196071, guid: 1fc89c03347ec4245858eb78b21a5f0e,
+    type: 3}
+  m_PrefabInstance: {fileID: 6468321448361155634}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 020a81b0aa8b7614e9393b1365c1b264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &3453160378294157546 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8514071621138783448, guid: 1fc89c03347ec4245858eb78b21a5f0e,
+    type: 3}
+  m_PrefabInstance: {fileID: 6468321448361155634}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8049144258064303756 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3922729938017786558, guid: 1fc89c03347ec4245858eb78b21a5f0e,
     type: 3}
   m_PrefabInstance: {fileID: 6468321448361155634}
   m_PrefabAsset: {fileID: 0}
@@ -171,6 +194,55 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6468321448361155634}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6586101286054787311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9091787742955575874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a2c115c59751c4284a6803c42867bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSprite: {fileID: 3313201928708467157}
+  characterName: Spider
+  damageNumber: {fileID: 8191174509523100527, guid: f084f7d7b806fb842b5731787320fff1,
+    type: 3}
+  die: {fileID: 4597255273898579344, guid: d13d564d5706d794eadd5420829568d6, type: 3}
+  dieReference: {fileID: 0}
+  spriteOffset: {x: 0, y: 0}
+  mainColor: {r: 0.35686275, g: 0.15294118, b: 0.34117648, a: 1}
+  maxHP: 8
+  HP: 0
+  block: 0
+  power: 2
+  allies: []
+  enemies: []
+  portrait: {fileID: 0}
+  baseAbilities:
+  - {fileID: 134639085946065000, guid: 334599d2db14e11449128524ea2adf09, type: 3}
+  - {fileID: 134639085946065000, guid: 334599d2db14e11449128524ea2adf09, type: 3}
+  - {fileID: 1188739410754349240, guid: 766f7ed309991f94493bf7ece06dcf44, type: 3}
+  - {fileID: 1796183200955546193, guid: c8e31431fce7c7b458e14fcbf6a0fdb1, type: 3}
+  - {fileID: 1188739410754349240, guid: 766f7ed309991f94493bf7ece06dcf44, type: 3}
+  - {fileID: 1796183200955546193, guid: c8e31431fce7c7b458e14fcbf6a0fdb1, type: 3}
+  abilities:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  characterPanel: {fileID: 0}
+  currentAbility: {fileID: 0}
+  targetable: 1
+  instance: {fileID: 0}
+  indicator: {fileID: 8049144258064303756}
+  gameManager: {fileID: 0}
+  target: {fileID: 0}
+  defaultRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &2826540163473414655
 BoxCollider:
   m_ObjectHideFlags: 0

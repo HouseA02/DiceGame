@@ -29,7 +29,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
   m_LocalPosition: {x: 0.807, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2843411424421465223}
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
@@ -54,8 +54,8 @@ MonoBehaviour:
   m_UVBias: {x: 0, y: 0}
   m_DecalLayerMask: 1
   m_ScaleMode: 0
-  m_Offset: {x: 0, y: 0, z: 0.1}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Offset: {x: 0, y: 0, z: 0.15}
+  m_Size: {x: 0.67, y: 0.67, z: 0.3}
   m_FadeFactor: 1
 --- !u!114 &6866522391597792531
 MonoBehaviour:
@@ -69,6 +69,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ed2531114c7934eb9a23f42f373df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetsEnemy: 0
+  targetsAlly: 0
+  targetingType: 0
   image: {fileID: 0}
   UIImage: {fileID: 0}
   decal: {fileID: 0}
@@ -104,7 +107,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.585}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2843411424421465223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -129,8 +132,8 @@ MonoBehaviour:
   m_UVBias: {x: 0, y: 0}
   m_DecalLayerMask: 1
   m_ScaleMode: 0
-  m_Offset: {x: 0, y: 0, z: 0.1}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Offset: {x: 0, y: 0, z: 0.15}
+  m_Size: {x: 0.67, y: 0.67, z: 0.3}
   m_FadeFactor: 1
 --- !u!114 &7818108404825358428
 MonoBehaviour:
@@ -144,6 +147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ed2531114c7934eb9a23f42f373df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetsEnemy: 0
+  targetsAlly: 0
+  targetingType: 0
   image: {fileID: 0}
   UIImage: {fileID: 0}
   decal: {fileID: 0}
@@ -177,7 +183,7 @@ Transform:
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1462304024459803829}
   - {fileID: 7143900069663734010}
@@ -216,7 +222,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.692}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5610020649716336104}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -283,7 +289,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.669, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5610020649716336104}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -350,7 +356,7 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
   m_LocalPosition: {x: 0, y: 0.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2843411424421465223}
   m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
@@ -375,8 +381,8 @@ MonoBehaviour:
   m_UVBias: {x: 0, y: 0}
   m_DecalLayerMask: 1
   m_ScaleMode: 0
-  m_Offset: {x: 0, y: 0, z: 0.1}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Offset: {x: 0, y: 0, z: 0.15}
+  m_Size: {x: 0.67, y: 0.67, z: 0.3}
   m_FadeFactor: 1
 --- !u!114 &2663796003805077234
 MonoBehaviour:
@@ -390,6 +396,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ed2531114c7934eb9a23f42f373df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetsEnemy: 0
+  targetsAlly: 0
+  targetingType: 0
   image: {fileID: 0}
   UIImage: {fileID: 0}
   decal: {fileID: 0}
@@ -425,7 +434,7 @@ Transform:
   m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: -0.643, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2843411424421465223}
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 270}
@@ -450,8 +459,8 @@ MonoBehaviour:
   m_UVBias: {x: 0, y: 0}
   m_DecalLayerMask: 1
   m_ScaleMode: 0
-  m_Offset: {x: 0, y: 0, z: 0.1}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Offset: {x: 0, y: 0, z: 0.15}
+  m_Size: {x: 0.67, y: 0.67, z: 0.3}
   m_FadeFactor: 1
 --- !u!114 &5968343738479124320
 MonoBehaviour:
@@ -465,6 +474,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ed2531114c7934eb9a23f42f373df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetsEnemy: 0
+  targetsAlly: 0
+  targetingType: 0
   image: {fileID: 0}
   UIImage: {fileID: 0}
   decal: {fileID: 0}
@@ -500,7 +512,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5610020649716336104}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -567,7 +579,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -0.737}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2843411424421465223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
@@ -592,8 +604,8 @@ MonoBehaviour:
   m_UVBias: {x: 0, y: 0}
   m_DecalLayerMask: 1
   m_ScaleMode: 0
-  m_Offset: {x: 0, y: 0, z: 0.1}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Offset: {x: 0, y: 0, z: 0.15}
+  m_Size: {x: 0.67, y: 0.67, z: 0.3}
   m_FadeFactor: 1
 --- !u!114 &498803367288053974
 MonoBehaviour:
@@ -607,6 +619,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ed2531114c7934eb9a23f42f373df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetsEnemy: 0
+  targetsAlly: 0
+  targetingType: 0
   image: {fileID: 0}
   UIImage: {fileID: 0}
   decal: {fileID: 0}
@@ -642,7 +657,7 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2843411424421465223}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -667,8 +682,8 @@ MonoBehaviour:
   m_UVBias: {x: 0, y: 0}
   m_DecalLayerMask: 1
   m_ScaleMode: 0
-  m_Offset: {x: 0, y: 0, z: 0.1}
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Offset: {x: 0, y: 0, z: 0.15}
+  m_Size: {x: 0.67, y: 0.67, z: 0.3}
   m_FadeFactor: 1
 --- !u!114 &4111325471169894825
 MonoBehaviour:
@@ -682,6 +697,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ed2531114c7934eb9a23f42f373df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetsEnemy: 0
+  targetsAlly: 0
+  targetingType: 0
   image: {fileID: 0}
   UIImage: {fileID: 0}
   decal: {fileID: 0}
@@ -717,7 +735,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.691, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5610020649716336104}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -784,7 +802,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.685, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5610020649716336104}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -850,7 +868,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2702982874093160770}
   - {fileID: 4057055266426546500}
@@ -902,7 +920,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.658, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5610020649716336104}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -948,6 +966,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 31fc8cbe82b70ba4ca86014d7df73c1d,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 31fc8cbe82b70ba4ca86014d7df73c1d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 31fc8cbe82b70ba4ca86014d7df73c1d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.67
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 31fc8cbe82b70ba4ca86014d7df73c1d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -997,6 +1030,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 31fc8cbe82b70ba4ca86014d7df73c1d,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 31fc8cbe82b70ba4ca86014d7df73c1d,
         type: 3}
@@ -1115,13 +1153,6 @@ MonoBehaviour:
   - {fileID: 8199494956505346888}
   value: 0
   rb: {fileID: 0}
-  abilities:
-  - {fileID: 498803367288053974}
-  - {fileID: 4111325471169894825}
-  - {fileID: 6866522391597792531}
-  - {fileID: 5968343738479124320}
-  - {fileID: 2663796003805077234}
-  - {fileID: 7818108404825358428}
   characterReference: {fileID: 0}
   landedAbility: {fileID: 0}
   decals:

@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     public List<Character> heroes = new List<Character>();
     [SerializeField]
     public List<Character> enemies = new List<Character>();
-
     [SerializeField]
     public List<Character> activeHeroes = new List<Character>();
     [SerializeField]
@@ -67,8 +66,41 @@ public class GameManager : MonoBehaviour
 
     private void OnTurnStart()
     {
+        canRoll = true;
         rerolls = 3;
         enemyRolled = false;
+        Roll();
+    }
+
+    public void OnTurnEnd()
+    {
+        canRoll = false;
+    }
+
+    void StartTurn()
+    {
+        activeHeroes.ForEach(h => h.OnTurnStart());
+        activeEnemies.ForEach(e => e.OnTurnEnd());
+        OnTurnStart();
+    }
+    public void EndTurn()
+    {
+        OnTurnEnd();
+        activeHeroes.ForEach(h  => h.OnTurnEnd());
+        activeEnemies.ForEach(e => e.OnTurnEnd());
+        StartTurn();
+    }
+
+    public void OnDeath(Character character)
+    {
+        if (activeEnemies.Contains(character))
+        {
+            activeEnemies.Remove(character);
+        }
+        if(activeHeroes.Contains(character))
+        {
+            activeHeroes.Remove(character);
+        }
     }
     void Initialise()
     {
@@ -92,6 +124,23 @@ public class GameManager : MonoBehaviour
             activeEnemies.Add(enemyInstance);
             enemyInstance.Initialise(enemyInstance);
         }
+        foreach(Character hero in activeHeroes) 
+        {
+            hero.allies = new List<Character>();
+            hero.allies.AddRange(activeHeroes);
+            hero.allies.Remove(hero);
+            hero.enemies = new List<Character>();
+            hero.enemies.AddRange(activeEnemies);
+        }
+        foreach (Character enemy in activeEnemies)
+        {
+            enemy.allies = new List<Character>();
+            enemy.allies.AddRange(activeEnemies);
+            enemy.allies.Remove(enemy);
+            enemy.enemies = new List<Character>();
+            enemy.enemies.AddRange(activeHeroes);
+        }
+        StartTurn();
         rerollText.text = new string($"Rerolls: {rerolls}");
         canRoll = true;
         isPlayerTurn = true;

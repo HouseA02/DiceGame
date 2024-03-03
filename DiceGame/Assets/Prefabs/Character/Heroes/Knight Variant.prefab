@@ -103,17 +103,17 @@ PrefabInstance:
     - target: {fileID: 8514071621138783448, guid: 1fc89c03347ec4245858eb78b21a5f0e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.6271725
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8514071621138783448, guid: 1fc89c03347ec4245858eb78b21a5f0e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8514071621138783448, guid: 1fc89c03347ec4245858eb78b21a5f0e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.5434866
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8514071621138783448, guid: 1fc89c03347ec4245858eb78b21a5f0e,
         type: 3}
@@ -187,21 +187,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4472070bc848b4248b58fd4792ef0941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetSprite: {fileID: 5971903907578166427}
+  characterName: Knight
+  damageNumber: {fileID: 8191174509523100527, guid: f084f7d7b806fb842b5731787320fff1,
+    type: 3}
   die: {fileID: 4597255273898579344, guid: d13d564d5706d794eadd5420829568d6, type: 3}
   dieReference: {fileID: 0}
   spriteOffset: {x: 0, y: 0}
   mainColor: {r: 0.35686275, g: 0.098039225, b: 0.098039225, a: 1}
   maxHP: 10
   HP: 0
+  block: 0
   power: 2
+  allies: []
+  enemies: []
   portrait: {fileID: 2800000, guid: 1d0e60a36f911a94495c04f8187d0319, type: 3}
   baseAbilities:
+  - {fileID: 134639085946065000, guid: 334599d2db14e11449128524ea2adf09, type: 3}
   - {fileID: 1188739410754349240, guid: 766f7ed309991f94493bf7ece06dcf44, type: 3}
-  - {fileID: 1188739410754349240, guid: 766f7ed309991f94493bf7ece06dcf44, type: 3}
-  - {fileID: 1188739410754349240, guid: 766f7ed309991f94493bf7ece06dcf44, type: 3}
+  - {fileID: 7781200114390376026, guid: aa8a3bfe1866e104c88eaf39e06ba398, type: 3}
+  - {fileID: 7781200114390376026, guid: aa8a3bfe1866e104c88eaf39e06ba398, type: 3}
   - {fileID: 1796183200955546193, guid: c8e31431fce7c7b458e14fcbf6a0fdb1, type: 3}
-  - {fileID: 1796183200955546193, guid: c8e31431fce7c7b458e14fcbf6a0fdb1, type: 3}
-  - {fileID: 1796183200955546193, guid: c8e31431fce7c7b458e14fcbf6a0fdb1, type: 3}
+  - {fileID: 134639085946065000, guid: 334599d2db14e11449128524ea2adf09, type: 3}
   abilities:
   - {fileID: 0}
   - {fileID: 0}
@@ -248,6 +255,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2800875549845834108}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5971903907578166427 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8376347378912196071, guid: 1fc89c03347ec4245858eb78b21a5f0e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2800875549845834108}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 020a81b0aa8b7614e9393b1365c1b264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7808251189253357245
 PrefabInstance:
   m_ObjectHideFlags: 0

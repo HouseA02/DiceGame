@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4acced62494eb22418e11e65e195d5a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetsEnemy: 1
+  targetsAlly: 0
+  targetingType: 1
   image: {fileID: 2100000, guid: 708329228375b6d45be4426606b02c23, type: 2}
   UIImage: {fileID: 21300000, guid: ef252b6e57ea81f43bfe3878c31f3202, type: 3}
   decal: {fileID: 0}
@@ -51,6 +54,5 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   characterReference: {fileID: 0}
   validTargets: []
-  targetsEnemy: 1
-  targetsAlly: 0
   multiplier: 2
+  isHealing: 0

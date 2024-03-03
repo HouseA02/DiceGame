@@ -1,10 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    [SerializeField]
+    public Target targetSprite;
+    [SerializeField]
+    public string characterName;
+    [SerializeField]
+    public Transform damageNumber;
     [SerializeField]
     AbilityDie die;
     public AbilityDie dieReference;
@@ -15,7 +22,10 @@ public class Character : MonoBehaviour
     [SerializeField]
     public int maxHP;
     public int HP;
+    public int block;
     public int power;
+    public List<Character> allies;
+    public List<Character> enemies;
     public Texture portrait;
     public Ability[] baseAbilities;
     public Ability[] abilities;
@@ -25,7 +35,6 @@ public class Character : MonoBehaviour
     public Character instance;
     public GameObject indicator;
     public GameManager gameManager;
-    
     public virtual void Roll()
     {
         CleanUp();
@@ -34,7 +43,7 @@ public class Character : MonoBehaviour
         dieInstance.Initialise(this);
         dieInstance.Roll();
     }
-    public void SetAbility(int value) 
+    public virtual void SetAbility(int value) 
     {
         if (value < 0)
         {
@@ -59,10 +68,41 @@ public class Character : MonoBehaviour
         HP += value;
         Mathf.Clamp(HP, 0, maxHP);
         characterPanel.SetHP(HP);
+        var damagePopup = Instantiate(damageNumber, characterPanel.HPText.transform);
+        damagePopup.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-1f,1f),2) * 10000);
+        if (value > 0) { damagePopup.GetComponent<TMP_Text>().color = Color.green; }
+        damagePopup.GetComponent<TMP_Text>().text = Mathf.Abs(value).ToString();
         if(HP<=0)
         {
-            gameObject.SetActive(false);
+            Die();
         }
+    }
+
+    public void ChangeBlock(int value, bool isOverflowing)
+    {
+        block += value;
+        if(block <= 0)
+        {
+            characterPanel.blockContainer.SetActive(false);
+            if(isOverflowing) { ChangeHP(block); }
+            block = 0;
+        }
+        else
+        {
+            characterPanel.blockContainer.SetActive(true);
+            characterPanel.blockText.text = block.ToString();
+        }
+    }
+
+    public void TakeDamage(int value)
+    {
+        ChangeBlock(-value, true);
+    }
+    public virtual void Die()
+    {
+        CleanUp();
+        gameManager.OnDeath(this);
+        gameObject.SetActive(false);
     }
 
     public virtual void OnAbilityUsed()
@@ -71,6 +111,11 @@ public class Character : MonoBehaviour
     }
 
     public virtual void OnTurnStart()
+    {
+        ChangeBlock(-block, false);
+    }
+
+    public virtual void OnTurnEnd()
     {
 
     }
@@ -86,7 +131,7 @@ public class Character : MonoBehaviour
             abilities[i] = Instantiate(baseAbilities[i], this.transform);
         }
     }
-    public void Initialise(Character temp)
+    public virtual void Initialise(Character temp)
     {
         instance = temp;
         HP = maxHP;

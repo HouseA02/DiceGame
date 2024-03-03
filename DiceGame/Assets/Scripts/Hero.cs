@@ -24,4 +24,10 @@ public class Hero : Character
         hasActed = false;
         base.OnTurnStart();
     }
+
+    public override void OnTurnEnd()
+    {
+        hasActed = true;
+        CleanUp();
+    }
 }

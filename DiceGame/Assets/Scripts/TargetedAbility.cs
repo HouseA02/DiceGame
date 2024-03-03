@@ -7,10 +7,7 @@ public class TargetedAbility : Ability
 {
     [SerializeField]
     private List<Character> validTargets = new List<Character>();
-    [SerializeField]
-    public bool targetsEnemy;
-    [SerializeField]
-    public bool targetsAlly;
+
     [SerializeField]
     float multiplier;
     [SerializeField]
@@ -21,7 +18,8 @@ public class TargetedAbility : Ability
         base.Activate();
         validTargets = GetTargets();
         Debug.Log(validTargets);
-        StartCoroutine(WaitForInput());
+        if(characterReference.GetType() == typeof(Hero)) { StartCoroutine(WaitForInput()); }
+        if (characterReference.GetType() == typeof(Enemy)) { UseAbility(characterReference.GetComponent<Enemy>().target);  }
     }
 
     IEnumerator WaitForInput()
@@ -40,29 +38,39 @@ public class TargetedAbility : Ability
             Debug.Log(raycastHit.transform.gameObject);
             if (validTargets.Contains(target))
             {
-                var damage = -(int)(characterReference.power * multiplier);
-                if(isHealing) { damage *= -1; }
-                target.ChangeHP(damage);
-                characterReference.CleanUp();
-                characterReference.OnAbilityUsed();
+                UseAbility(target);
             }
         }
+    }
+
+    void UseAbility(Character target)
+    {
+        var damage = (int)(characterReference.power * multiplier);
+        if (isHealing) { 
+            target.ChangeHP(damage);
+        }
+        else
+        {
+            target.TakeDamage(damage);
+        }
+        characterReference.CleanUp();
+        characterReference.OnAbilityUsed();
     }
     public List<Character> GetTargets()
     {
         List<Character> targets = new List<Character>();
         if (targetsEnemy)
         {
-            foreach(Character e in gameManager.activeEnemies.Where(e => e.targetable = true))
+            foreach(Character e in characterReference.enemies.Where(e => e.targetable = true))
             {
                 targets.Add(e);
             }
         }
         if (targetsAlly)
         {
-            foreach(Character h in gameManager.activeHeroes)
+            foreach(Character a in characterReference.allies.Where(a => a.targetable = true))
             {
-                targets.Add(h);
+                targets.Add(a);
             }
         }
         return targets;

@@ -6,6 +6,19 @@ using UnityEngine.Rendering.Universal;
 public class Ability : MonoBehaviour
 {
     [SerializeField]
+    public bool targetsEnemy;
+    [SerializeField]
+    public bool targetsAlly;
+    public enum TargetingType
+    {
+        none,
+        single,
+        team,
+        all,
+        self
+    }
+    public TargetingType targetingType;
+    [SerializeField]
     public Material image;
     [SerializeField]
     public Sprite UIImage;

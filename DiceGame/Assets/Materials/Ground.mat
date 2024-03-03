@@ -173,7 +173,7 @@ Material:
     - _EnableInstancedPerPixelNormal: 1
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
-    - _Glossiness: 34.88
+    - _Glossiness: 18.61
     - _GlossinessSource: 0
     - _GlossyReflections: 0
     - _HeightTransition: 0

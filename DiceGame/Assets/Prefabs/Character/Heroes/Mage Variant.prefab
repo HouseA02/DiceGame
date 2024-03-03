@@ -172,17 +172,17 @@ PrefabInstance:
     - target: {fileID: 8514071621138783448, guid: 1fc89c03347ec4245858eb78b21a5f0e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2522417
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8514071621138783448, guid: 1fc89c03347ec4245858eb78b21a5f0e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8514071621138783448, guid: 1fc89c03347ec4245858eb78b21a5f0e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.13722467
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8514071621138783448, guid: 1fc89c03347ec4245858eb78b21a5f0e,
         type: 3}
@@ -238,6 +238,18 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2532658161053458275}
   m_SourcePrefab: {fileID: 100100000, guid: 1fc89c03347ec4245858eb78b21a5f0e, type: 3}
+--- !u!114 &659877048316126653 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8376347378912196071, guid: 1fc89c03347ec4245858eb78b21a5f0e,
+    type: 3}
+  m_PrefabInstance: {fileID: 9013560076996513882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 020a81b0aa8b7614e9393b1365c1b264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &810250072879205506 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8514071621138783448, guid: 1fc89c03347ec4245858eb78b21a5f0e,
@@ -268,21 +280,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4472070bc848b4248b58fd4792ef0941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetSprite: {fileID: 659877048316126653}
+  characterName: Mage
+  damageNumber: {fileID: 8191174509523100527, guid: f084f7d7b806fb842b5731787320fff1,
+    type: 3}
   die: {fileID: 4597255273898579344, guid: d13d564d5706d794eadd5420829568d6, type: 3}
   dieReference: {fileID: 0}
   spriteOffset: {x: 2, y: 0}
   mainColor: {r: 0.1254902, g: 0.16470589, b: 0.3019608, a: 1}
   maxHP: 10
   HP: 0
+  block: 0
   power: 2
+  allies: []
+  enemies: []
   portrait: {fileID: 2800000, guid: 104e6cc67c0423945b76675dd420753a, type: 3}
   baseAbilities:
+  - {fileID: 134639085946065000, guid: 334599d2db14e11449128524ea2adf09, type: 3}
   - {fileID: 1188739410754349240, guid: 766f7ed309991f94493bf7ece06dcf44, type: 3}
   - {fileID: 1188739410754349240, guid: 766f7ed309991f94493bf7ece06dcf44, type: 3}
-  - {fileID: 1188739410754349240, guid: 766f7ed309991f94493bf7ece06dcf44, type: 3}
-  - {fileID: 1796183200955546193, guid: c8e31431fce7c7b458e14fcbf6a0fdb1, type: 3}
-  - {fileID: 1796183200955546193, guid: c8e31431fce7c7b458e14fcbf6a0fdb1, type: 3}
-  - {fileID: 1796183200955546193, guid: c8e31431fce7c7b458e14fcbf6a0fdb1, type: 3}
+  - {fileID: 7108513945749902036, guid: ff553169144d3634695066ed4f17aa1b, type: 3}
+  - {fileID: 7108513945749902036, guid: ff553169144d3634695066ed4f17aa1b, type: 3}
+  - {fileID: 134639085946065000, guid: 334599d2db14e11449128524ea2adf09, type: 3}
   abilities:
   - {fileID: 0}
   - {fileID: 0}
