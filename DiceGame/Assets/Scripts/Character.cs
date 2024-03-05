@@ -24,6 +24,7 @@ public class Character : MonoBehaviour
     [SerializeField]
     public Color mainColor;
     [SerializeField]
+    public int id;
     public int maxHP;
     public int HP;
     public int block;

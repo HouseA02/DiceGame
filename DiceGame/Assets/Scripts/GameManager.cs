@@ -145,6 +145,7 @@ public class GameManager : MonoBehaviour
             heroInstance.transform.position = heroPositions[i].position;
             heroInstance.transform.rotation = heroPositions[i].rotation;
             heroInstance.gameManager = this;
+            heroInstance.id = i;
             activeHeroes.Add(heroInstance);
             heroInstance.Initialise(heroInstance);
         }
@@ -155,6 +156,7 @@ public class GameManager : MonoBehaviour
             enemyInstance.transform.position = enemyPositions[i].position;
             enemyInstance.transform.rotation = enemyPositions[i].rotation;
             enemyInstance.gameManager = this;
+            enemyInstance.id = i;
             activeEnemies.Add(enemyInstance);
             enemyInstance.Initialise(enemyInstance);
         }

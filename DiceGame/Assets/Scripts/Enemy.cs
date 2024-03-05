@@ -19,12 +19,18 @@ public class Enemy : Character
             { 
                 target.characterPanel.targetSprite.gameObject.SetActive(true);
                 target.targetSprite.gameObject.SetActive(true);
+                transform.LookAt(target.transform.position);
                 if(characterPanel.targetContainer != null)
                 {
                     characterPanel.targetContainer.gameObject.SetActive(true);
                     characterPanel.targetImage.sprite = target.portrait;
                 }
             }
+            else
+            {
+                transform.LookAt(enemies[id].transform);
+            }
+
         }
     }
 

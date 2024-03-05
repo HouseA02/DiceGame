@@ -288,11 +288,12 @@ MonoBehaviour:
   dieReference: {fileID: 0}
   spriteOffset: {x: -10, y: -20}
   spriteSize: 0
-  mainColor: {r: 0.1254902, g: 0.16470589, b: 0.3019608, a: 1}
+  mainColor: {r: 0.19514653, g: 0.24821661, b: 0.4339623, a: 1}
   maxHP: 10
   HP: 0
   block: 0
   power: 2
+  damageMultiplier: 1
   allies: []
   enemies: []
   portrait: {fileID: 21300000, guid: 104e6cc67c0423945b76675dd420753a, type: 3}
@@ -316,6 +317,16 @@ MonoBehaviour:
   instance: {fileID: 0}
   indicator: {fileID: 5433257848724392676}
   gameManager: {fileID: 0}
+  statusEffects: []
+  m_OnTurnStart:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnTurnEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnAttacked:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &2532658161053458275
 BoxCollider:
   m_ObjectHideFlags: 0

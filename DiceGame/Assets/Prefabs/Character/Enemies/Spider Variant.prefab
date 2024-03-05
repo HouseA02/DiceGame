@@ -219,6 +219,7 @@ MonoBehaviour:
   HP: 0
   block: 0
   power: 2
+  damageMultiplier: 1
   allies: []
   enemies: []
   portrait: {fileID: 21300000, guid: f6432043ba0b67b498132439f5605e18, type: 3}
@@ -242,6 +243,16 @@ MonoBehaviour:
   instance: {fileID: 0}
   indicator: {fileID: 8049144258064303756}
   gameManager: {fileID: 0}
+  statusEffects: []
+  m_OnTurnStart:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnTurnEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnAttacked:
+    m_PersistentCalls:
+      m_Calls: []
   target: {fileID: 0}
   defaultRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &2826540163473414655
@@ -296,22 +307,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0ee8e42fb54923f4b97eebc6c5e145d6,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0ee8e42fb54923f4b97eebc6c5e145d6,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0ee8e42fb54923f4b97eebc6c5e145d6,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0ee8e42fb54923f4b97eebc6c5e145d6,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0ee8e42fb54923f4b97eebc6c5e145d6,
         type: 3}
@@ -321,7 +332,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0ee8e42fb54923f4b97eebc6c5e145d6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0ee8e42fb54923f4b97eebc6c5e145d6,
         type: 3}
