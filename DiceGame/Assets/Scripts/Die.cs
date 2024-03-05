@@ -15,10 +15,12 @@ public class Die : MonoBehaviour
     public BoxCollider[] faceChecks;
     public int value;
     public Rigidbody rb;
-
+    AudioSource audioSource;
+    public AudioClip[] sounds;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public virtual void Roll()
@@ -44,7 +46,25 @@ public class Die : MonoBehaviour
         yield return null;
     }
 
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (sounds != null && audioSource != null)
+        {
+            if(rb.velocity.magnitude > 10) 
+            { 
+                audioSource.clip = sounds[2];
+            }
+            else if(rb.velocity.magnitude > 3)
+            {
+                audioSource.clip = sounds[1];
+            }
+            else
+            {
+                audioSource.clip = sounds[0];
+            }
+            audioSource.Play();
+        }   
+    }
     public virtual void Activate(int value)
     {
         Debug.Log($"You rolled {value}!");

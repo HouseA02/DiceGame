@@ -44,12 +44,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ed2531114c7934eb9a23f42f373df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilityName: Blank
   targetsEnemy: 0
   targetsAlly: 0
+  targetsSelf: 0
+  effects: []
   targetingType: 0
   image: {fileID: 2100000, guid: de96e80f7504fb04d93ece0e6706fb6f, type: 2}
   UIImage: {fileID: 21300000, guid: 9e50d10335df2bc479cb335839d6a0db, type: 3}
   decal: {fileID: 0}
-  debugText: Whiff
+  description: Does nothing
   gameManager: {fileID: 0}
   characterReference: {fileID: 0}

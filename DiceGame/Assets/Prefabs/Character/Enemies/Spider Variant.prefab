@@ -212,7 +212,8 @@ MonoBehaviour:
     type: 3}
   die: {fileID: 4597255273898579344, guid: d13d564d5706d794eadd5420829568d6, type: 3}
   dieReference: {fileID: 0}
-  spriteOffset: {x: 0, y: 0}
+  spriteOffset: {x: 30, y: -10}
+  spriteSize: 1
   mainColor: {r: 0.35686275, g: 0.15294118, b: 0.34117648, a: 1}
   maxHP: 8
   HP: 0
@@ -220,7 +221,7 @@ MonoBehaviour:
   power: 2
   allies: []
   enemies: []
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: f6432043ba0b67b498132439f5605e18, type: 3}
   baseAbilities:
   - {fileID: 134639085946065000, guid: 334599d2db14e11449128524ea2adf09, type: 3}
   - {fileID: 134639085946065000, guid: 334599d2db14e11449128524ea2adf09, type: 3}

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6738452525286046307}
   - component: {fileID: 1188739410754349240}
+  - component: {fileID: -981031962479951513}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -44,15 +45,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4acced62494eb22418e11e65e195d5a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilityName: Strike
   targetsEnemy: 1
   targetsAlly: 0
+  targetsSelf: 0
+  effects:
+  - effect: {fileID: -981031962479951513}
+    value: 1
   targetingType: 1
   image: {fileID: 2100000, guid: 0a1466e1db37f9c47a1ecb68a9377db7, type: 2}
   UIImage: {fileID: 21300000, guid: 8f0d1068ded228541a0099b8de3af0bd, type: 3}
   decal: {fileID: 0}
-  debugText: 
+  description: Deal 2 damage to target enemy
   gameManager: {fileID: 0}
   characterReference: {fileID: 0}
   validTargets: []
-  multiplier: 1
   isHealing: 0
+--- !u!114 &-981031962479951513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8077831355862072497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ef0c17aa3409d4697804b51b818819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

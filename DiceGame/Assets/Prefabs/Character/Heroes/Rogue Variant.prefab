@@ -229,19 +229,21 @@ MonoBehaviour:
     type: 3}
   die: {fileID: 4597255273898579344, guid: d13d564d5706d794eadd5420829568d6, type: 3}
   dieReference: {fileID: 0}
-  spriteOffset: {x: 0, y: 0}
+  spriteOffset: {x: -20, y: -50}
+  spriteSize: 0.2
   mainColor: {r: 0.1137255, g: 0.36862746, b: 0.10588236, a: 1}
   maxHP: 10
   HP: 0
   block: 0
   power: 2
+  damageMultiplier: 0
   allies: []
   enemies: []
-  portrait: {fileID: 2800000, guid: 1d0e60a36f911a94495c04f8187d0319, type: 3}
+  portrait: {fileID: 21300000, guid: 1d0e60a36f911a94495c04f8187d0319, type: 3}
   baseAbilities:
   - {fileID: 134639085946065000, guid: 334599d2db14e11449128524ea2adf09, type: 3}
   - {fileID: 1188739410754349240, guid: 766f7ed309991f94493bf7ece06dcf44, type: 3}
-  - {fileID: 1188739410754349240, guid: 766f7ed309991f94493bf7ece06dcf44, type: 3}
+  - {fileID: 8698208988420570346, guid: c38d6efd1e4f65a428c2753026374810, type: 3}
   - {fileID: 1796183200955546193, guid: c8e31431fce7c7b458e14fcbf6a0fdb1, type: 3}
   - {fileID: 1796183200955546193, guid: c8e31431fce7c7b458e14fcbf6a0fdb1, type: 3}
   - {fileID: 134639085946065000, guid: 334599d2db14e11449128524ea2adf09, type: 3}
@@ -258,6 +260,16 @@ MonoBehaviour:
   instance: {fileID: 0}
   indicator: {fileID: 1095560863912265496}
   gameManager: {fileID: 0}
+  statusEffects: []
+  m_OnTurnStart:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnTurnEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnAttacked:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &6560831468754886365
 BoxCollider:
   m_ObjectHideFlags: 0

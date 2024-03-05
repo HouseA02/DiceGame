@@ -12,11 +12,20 @@ public class CharacterPanel : MonoBehaviour
     public TMP_Text blockText;
     public GameObject blockContainer;
     public Image resultImage;
-    public RawImage portraitSlot;
+    public Image portraitSlot;
     public Vector3 defaultPosition;
     public Character character;
     public Image background;
     public Target targetSprite;
+    ///
+    public GameObject descContainer;
+    public TMP_Text descriptionText;
+    public TMP_Text abilityNameText;
+    ///
+    public GameObject targetContainer;
+    public Image targetImage;
+    /// 
+    public StatusSlot[] statusSlots;
 
     public void Initialise(Character newCharacter)
     {
@@ -25,7 +34,8 @@ public class CharacterPanel : MonoBehaviour
         nameText.text = character.characterName;
         HPText.text = character.HP.ToString();
         if (character.portrait != null) { 
-            portraitSlot.texture = character.portrait;
+            portraitSlot.sprite = character.portrait;
+            portraitSlot.transform.localScale = Vector3.one * (1+character.spriteSize);
             portraitSlot.transform.Translate(character.spriteOffset);
         }
         background.color = character.mainColor;

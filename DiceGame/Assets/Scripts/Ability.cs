@@ -5,10 +5,29 @@ using UnityEngine.Rendering.Universal;
 
 public class Ability : MonoBehaviour
 {
+    [System.Serializable]
+    public class AbilityEffect
+    {
+        public Effect effect;
+        public float value;
+        public void Activate(Character source, Character target)
+        {
+            effect.Activate(source, target, value);
+        }
+
+        public void Activate(Character source, List<Character> targets)
+        {
+            effect.Activate(source, targets, value);
+        }
+    }
+    [SerializeField]
+    public string abilityName;
     [SerializeField]
     public bool targetsEnemy;
     [SerializeField]
     public bool targetsAlly;
+    [SerializeField]
+    public bool targetsSelf;
     public enum TargetingType
     {
         none,
@@ -17,6 +36,8 @@ public class Ability : MonoBehaviour
         all,
         self
     }
+    [SerializeField]
+    public List<AbilityEffect> effects = new List<AbilityEffect>();
     public TargetingType targetingType;
     [SerializeField]
     public Material image;
@@ -25,13 +46,49 @@ public class Ability : MonoBehaviour
     [SerializeField]
     public DecalProjector decal;
     [SerializeField]
-    public string debugText;
+    public string description;
     public GameManager gameManager;
     public Character characterReference;
     public virtual void Activate()
     {
-        
+
     }
+
+    public virtual IEnumerator UseAbility()
+    {
+        characterReference.CleanUp();
+        //effects.ForEach(e => { e.Activate(characterReference, target); });
+        foreach (AbilityEffect effect in effects)
+        {
+            effect.Activate(characterReference, characterReference);
+            yield return new WaitForSeconds(0.2f);
+        }
+        characterReference.OnAbilityUsed();
+    }
+    public virtual IEnumerator UseAbility(Character target)
+    {
+        characterReference.CleanUp();
+        //effects.ForEach(e => { e.Activate(characterReference, target); });
+        foreach (AbilityEffect effect in effects)
+        {
+            effect.Activate(characterReference, target);
+            yield return new WaitForSeconds(0.2f);
+        }
+        characterReference.OnAbilityUsed();
+    }
+    public virtual IEnumerator UseAbility(List<Character> targets)
+    {
+        characterReference.CleanUp();
+        //effects.ForEach(e => { e.Activate(characterReference, target); });
+        foreach (AbilityEffect effect in effects)
+        {
+            effect.Activate(characterReference, targets);
+            yield return new WaitForSeconds(0.2f);
+        }
+        characterReference.OnAbilityUsed();
+    }
+
+
 
     private void Awake()
     {

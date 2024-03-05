@@ -9,8 +9,6 @@ public class TargetedAbility : Ability
     private List<Character> validTargets = new List<Character>();
 
     [SerializeField]
-    float multiplier;
-    [SerializeField]
     bool isHealing;
 
     public override void Activate()
@@ -19,7 +17,7 @@ public class TargetedAbility : Ability
         validTargets = GetTargets();
         Debug.Log(validTargets);
         if(characterReference.GetType() == typeof(Hero)) { StartCoroutine(WaitForInput()); }
-        if (characterReference.GetType() == typeof(Enemy)) { UseAbility(characterReference.GetComponent<Enemy>().target);  }
+        if (characterReference.GetType() == typeof(Enemy)) { StartCoroutine(UseAbility(characterReference.GetComponent<Enemy>().target));  }
     }
 
     IEnumerator WaitForInput()
@@ -38,12 +36,12 @@ public class TargetedAbility : Ability
             Debug.Log(raycastHit.transform.gameObject);
             if (validTargets.Contains(target))
             {
-                UseAbility(target);
+                StartCoroutine(UseAbility(target));
             }
         }
     }
 
-    void UseAbility(Character target)
+    /*public override void UseAbility(Character target)
     {
         var damage = (int)(characterReference.power * multiplier);
         if (isHealing) { 
@@ -53,9 +51,8 @@ public class TargetedAbility : Ability
         {
             target.TakeDamage(damage);
         }
-        characterReference.CleanUp();
-        characterReference.OnAbilityUsed();
-    }
+        base.UseAbility(target);
+    }*/
     public List<Character> GetTargets()
     {
         List<Character> targets = new List<Character>();
@@ -72,6 +69,10 @@ public class TargetedAbility : Ability
             {
                 targets.Add(a);
             }
+        }
+        if (targetsSelf)
+        {
+            targets.Add(characterReference);
         }
         return targets;
     }

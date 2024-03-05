@@ -19,13 +19,45 @@ public class Enemy : Character
             { 
                 target.characterPanel.targetSprite.gameObject.SetActive(true);
                 target.targetSprite.gameObject.SetActive(true);
+                if(characterPanel.targetContainer != null)
+                {
+                    characterPanel.targetContainer.gameObject.SetActive(true);
+                    characterPanel.targetImage.sprite = target.portrait;
+                }
             }
         }
     }
 
+    public override void CleanUp()
+    {
+        if (target != null && !CheckAllyTargets())
+        {
+            target.characterPanel.targetSprite.gameObject.SetActive(false);
+            target.targetSprite.gameObject.SetActive(false);
+            if (characterPanel.targetContainer != null)
+            {
+                characterPanel.targetContainer.gameObject.SetActive(false);
+                characterPanel.targetImage.sprite = null;
+            }
+        }
+        base.CleanUp();
+    }
+
+    bool CheckAllyTargets()
+    {
+        bool isCommonTarget=false;
+        allies.ForEach(a =>
+        {
+            if (a.GetComponent<Enemy>().target == target)
+            {
+                isCommonTarget = true;
+            }
+        });
+        return isCommonTarget;
+    }
     public void UpdateTarget(Character newTarget)
     {
-        if (target != null)
+        if (target != null && !CheckAllyTargets())
         {
             target.characterPanel.targetSprite.gameObject.SetActive(false);
             target.targetSprite.gameObject.SetActive(false);
@@ -33,19 +65,29 @@ public class Enemy : Character
         target = newTarget;
         target.characterPanel.targetSprite.gameObject.SetActive(true);
         target.targetSprite.gameObject.SetActive(true);
+        if (characterPanel.targetContainer != null)
+        {
+            characterPanel.targetContainer.gameObject.SetActive(true);
+            characterPanel.targetImage.sprite = target.portrait;
+        }
     }
-    public override void OnTurnEnd()
+    public override void OnTurnStart()
     {
-        if(currentAbility != null)
+        base.OnTurnStart();
+        if (currentAbility != null)
         {
             currentAbility.Activate();
             if (target != null) 
             { 
                 target.characterPanel.targetSprite.gameObject.SetActive(false);
                 target.targetSprite.gameObject.SetActive(false);
+                if (characterPanel.targetContainer != null)
+                {
+                    characterPanel.targetContainer.gameObject.SetActive(false);
+                    characterPanel.targetImage.sprite = null;
+                }
             }
         }
-        base.OnTurnEnd();
     }
     public Character ChooseTarget(Ability ability)
     {
@@ -59,7 +101,7 @@ public class Enemy : Character
                 }
                 else
                 {
-                    Character target = allies[(int)Random.Range(0, allies.Count + 1)];
+                    Character target = allies[(int)Random.Range(0, allies.Count)];
                     return target;
                 }
             default: 

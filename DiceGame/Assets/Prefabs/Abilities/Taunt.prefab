@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2368060484240138714}
-  - component: {fileID: 7781200114390376026}
+  - component: {fileID: 7545600256442713267}
+  - component: {fileID: 3047053891247446698}
+  - component: {fileID: 8178659997645234242}
   m_Layer: 0
   m_Name: Taunt
   m_TagString: Untagged
@@ -32,7 +34,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7781200114390376026
+--- !u!114 &7545600256442713267
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,16 +43,46 @@ MonoBehaviour:
   m_GameObject: {fileID: 4432371268531504105}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 021686ff261aea54aa128d318a82894b, type: 3}
+  m_Script: {fileID: 11500000, guid: c7650b1bef1cdb04d864b4d131449bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilityName: Taunt
   targetsEnemy: 0
   targetsAlly: 0
-  targetingType: 4
+  targetsSelf: 0
+  effects:
+  - effect: {fileID: 3047053891247446698}
+    value: 6
+  - effect: {fileID: 8178659997645234242}
+    value: 0
+  targetingType: 0
   image: {fileID: 2100000, guid: 781f7ae58fac5d344872e663a616fbd3, type: 2}
   UIImage: {fileID: 21300000, guid: 5b053244c21ecda46a1d575e62a455e8, type: 3}
   decal: {fileID: 0}
-  debugText: 
+  description: Gain 6 block and force all enemies to attack the caster
   gameManager: {fileID: 0}
   characterReference: {fileID: 0}
-  blockAmount: 6
+--- !u!114 &3047053891247446698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4432371268531504105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1400dcfbfa4bdef41bfa14730d8d02c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8178659997645234242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4432371268531504105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a1c5051dc0f2dd4295c953128299919, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

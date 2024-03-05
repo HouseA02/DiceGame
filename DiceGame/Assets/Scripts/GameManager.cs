@@ -87,7 +87,18 @@ public class GameManager : MonoBehaviour
     {
         OnTurnEnd();
         activeHeroes.ForEach(h  => h.OnTurnEnd());
-        activeEnemies.ForEach(e => e.OnTurnEnd());
+        StartCoroutine(EnemyAct());
+        //activeEnemies.ForEach(e => e.OnTurnEnd());
+        //StartTurn();
+    }
+
+    public IEnumerator EnemyAct()
+    {
+        foreach(Character enemy in activeEnemies)
+        {
+            enemy.OnTurnStart();
+            yield return new WaitForSeconds(0.5f);
+        }
         StartTurn();
     }
 
@@ -100,6 +111,29 @@ public class GameManager : MonoBehaviour
         if(activeHeroes.Contains(character))
         {
             activeHeroes.Remove(character);
+        }
+        foreach (Character hero in activeHeroes)
+        {
+            hero.allies = new List<Character>();
+            hero.allies.AddRange(activeHeroes);
+            hero.allies.Remove(hero);
+            hero.enemies = new List<Character>();
+            hero.enemies.AddRange(activeEnemies);
+        }
+        foreach (Character enemy in activeEnemies)
+        {
+            enemy.allies = new List<Character>();
+            enemy.allies.AddRange(activeEnemies);
+            enemy.allies.Remove(enemy);
+            enemy.enemies = new List<Character>();
+            enemy.enemies.AddRange(activeHeroes);
+        }
+        if (activeEnemies.Count<=0)
+        {
+            Debug.Log("Win");
+        }else if(activeHeroes.Count<=0)
+        {
+            Debug.Log("Lose");
         }
     }
     void Initialise()

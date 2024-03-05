@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Character : MonoBehaviour
 {
@@ -18,15 +20,18 @@ public class Character : MonoBehaviour
     [SerializeField]
     public Vector2 spriteOffset;
     [SerializeField]
+    public float spriteSize;
+    [SerializeField]
     public Color mainColor;
     [SerializeField]
     public int maxHP;
     public int HP;
     public int block;
     public int power;
+    public float damageMultiplier = 1;
     public List<Character> allies;
     public List<Character> enemies;
-    public Texture portrait;
+    public Sprite portrait;
     public Ability[] baseAbilities;
     public Ability[] abilities;
     public CharacterPanel characterPanel;
@@ -35,6 +40,10 @@ public class Character : MonoBehaviour
     public Character instance;
     public GameObject indicator;
     public GameManager gameManager;
+    public List<StatusEffect> statusEffects = new List<StatusEffect>();
+    public UnityEvent m_OnTurnStart = new UnityEvent();
+    public UnityEvent m_OnTurnEnd = new UnityEvent();
+    public UnityEvent m_OnAttacked = new UnityEvent();
     public virtual void Roll()
     {
         CleanUp();
@@ -49,12 +58,19 @@ public class Character : MonoBehaviour
         {
             currentAbility = null;
             characterPanel.resultImage.sprite = null;
+            if(characterPanel.descContainer != null) { characterPanel.descContainer.SetActive(false); }
         }
         else
         {
             currentAbility = abilities[value];
             abilities[value].characterReference = instance;
             characterPanel.resultImage.sprite = currentAbility.UIImage;
+            if (characterPanel.descContainer != null) 
+            { 
+                characterPanel.descContainer.SetActive(true);
+                characterPanel.descriptionText.text = currentAbility.description;
+                characterPanel.abilityNameText.text = currentAbility.abilityName;
+            }
         }
     }
 
@@ -66,7 +82,7 @@ public class Character : MonoBehaviour
     public void ChangeHP(int value)
     {
         HP += value;
-        Mathf.Clamp(HP, 0, maxHP);
+        HP = Mathf.Clamp(HP, 0, maxHP);
         characterPanel.SetHP(HP);
         var damagePopup = Instantiate(damageNumber, characterPanel.HPText.transform);
         damagePopup.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-1f,1f),2) * 10000);
@@ -96,11 +112,16 @@ public class Character : MonoBehaviour
 
     public void TakeDamage(int value)
     {
-        ChangeBlock(-value, true);
+        //damagetotake
+        float damageToTake = value;
+        damageToTake *= damageMultiplier;
+        m_OnAttacked.Invoke();
+        ChangeBlock(-(int)damageToTake, true);
     }
     public virtual void Die()
     {
         CleanUp();
+        characterPanel.gameObject.SetActive(false);
         gameManager.OnDeath(this);
         gameObject.SetActive(false);
     }
@@ -113,11 +134,37 @@ public class Character : MonoBehaviour
     public virtual void OnTurnStart()
     {
         ChangeBlock(-block, false);
+        m_OnTurnStart.Invoke();
     }
 
     public virtual void OnTurnEnd()
     {
+        m_OnTurnEnd.Invoke();
+    }
 
+    public virtual void ApplyStatus(StatusEffect status, int value)
+    {
+        if (statusEffects.Find(s => s.statusName == status.statusName) != null)
+        {
+            foreach(StatusEffect statusEffect in statusEffects.Where(s => s.statusName == status.statusName))
+            {
+                statusEffect.AddValue(value);
+            }
+        }
+        else
+        {
+            StatusEffect newStatus = Instantiate(status);
+            newStatus.Initialise(this, value);
+            statusEffects.Add(newStatus);
+            foreach (StatusSlot slot in characterPanel.statusSlots)
+            {
+                if (!slot.isTaken)
+                {
+                    slot.Initialise(newStatus, value);
+                    break;
+                }
+            }
+        }
     }
     public virtual void CleanUp()
     {
@@ -135,6 +182,7 @@ public class Character : MonoBehaviour
     {
         instance = temp;
         HP = maxHP;
+        damageMultiplier = 1;
         characterPanel.gameObject.SetActive(true);
         characterPanel.Initialise(this);
     }
