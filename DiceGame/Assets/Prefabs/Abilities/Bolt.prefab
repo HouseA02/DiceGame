@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 452156929271696383}
   - component: {fileID: 1681701865131517839}
-  - component: {fileID: 299250994328101689}
+  - component: {fileID: -6573479054482762722}
+  - component: {fileID: -3962842125240442445}
   m_Layer: 0
   m_Name: Bolt
   m_TagString: Untagged
@@ -50,12 +51,12 @@ MonoBehaviour:
   targetsAlly: 0
   targetsSelf: 0
   effects:
-  - effect: {fileID: 299250994328101689}
-    value: 0.5
-  - effect: {fileID: 299250994328101689}
-    value: 0.5
-  - effect: {fileID: 299250994328101689}
-    value: 0.5
+  - effect: {fileID: -3962842125240442445}
+    value: 1
+  - effect: {fileID: -3962842125240442445}
+    value: 1
+  - effect: {fileID: -3962842125240442445}
+    value: 1
   targetingType: 0
   image: {fileID: 2100000, guid: 3da252083f8dd884c9401ccf2f432c76, type: 2}
   UIImage: {fileID: 21300000, guid: a7830149b8623bd4991da7bc4efce2f5, type: 3}
@@ -63,7 +64,7 @@ MonoBehaviour:
   description: Deal 3x1 damage to all enemies
   gameManager: {fileID: 0}
   characterReference: {fileID: 0}
---- !u!114 &299250994328101689
+--- !u!114 &-6573479054482762722
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,6 +73,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 9171285988972593555}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be313139c18dc3b43a7d643375046f2c, type: 3}
+  m_Script: {fileID: 11500000, guid: a8ef0c17aa3409d4697804b51b818819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-3962842125240442445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9171285988972593555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa83094fed1ec09478e61fbe6c5dd367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: -6573479054482762722}
+  targetsEnemies: 1
+  targetsAllies: 0
+  targetsSelf: 0

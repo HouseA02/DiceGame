@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,9 @@ using UnityEngine.Events;
 
 public class Character : MonoBehaviour
 {
+    [Serializable]
+
+    public class ResultEvent : UnityEvent<Ability> { }
     [SerializeField]
     public Target targetSprite;
     [SerializeField]
@@ -28,7 +32,7 @@ public class Character : MonoBehaviour
     public int maxHP;
     public int HP;
     public int block;
-    public int power;
+    public int power = 0;
     public float damageMultiplier = 1;
     public List<Character> allies;
     public List<Character> enemies;
@@ -38,6 +42,8 @@ public class Character : MonoBehaviour
     public CharacterPanel characterPanel;
     public Ability currentAbility;
     public bool targetable = true;
+    public bool isFirstRoll = true;
+    public bool canRoll = true;
     public Character instance;
     public GameObject indicator;
     public GameManager gameManager;
@@ -45,13 +51,25 @@ public class Character : MonoBehaviour
     public UnityEvent m_OnTurnStart = new UnityEvent();
     public UnityEvent m_OnTurnEnd = new UnityEvent();
     public UnityEvent m_OnAttacked = new UnityEvent();
+    public UnityEvent m_OnRoll = new UnityEvent();
+    public UnityEvent m_OnReroll = new UnityEvent();
+    public ResultEvent m_OnResult = new ResultEvent();
     public virtual void Roll()
     {
-        CleanUp();
-        AbilityDie dieInstance = Instantiate(die);
-        dieReference = dieInstance;
-        dieInstance.Initialise(this);
-        dieInstance.Roll();
+        if (isFirstRoll || canRoll)
+        {
+            CleanUp();
+            AbilityDie dieInstance = Instantiate(die);
+            dieReference = dieInstance;
+            dieInstance.Initialise(this);
+            dieInstance.Roll();
+            isFirstRoll = false;
+        }
+        if (!isFirstRoll)
+        {
+            m_OnReroll.Invoke();
+        }
+        m_OnRoll.Invoke();
     }
     public virtual void SetAbility(int value) 
     {
@@ -59,21 +77,26 @@ public class Character : MonoBehaviour
         {
             currentAbility = null;
             characterPanel.resultImage.sprite = null;
+            characterPanel.resultImage.gameObject.SetActive(false);
             if(characterPanel.descContainer != null) { characterPanel.descContainer.SetActive(false); }
         }
         else
         {
             currentAbility = abilities[value];
             abilities[value].characterReference = instance;
+            characterPanel.resultImage.gameObject.SetActive(true);
             characterPanel.resultImage.sprite = currentAbility.UIImage;
-            if (characterPanel.descContainer != null) 
+            /*if (characterPanel.descContainer != null) 
             { 
                 characterPanel.descContainer.SetActive(true);
                 characterPanel.descriptionText.text = currentAbility.description;
                 characterPanel.abilityNameText.text = currentAbility.abilityName;
-            }
+            }*/
+            m_OnResult.Invoke(currentAbility);
         }
     }
+
+
 
     public void PrimeAbility()
     {
@@ -86,7 +109,7 @@ public class Character : MonoBehaviour
         HP = Mathf.Clamp(HP, 0, maxHP);
         characterPanel.SetHP(HP);
         var damagePopup = Instantiate(damageNumber, characterPanel.HPText.transform);
-        damagePopup.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-1f,1f),2) * 10000);
+        damagePopup.GetComponent<Rigidbody2D>().AddForce(new Vector2(UnityEngine.Random.Range(-1f,1f),2) * 10000);
         if (value > 0) { damagePopup.GetComponent<TMP_Text>().color = Color.green; }
         damagePopup.GetComponent<TMP_Text>().text = Mathf.Abs(value).ToString();
         if(HP<=0)
@@ -122,6 +145,7 @@ public class Character : MonoBehaviour
     public virtual void Die()
     {
         CleanUp();
+        statusEffects.Clear();
         characterPanel.gameObject.SetActive(false);
         gameManager.OnDeath(this);
         gameObject.SetActive(false);
@@ -178,6 +202,7 @@ public class Character : MonoBehaviour
         {
             abilities[i] = Instantiate(baseAbilities[i], this.transform);
         }
+        power = 0;
     }
     public virtual void Initialise(Character temp)
     {
@@ -186,5 +211,16 @@ public class Character : MonoBehaviour
         damageMultiplier = 1;
         characterPanel.gameObject.SetActive(true);
         characterPanel.Initialise(this);
+        gameManager.gm_OnTurnStart.AddListener(OnTurnStart);
+        gameManager.gm_OnTurnEnd.AddListener(OnTurnEnd);
+        m_OnResult.AddListener(OnResult);
+    }
+
+    void OnResult(Ability ability)
+    {
+        if (ability != null)
+        {
+            Debug.Log(ability.abilityName);
+        }
     }
 }

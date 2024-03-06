@@ -37,10 +37,22 @@ public class StatusEffect : MonoBehaviour
     public virtual void AddValue(int addValue)
     {
         value += addValue;
+        UpdateValue();
+    }
+
+    public virtual void OnExpire()
+    {
+
+    }
+
+    public virtual void UpdateValue()
+    {
         slot.UpdateValue(value);
+        if (value <= 0) { Expire(); }
     }
     public virtual void Expire()
     {
+        OnExpire();
         characterReference.statusEffects.Remove(this);
         Destroy(gameObject);
     }

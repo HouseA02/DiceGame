@@ -5,21 +5,6 @@ using UnityEngine.Rendering.Universal;
 
 public class Ability : MonoBehaviour
 {
-    [System.Serializable]
-    public class AbilityEffect
-    {
-        public Effect effect;
-        public float value;
-        public void Activate(Character source, Character target)
-        {
-            effect.Activate(source, target, value);
-        }
-
-        public void Activate(Character source, List<Character> targets)
-        {
-            effect.Activate(source, targets, value);
-        }
-    }
     [SerializeField]
     public string abilityName;
     [SerializeField]

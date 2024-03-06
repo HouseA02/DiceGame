@@ -17,8 +17,8 @@ public class Enemy : Character
             target = ChooseTarget(currentAbility);
             if (target != null) 
             { 
-                target.characterPanel.targetSprite.gameObject.SetActive(true);
-                target.targetSprite.gameObject.SetActive(true);
+                //target.characterPanel.targetSprite.gameObject.SetActive(true);
+                //target.targetSprite.gameObject.SetActive(true);
                 transform.LookAt(target.transform.position);
                 if(characterPanel.targetContainer != null)
                 {
@@ -30,7 +30,10 @@ public class Enemy : Character
             {
                 transform.LookAt(enemies[id].transform);
             }
-
+        }
+        else
+        {
+            transform.LookAt(enemies[id].transform);
         }
     }
 
@@ -69,8 +72,8 @@ public class Enemy : Character
             target.targetSprite.gameObject.SetActive(false);
         }
         target = newTarget;
-        target.characterPanel.targetSprite.gameObject.SetActive(true);
-        target.targetSprite.gameObject.SetActive(true);
+        //target.characterPanel.targetSprite.gameObject.SetActive(true);
+        //target.targetSprite.gameObject.SetActive(true);
         if (characterPanel.targetContainer != null)
         {
             characterPanel.targetContainer.gameObject.SetActive(true);
@@ -80,11 +83,15 @@ public class Enemy : Character
     public override void OnTurnStart()
     {
         base.OnTurnStart();
+    }
+
+    public void TakeAction()
+    {
         if (currentAbility != null)
         {
             currentAbility.Activate();
-            if (target != null) 
-            { 
+            if (target != null)
+            {
                 target.characterPanel.targetSprite.gameObject.SetActive(false);
                 target.targetSprite.gameObject.SetActive(false);
                 if (characterPanel.targetContainer != null)
@@ -113,5 +120,15 @@ public class Enemy : Character
             default: 
                 return null;
         }
+    }
+    public override void Initialise(Character temp)
+    {
+        instance = temp;
+        HP = maxHP;
+        damageMultiplier = 1;
+        characterPanel.gameObject.SetActive(true);
+        characterPanel.Initialise(this);
+        gameManager.gm_OnTurnStart.AddListener(OnTurnEnd);
+        gameManager.gm_OnTurnEnd.AddListener(OnTurnStart);
     }
 }

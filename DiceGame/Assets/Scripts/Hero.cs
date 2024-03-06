@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Hero : Character
 {
@@ -29,5 +30,6 @@ public class Hero : Character
     {
         hasActed = true;
         CleanUp();
+        base.OnTurnEnd();
     }
 }

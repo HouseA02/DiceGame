@@ -289,10 +289,11 @@ MonoBehaviour:
   spriteOffset: {x: -10, y: -20}
   spriteSize: 0
   mainColor: {r: 0.19514653, g: 0.24821661, b: 0.4339623, a: 1}
-  maxHP: 10
+  id: 0
+  maxHP: 20
   HP: 0
   block: 0
-  power: 2
+  power: 1
   damageMultiplier: 1
   allies: []
   enemies: []
@@ -314,6 +315,8 @@ MonoBehaviour:
   characterPanel: {fileID: 0}
   currentAbility: {fileID: 0}
   targetable: 1
+  isFirstRoll: 1
+  canRoll: 1
   instance: {fileID: 0}
   indicator: {fileID: 5433257848724392676}
   gameManager: {fileID: 0}
@@ -325,6 +328,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_OnAttacked:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnRoll:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnReroll:
     m_PersistentCalls:
       m_Calls: []
 --- !u!65 &2532658161053458275

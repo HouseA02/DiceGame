@@ -42,6 +42,7 @@ public class Die : MonoBehaviour
         else
         {
             Activate(value);
+            rb.isKinematic = true;
         }
         yield return null;
     }

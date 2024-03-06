@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2265726302452098511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4835269136746143299}
+  - component: {fileID: 5556463949544326708}
+  - component: {fileID: 6830838571444737313}
+  - component: {fileID: 6917980009876511544}
+  m_Layer: 0
+  m_Name: PoisonBite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4835269136746143299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2265726302452098511}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.6270962, y: -5.980256, z: 24.538128}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5556463949544326708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2265726302452098511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acced62494eb22418e11e65e195d5a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityName: Poison Bite
+  targetsEnemy: 1
+  targetsAlly: 0
+  targetsSelf: 0
+  effects:
+  - effect: {fileID: 6830838571444737313}
+    value: 1
+  - effect: {fileID: 6917980009876511544}
+    value: 2
+  targetingType: 1
+  image: {fileID: 2100000, guid: df1aa9e7af0c88744a848182afb483cb, type: 2}
+  UIImage: {fileID: 21300000, guid: 584db495ddf57fb48a8138b80bd37ac6, type: 3}
+  decal: {fileID: 0}
+  description: Deal 1 damage and apply 2 poison to target
+  gameManager: {fileID: 0}
+  characterReference: {fileID: 0}
+  validTargets: []
+  isHealing: 0
+--- !u!114 &6830838571444737313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2265726302452098511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ef0c17aa3409d4697804b51b818819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6917980009876511544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2265726302452098511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d6c845cd4cf914badfef85a5ad15a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  status: {fileID: 5283018372578735935, guid: 00301d577caf05c44b3b2176a9b45637, type: 3}

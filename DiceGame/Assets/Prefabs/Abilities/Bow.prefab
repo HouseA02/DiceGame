@@ -51,7 +51,7 @@ MonoBehaviour:
   targetsSelf: 0
   effects:
   - effect: {fileID: -2338534431633553733}
-    value: 2
+    value: 4
   targetingType: 1
   image: {fileID: 2100000, guid: 708329228375b6d45be4426606b02c23, type: 2}
   UIImage: {fileID: 21300000, guid: ef252b6e57ea81f43bfe3878c31f3202, type: 3}

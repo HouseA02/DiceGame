@@ -52,7 +52,7 @@ MonoBehaviour:
   targetsSelf: 0
   effects:
   - effect: {fileID: 1183217566157692928}
-    value: 1
+    value: 2
   - effect: {fileID: -7999166616261077386}
     value: 2
   targetingType: 1

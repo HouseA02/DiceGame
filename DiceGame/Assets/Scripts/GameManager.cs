@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class GameManager : MonoBehaviour
 {
+    [SerializeField]
+    Player player;
     [SerializeField]
     CharacterPanel[] characterPanelsFriendly;
     [SerializeField]
@@ -28,6 +30,8 @@ public class GameManager : MonoBehaviour
     int rerolls;
     [SerializeField]
     TMP_Text rerollText;
+    public UnityEvent gm_OnTurnStart = new UnityEvent();
+    public UnityEvent gm_OnTurnEnd = new UnityEvent();
 
     private void Start()
     {
@@ -69,6 +73,7 @@ public class GameManager : MonoBehaviour
         canRoll = true;
         rerolls = 3;
         enemyRolled = false;
+        activeHeroes.ForEach(h => h.isFirstRoll = true);
         Roll();
     }
 
@@ -79,14 +84,16 @@ public class GameManager : MonoBehaviour
 
     void StartTurn()
     {
-        activeHeroes.ForEach(h => h.OnTurnStart());
-        activeEnemies.ForEach(e => e.OnTurnEnd());
+        gm_OnTurnStart.Invoke();
+        //activeHeroes.ForEach(h => h.OnTurnStart());
+        //activeEnemies.ForEach(e => e.OnTurnEnd());
         OnTurnStart();
     }
     public void EndTurn()
     {
+        gm_OnTurnEnd.Invoke();
         OnTurnEnd();
-        activeHeroes.ForEach(h  => h.OnTurnEnd());
+        //activeHeroes.ForEach(h  => h.OnTurnEnd());
         StartCoroutine(EnemyAct());
         //activeEnemies.ForEach(e => e.OnTurnEnd());
         //StartTurn();
@@ -94,9 +101,9 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator EnemyAct()
     {
-        foreach(Character enemy in activeEnemies)
+        foreach(Enemy enemy in activeEnemies)
         {
-            enemy.OnTurnStart();
+            enemy.TakeAction();
             yield return new WaitForSeconds(0.5f);
         }
         StartTurn();
@@ -176,6 +183,8 @@ public class GameManager : MonoBehaviour
             enemy.enemies = new List<Character>();
             enemy.enemies.AddRange(activeHeroes);
         }
+        player.gameManager = this;
+        player.tempRelics.ForEach(r => player.AddRelic(r));
         StartTurn();
         rerollText.text = new string($"Rerolls: {rerolls}");
         canRoll = true;

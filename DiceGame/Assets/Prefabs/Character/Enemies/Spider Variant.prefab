@@ -215,10 +215,11 @@ MonoBehaviour:
   spriteOffset: {x: 30, y: -10}
   spriteSize: 1
   mainColor: {r: 0.35686275, g: 0.15294118, b: 0.34117648, a: 1}
+  id: 0
   maxHP: 8
   HP: 0
   block: 0
-  power: 2
+  power: 1
   damageMultiplier: 1
   allies: []
   enemies: []
@@ -227,9 +228,9 @@ MonoBehaviour:
   - {fileID: 134639085946065000, guid: 334599d2db14e11449128524ea2adf09, type: 3}
   - {fileID: 134639085946065000, guid: 334599d2db14e11449128524ea2adf09, type: 3}
   - {fileID: 1188739410754349240, guid: 766f7ed309991f94493bf7ece06dcf44, type: 3}
-  - {fileID: 1796183200955546193, guid: c8e31431fce7c7b458e14fcbf6a0fdb1, type: 3}
-  - {fileID: 1188739410754349240, guid: 766f7ed309991f94493bf7ece06dcf44, type: 3}
-  - {fileID: 1796183200955546193, guid: c8e31431fce7c7b458e14fcbf6a0fdb1, type: 3}
+  - {fileID: 4207512278541081573, guid: d301c57c6e572914081bceed683f0c97, type: 3}
+  - {fileID: 4207512278541081573, guid: d301c57c6e572914081bceed683f0c97, type: 3}
+  - {fileID: 5556463949544326708, guid: 62f02e4e3612d5443a77673bde4e99fe, type: 3}
   abilities:
   - {fileID: 0}
   - {fileID: 0}
@@ -240,6 +241,8 @@ MonoBehaviour:
   characterPanel: {fileID: 0}
   currentAbility: {fileID: 0}
   targetable: 1
+  isFirstRoll: 1
+  canRoll: 1
   instance: {fileID: 0}
   indicator: {fileID: 8049144258064303756}
   gameManager: {fileID: 0}
@@ -251,6 +254,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_OnAttacked:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnRoll:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnReroll:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnResult:
     m_PersistentCalls:
       m_Calls: []
   target: {fileID: 0}

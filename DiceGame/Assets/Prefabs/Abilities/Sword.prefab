@@ -51,10 +51,10 @@ MonoBehaviour:
   targetsSelf: 0
   effects:
   - effect: {fileID: -981031962479951513}
-    value: 1
+    value: 2
   targetingType: 1
   image: {fileID: 2100000, guid: 0a1466e1db37f9c47a1ecb68a9377db7, type: 2}
-  UIImage: {fileID: 21300000, guid: 8f0d1068ded228541a0099b8de3af0bd, type: 3}
+  UIImage: {fileID: 21300000, guid: 8c5210a6e08b1924e840cc46886b8a34, type: 3}
   decal: {fileID: 0}
   description: Deal 2 damage to target enemy
   gameManager: {fileID: 0}

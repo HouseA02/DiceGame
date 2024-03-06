@@ -6,6 +6,11 @@ public class DealDamage : Effect
 {
     public override void Activate(Character source, Character target, float value)
     {
-        target.TakeDamage((int)(value * source.power));
+        target.TakeDamage((int)(value + source.power));
+    }
+
+    public override void Activate(Character target, float value)
+    {
+        target.TakeDamage((int)value);
     }
 }
