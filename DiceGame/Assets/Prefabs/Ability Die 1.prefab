@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6036138258210958901}
   - component: {fileID: 4326925941049351007}
-  - component: {fileID: 6866522391597792531}
   m_Layer: 0
   m_Name: Decal3
   m_TagString: Untagged
@@ -57,28 +56,6 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0.15}
   m_Size: {x: 0.67, y: 0.67, z: 0.3}
   m_FadeFactor: 1
---- !u!114 &6866522391597792531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 409212610744585887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22ed2531114c7934eb9a23f42f373df6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetsEnemy: 0
-  targetsAlly: 0
-  effects: []
-  targetingType: 0
-  image: {fileID: 0}
-  UIImage: {fileID: 0}
-  decal: {fileID: 0}
-  debugText: 
-  gameManager: {fileID: 0}
-  characterReference: {fileID: 0}
 --- !u!1 &843358820652271688
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,7 +66,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8381827643990731486}
   - component: {fileID: 2892429774758881462}
-  - component: {fileID: 7818108404825358428}
   m_Layer: 0
   m_Name: Decal6
   m_TagString: Untagged
@@ -136,28 +112,6 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0.15}
   m_Size: {x: 0.67, y: 0.67, z: 0.3}
   m_FadeFactor: 1
---- !u!114 &7818108404825358428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 843358820652271688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22ed2531114c7934eb9a23f42f373df6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetsEnemy: 0
-  targetsAlly: 0
-  effects: []
-  targetingType: 0
-  image: {fileID: 0}
-  UIImage: {fileID: 0}
-  decal: {fileID: 0}
-  debugText: 
-  gameManager: {fileID: 0}
-  characterReference: {fileID: 0}
 --- !u!1 &894463907763685173
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,7 +293,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8071287389624792340}
   - component: {fileID: 1674963251617941874}
-  - component: {fileID: 2663796003805077234}
   m_Layer: 0
   m_Name: Decal5
   m_TagString: Untagged
@@ -386,28 +339,6 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0.15}
   m_Size: {x: 0.67, y: 0.67, z: 0.3}
   m_FadeFactor: 1
---- !u!114 &2663796003805077234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3406490585747963267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22ed2531114c7934eb9a23f42f373df6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetsEnemy: 0
-  targetsAlly: 0
-  effects: []
-  targetingType: 0
-  image: {fileID: 0}
-  UIImage: {fileID: 0}
-  decal: {fileID: 0}
-  debugText: 
-  gameManager: {fileID: 0}
-  characterReference: {fileID: 0}
 --- !u!1 &3431357823445282579
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,7 +349,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7162717888814829659}
   - component: {fileID: 535640887350661957}
-  - component: {fileID: 5968343738479124320}
   m_Layer: 0
   m_Name: Decal4
   m_TagString: Untagged
@@ -465,28 +395,6 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0.15}
   m_Size: {x: 0.67, y: 0.67, z: 0.3}
   m_FadeFactor: 1
---- !u!114 &5968343738479124320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3431357823445282579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22ed2531114c7934eb9a23f42f373df6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetsEnemy: 0
-  targetsAlly: 0
-  effects: []
-  targetingType: 0
-  image: {fileID: 0}
-  UIImage: {fileID: 0}
-  decal: {fileID: 0}
-  debugText: 
-  gameManager: {fileID: 0}
-  characterReference: {fileID: 0}
 --- !u!1 &3483207913367653613
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,7 +472,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1462304024459803829}
   - component: {fileID: 6217802146737342371}
-  - component: {fileID: 498803367288053974}
   m_Layer: 0
   m_Name: Decal1
   m_TagString: Untagged
@@ -611,28 +518,6 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0.15}
   m_Size: {x: 0.67, y: 0.67, z: 0.3}
   m_FadeFactor: 1
---- !u!114 &498803367288053974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3781662616898937917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22ed2531114c7934eb9a23f42f373df6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetsEnemy: 0
-  targetsAlly: 0
-  effects: []
-  targetingType: 0
-  image: {fileID: 0}
-  UIImage: {fileID: 0}
-  decal: {fileID: 0}
-  debugText: 
-  gameManager: {fileID: 0}
-  characterReference: {fileID: 0}
 --- !u!1 &5181952297182331090
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,7 +528,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7143900069663734010}
   - component: {fileID: 7179110586827787196}
-  - component: {fileID: 4111325471169894825}
   m_Layer: 0
   m_Name: Decal2
   m_TagString: Untagged
@@ -690,28 +574,6 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0.15}
   m_Size: {x: 0.67, y: 0.67, z: 0.3}
   m_FadeFactor: 1
---- !u!114 &4111325471169894825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5181952297182331090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22ed2531114c7934eb9a23f42f373df6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetsEnemy: 0
-  targetsAlly: 0
-  effects: []
-  targetingType: 0
-  image: {fileID: 0}
-  UIImage: {fileID: 0}
-  decal: {fileID: 0}
-  debugText: 
-  gameManager: {fileID: 0}
-  characterReference: {fileID: 0}
 --- !u!1 &5200847452651206193
 GameObject:
   m_ObjectHideFlags: 0

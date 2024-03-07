@@ -17,6 +17,7 @@ public class CharacterPanel : MonoBehaviour
     public Character character;
     public Image background;
     public Target targetSprite;
+    public DieSpreadImage[] dieSpreadImages;
     ///
     public GameObject descContainer;
     public TMP_Text descriptionText;
@@ -39,6 +40,10 @@ public class CharacterPanel : MonoBehaviour
             portraitSlot.transform.Translate(character.spriteOffset);
         }
         background.color = character.mainColor;
+        for (int i = 0; i < character.abilities.Length; i++) 
+        {
+            dieSpreadImages[i].Initialise(character.abilities[i]);
+        }
     }
 
     public void SetHP(int value)

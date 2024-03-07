@@ -8,7 +8,7 @@ public class Burn : StatusEffect
     public override void OnTurnEnd()
     {
         base.OnTurnEnd();
-        characterReference.TakeDamage(value);
+        characterReference.ChangeBlock(-value, true);
         value /= 2;
         UpdateValue();
     }
