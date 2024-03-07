@@ -6,6 +6,12 @@ using UnityEngine.Events;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
+    public Transform dieOrigin;
+    [SerializeField]
+    public Camera battleCamera;
+    [SerializeField]
+    GameObject battleLight;
+    [SerializeField]
     Player player;
     [SerializeField]
     CharacterPanel[] characterPanelsFriendly;
@@ -23,9 +29,11 @@ public class GameManager : MonoBehaviour
     public List<Character> activeHeroes = new List<Character>();
     [SerializeField]
     public List<Character> activeEnemies = new List<Character>();
-    bool isPlayerTurn;
+    [SerializeField]
+    public List<Character> reinforcements = new List<Character>();
     bool canRoll;
     bool enemyRolled;
+    public bool inBattle = false;
     [SerializeField]
     int rerolls;
     [SerializeField]
@@ -35,7 +43,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Initialise();
+        //Initialise();
     }
 
 
@@ -143,8 +151,10 @@ public class GameManager : MonoBehaviour
             Debug.Log("Lose");
         }
     }
-    void Initialise()
+    public void Initialise()
     {
+        GameObject.FindGameObjectWithTag("MainCamera").gameObject.SetActive(false);
+        battleCamera.gameObject.SetActive(true);
         for (int i = 0; i < heroes.Count; i++)
         {
             Character heroInstance = Instantiate(heroes[i]);
@@ -183,11 +193,12 @@ public class GameManager : MonoBehaviour
             enemy.enemies = new List<Character>();
             enemy.enemies.AddRange(activeHeroes);
         }
+        battleLight.SetActive(true);
+        inBattle = true;
         player.gameManager = this;
         player.tempRelics.ForEach(r => player.AddRelic(r));
         StartTurn();
         rerollText.text = new string($"Rerolls: {rerolls}");
         canRoll = true;
-        isPlayerTurn = true;
     }
 }

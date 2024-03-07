@@ -25,7 +25,7 @@ public class TargetedAbility : Ability
         validTargets.ForEach(target => { target.indicator.SetActive(true); });
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Mouse0));
         validTargets.ForEach(target => { target.indicator.SetActive(false); });
-        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        var ray = characterReference.gameManager.battleCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit raycastHit;
         int layermask = 1 << 9;
         if (Physics.Raycast(ray, out raycastHit, 100f, layermask))

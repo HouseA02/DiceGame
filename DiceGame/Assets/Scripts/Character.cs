@@ -61,6 +61,7 @@ public class Character : MonoBehaviour
             CleanUp();
             AbilityDie dieInstance = Instantiate(die);
             dieReference = dieInstance;
+            dieInstance.transform.position = gameManager.dieOrigin.position;
             dieInstance.Initialise(this);
             dieInstance.Roll();
             isFirstRoll = false;

@@ -6,6 +6,7 @@ using UnityEngine.TextCore.Text;
 
 public class Relic : MonoBehaviour
 {
+    public string relicName;
     public GameManager gameManager;
     bool usesValue;
     [SerializeField]
