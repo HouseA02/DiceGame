@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class PlayerController : MonoBehaviour
     private SoulsMenu soulsMenu;
     private MapController mapController;
     private EventArenaController eventArenaController;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +38,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !gameManager.inBattle)
+        if (Input.GetMouseButtonDown(0) && !gameManager.inBattle && false)
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

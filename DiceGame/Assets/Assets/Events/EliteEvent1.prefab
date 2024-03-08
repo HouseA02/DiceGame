@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7755547596849557807}
   - component: {fileID: 1259617265146619153}
   m_Layer: 0
-  m_Name: EliteEvent
+  m_Name: EliteEvent1
   m_TagString: EliteEvents
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

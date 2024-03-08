@@ -30,7 +30,7 @@ public class CharacterPanel : MonoBehaviour
 
     public void Initialise(Character newCharacter)
     {
-        defaultPosition = portraitSlot.transform.position;
+        //defaultPosition = portraitSlot.transform.position;
         character = newCharacter;
         nameText.text = character.characterName;
         HPText.text = character.HP.ToString();

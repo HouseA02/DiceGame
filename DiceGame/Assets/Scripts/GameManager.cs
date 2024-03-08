@@ -5,12 +5,17 @@ using UnityEngine;
 using UnityEngine.Events;
 public class GameManager : MonoBehaviour
 {
+    public EventArenaController eventArenaController;
+    [SerializeField]
+    public CombatData CombatData;
     [SerializeField]
     public Transform dieOrigin;
     [SerializeField]
     public Camera battleCamera;
     [SerializeField]
     GameObject battleLight;
+    [SerializeField]
+    GameObject[] battleUI;
     [SerializeField]
     Player player;
     [SerializeField]
@@ -40,10 +45,12 @@ public class GameManager : MonoBehaviour
     TMP_Text rerollText;
     public UnityEvent gm_OnTurnStart = new UnityEvent();
     public UnityEvent gm_OnTurnEnd = new UnityEvent();
+    [SerializeField]
+    private GameObject mainCamera;
 
     private void Start()
     {
-        //Initialise();
+        Initialise();
     }
 
 
@@ -146,15 +153,60 @@ public class GameManager : MonoBehaviour
         if (activeEnemies.Count<=0)
         {
             Debug.Log("Win");
-        }else if(activeHeroes.Count<=0)
+            inBattle = false;
+            mainCamera.SetActive(true);
+        }
+        else if(activeHeroes.Count<=0)
         {
             Debug.Log("Lose");
+            inBattle = false;
+            mainCamera.SetActive(true);
         }
     }
-    public void Initialise()
+
+    public void StartCombat(CombatEvent e)
     {
-        GameObject.FindGameObjectWithTag("MainCamera").gameObject.SetActive(false);
-        battleCamera.gameObject.SetActive(true);
+        mainCamera.SetActive(false);
+        e.combatData.GetData(this);
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            Character enemyInstance = Instantiate(enemies[i]);
+            enemyInstance.characterPanel = characterPanelsEnemy[i];
+            enemyInstance.transform.position = enemyPositions[i].position;
+            enemyInstance.transform.rotation = enemyPositions[i].rotation;
+            enemyInstance.gameManager = this;
+            enemyInstance.id = i;
+            activeEnemies.Add(enemyInstance);
+            enemyInstance.Initialise(enemyInstance);
+            foreach (Character hero in activeHeroes)
+            {
+                hero.allies = new List<Character>();
+                hero.allies.AddRange(activeHeroes);
+                hero.allies.Remove(hero);
+                hero.enemies = new List<Character>();
+                hero.enemies.AddRange(activeEnemies);
+            }
+            foreach (Character enemy in activeEnemies)
+            {
+                enemy.allies = new List<Character>();
+                enemy.allies.AddRange(activeEnemies);
+                enemy.allies.Remove(enemy);
+                enemy.enemies = new List<Character>();
+                enemy.enemies.AddRange(activeHeroes);
+            }
+            battleLight.SetActive(true);
+        }
+        foreach (GameObject element in battleUI)
+        {
+            element.SetActive(true);
+        }
+        inBattle = true;
+        StartTurn();
+        rerollText.text = new string($"Rerolls: {rerolls}");
+        canRoll = true;
+    }
+    void Initialise()
+    {
         for (int i = 0; i < heroes.Count; i++)
         {
             Character heroInstance = Instantiate(heroes[i]);
@@ -166,39 +218,7 @@ public class GameManager : MonoBehaviour
             activeHeroes.Add(heroInstance);
             heroInstance.Initialise(heroInstance);
         }
-        for (int i = 0; i < enemies.Count; i++)
-        {
-            Character enemyInstance = Instantiate(enemies[i]);
-            enemyInstance.characterPanel = characterPanelsEnemy[i];
-            enemyInstance.transform.position = enemyPositions[i].position;
-            enemyInstance.transform.rotation = enemyPositions[i].rotation;
-            enemyInstance.gameManager = this;
-            enemyInstance.id = i;
-            activeEnemies.Add(enemyInstance);
-            enemyInstance.Initialise(enemyInstance);
-        }
-        foreach(Character hero in activeHeroes) 
-        {
-            hero.allies = new List<Character>();
-            hero.allies.AddRange(activeHeroes);
-            hero.allies.Remove(hero);
-            hero.enemies = new List<Character>();
-            hero.enemies.AddRange(activeEnemies);
-        }
-        foreach (Character enemy in activeEnemies)
-        {
-            enemy.allies = new List<Character>();
-            enemy.allies.AddRange(activeEnemies);
-            enemy.allies.Remove(enemy);
-            enemy.enemies = new List<Character>();
-            enemy.enemies.AddRange(activeHeroes);
-        }
-        battleLight.SetActive(true);
-        inBattle = true;
         player.gameManager = this;
         player.tempRelics.ForEach(r => player.AddRelic(r));
-        StartTurn();
-        rerollText.text = new string($"Rerolls: {rerolls}");
-        canRoll = true;
     }
 }
