@@ -28,10 +28,15 @@ public class StatusSlot : MonoBehaviour
         }
         else
         {
-            isTaken = false;
-            image.sprite = null;
-            gameObject.SetActive(false);
+            Expire();
         }
 
+    }
+
+    public void Expire()
+    {
+        isTaken = false;
+        image.sprite = null;
+        gameObject.SetActive(false);
     }
 }

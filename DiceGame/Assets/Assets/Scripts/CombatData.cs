@@ -14,7 +14,7 @@ public class CombatData : ScriptableObject
     [SerializeField]public CombatType type;
 
     [SerializeField]
-    List<Character> enemies;
+    public List<Character> enemies;
     public void GetData(GameManager gameManager)
     {
         gameManager.enemies.Clear();

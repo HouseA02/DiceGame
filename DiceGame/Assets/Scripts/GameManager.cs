@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.Events;
 public class GameManager : MonoBehaviour
 {
+    [SerializeField]
+    private StoryController storyController;
     public EventArenaController eventArenaController;
     [SerializeField]
     public CombatData CombatData;
@@ -153,6 +155,7 @@ public class GameManager : MonoBehaviour
         if (activeEnemies.Count<=0)
         {
             Debug.Log("Win");
+            activeHeroes.ForEach(h => h.Cleanse());
             inBattle = false;
             mainCamera.SetActive(true);
         }

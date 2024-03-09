@@ -20,4 +20,10 @@ public class Strength : StatusEffect
         characterReference.power = value;
         base.UpdateValue();
     }
+
+    public override void OnExpire()
+    {
+        characterReference.power -= value;
+        base.OnExpire();
+    }
 }

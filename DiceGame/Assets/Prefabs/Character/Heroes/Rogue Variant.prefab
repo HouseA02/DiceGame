@@ -248,10 +248,10 @@ MonoBehaviour:
   portrait: {fileID: 21300000, guid: 1d0e60a36f911a94495c04f8187d0319, type: 3}
   baseAbilities:
   - {fileID: 134639085946065000, guid: 334599d2db14e11449128524ea2adf09, type: 3}
-  - {fileID: 1188739410754349240, guid: 766f7ed309991f94493bf7ece06dcf44, type: 3}
   - {fileID: 8698208988420570346, guid: c38d6efd1e4f65a428c2753026374810, type: 3}
   - {fileID: 2361043111475641361, guid: b90ecfd3ac76312429b620fd773ac314, type: 3}
   - {fileID: 1796183200955546193, guid: c8e31431fce7c7b458e14fcbf6a0fdb1, type: 3}
+  - {fileID: 1188739410754349240, guid: 766f7ed309991f94493bf7ece06dcf44, type: 3}
   - {fileID: 134639085946065000, guid: 334599d2db14e11449128524ea2adf09, type: 3}
   abilities:
   - {fileID: 0}
@@ -282,6 +282,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_OnReroll:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnResult:
     m_PersistentCalls:
       m_Calls: []
 --- !u!65 &6560831468754886365

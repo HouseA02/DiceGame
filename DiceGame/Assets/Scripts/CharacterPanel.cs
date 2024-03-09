@@ -13,7 +13,7 @@ public class CharacterPanel : MonoBehaviour
     public GameObject blockContainer;
     public Image resultImage;
     public Image portraitSlot;
-    public Vector3 defaultPosition;
+    public Vector2 defaultPosition;
     public Character character;
     public Image background;
     public Target targetSprite;
@@ -28,6 +28,10 @@ public class CharacterPanel : MonoBehaviour
     /// 
     public StatusSlot[] statusSlots;
 
+    private void Awake()
+    {
+        defaultPosition = portraitSlot.transform.position;
+    }
     public void Initialise(Character newCharacter)
     {
         //defaultPosition = portraitSlot.transform.position;
@@ -37,7 +41,7 @@ public class CharacterPanel : MonoBehaviour
         if (character.portrait != null) { 
             portraitSlot.sprite = character.portrait;
             portraitSlot.transform.localScale = Vector3.one * (1+character.spriteSize);
-            portraitSlot.transform.Translate(character.spriteOffset);
+            portraitSlot.transform.position = defaultPosition + character.spriteOffset*GetComponentInParent<Canvas>().scaleFactor;
         }
         background.color = character.mainColor;
         for (int i = 0; i < character.abilities.Length; i++) 

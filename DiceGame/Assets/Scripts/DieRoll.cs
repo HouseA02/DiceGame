@@ -20,9 +20,9 @@ public class DieRoll : Effect
         dieInstance.transform.position = source.dieReference.transform.position;
         dieInstance.Roll();
         yield return new WaitUntil(dieInstance.rb.IsSleeping);
-        if (effects[dieInstance.value] != null)
+        if (effects[dieInstance.value-1] != null)
         {
-            effects[dieInstance.value].Activate(source, target, value);
+            effects[dieInstance.value-1].Activate(source, target, value);
         }
         Destroy(dieInstance.gameObject);
     }

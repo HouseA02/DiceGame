@@ -108,6 +108,7 @@ public class EventArenaController : MonoBehaviour
     {
         mapCamAnim.SetTrigger("Activate");
         eventName = null;
+        gameManager.StartCombat(e);
     }
     void RestEvent(RestEvent e)
     {
@@ -117,10 +118,11 @@ public class EventArenaController : MonoBehaviour
     }
     void EncounterEvent(StoryEvent e)
     {
-        mapCamAnim.SetTrigger("Activate");
+        //mapCamAnim.SetTrigger("Activate");
         fadeIn = true;
         eventName = null;
-        currentEncounter = Instantiate(Act1Encounters[Random.Range(0, Act1Encounters.Length)], encounterCardPos.position, Quaternion.identity, encounterParent.transform);
+        gameManager.GetComponent<StoryController>().StartStory(e.storyData);
+        //currentEncounter = Instantiate(Act1Encounters[Random.Range(0, Act1Encounters.Length)], encounterCardPos.position, Quaternion.identity, encounterParent.transform);
     }
 
     public void fadeOut()

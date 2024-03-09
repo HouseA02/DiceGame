@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StoryEvent : Event
 {
+    public StoryData storyData;
     private void Awake()
     {
         eventType = EventType.Story;

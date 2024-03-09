@@ -11,10 +11,16 @@ public class MapController : MonoBehaviour
     {
         public List<CombatData> combats = new List<CombatData>();
         public List<CombatData> elites = new List<CombatData>();
+        public List<StoryData> stories = new List<StoryData>();
+    }
+    [System.Serializable]
+    public class HourList
+    {
+        public List<Event> events = new List<Event>();
     }
     [SerializeField]
     public EventArenaController eventArenaController;
-    public List<Event> Events = new List<Event>();
+    public List<Event> events = new List<Event>();
     public List<float> EventPercentages = new List<float>();
 
     [SerializeField]
@@ -32,16 +38,9 @@ public class MapController : MonoBehaviour
     private float handReset;
     private GameObject clockHand;
 
-    [SerializeField]
-    private CombatEvent combatEvent;
-    [SerializeField]
-    private EliteEvent eliteEvent;
-    [SerializeField]
-    private RestEvent restEvent;
-    [SerializeField]
-    private StoryEvent storyEvent;
 
-
+    [SerializeField]
+    private HourList[] hours;
     private List<Event> SpawnedEvents = new List<Event>();
     private List<Transform> Points = new List<Transform>();
     private List<Event> currentChoices = new List<Event>();
@@ -80,17 +79,15 @@ public class MapController : MonoBehaviour
             SpawnedEvents.ForEach(e => { Destroy(e.gameObject); });
 
             float handNum = 1;
-            for (int i = 0; i < 12; i++)
+            foreach(HourList h in hours)
             {
-                for (int j = 0; j < Points.Count; j++)
+                for (int j = 0; j < 3; j++)
                 {
-                    Event rand = possibleEvents[Random.Range(0, possibleEvents.Count)];
-                    //GameObject instance = Instantiate(rand, Points[j].position, Quaternion.identity);
+                    Event rand = hours[(int)handNum - 1].events[j];
                     Event instance = Instantiate(rand, Points[j].position, Points[j].rotation);
-                    instance.id = i+1;
-                    possibleEvents.Remove(rand);
+                    instance.transform.rotation = Quaternion.LookRotation(Vector3.down, Vector3.up);
+                    instance.id = (int)handNum;
                     instance.eventArenaController = eventArenaController;
-                    //instance.transform.SetParent(GameObject.Find(instance.id.ToString()).transform);
                     instance.tag = handNum.ToString();
                     SpawnedEvents.Add(instance);
                 }
@@ -100,7 +97,15 @@ public class MapController : MonoBehaviour
             }
             foreach(Event e in SpawnedEvents.Where(e => e.eventType == Event.EventType.Combat))
             {
-                e.GetComponent<CombatEvent>().combatData = acts[act].combats[Random.Range(0, acts[act].combats.Count)]; 
+                e.GetComponent<CombatEvent>().Initialise(acts[act].combats[Random.Range(0, acts[act].combats.Count)]);
+            }
+            foreach (Event e in SpawnedEvents.Where(e => e.eventType == Event.EventType.Elite))
+            {
+                e.GetComponent<CombatEvent>().Initialise(acts[act].elites[Random.Range(0, acts[act].elites.Count)]);
+            }
+            foreach (Event e in SpawnedEvents.Where(e => e.eventType == Event.EventType.Story))
+            {
+                e.GetComponent<StoryEvent>().storyData = acts[act].stories[Random.Range(0, acts[act].stories.Count)];
             }
             eventChoice();
         }
@@ -112,7 +117,7 @@ public class MapController : MonoBehaviour
         {
             if(e != null)
             {
-                e.transform.localScale /= 2;
+                e.transform.localScale /= 1.5f;
                 e.Focus(false);
                 e.name = "DeadEvent";
             }
@@ -124,7 +129,7 @@ public class MapController : MonoBehaviour
         }      
         foreach (Event e in currentChoices)
         {
-            e.transform.localScale *= 2;
+            e.transform.localScale *= 1.5f;
             e.Focus(true);
             e.name = "Choose";
         }
@@ -143,25 +148,21 @@ public class MapController : MonoBehaviour
 
     void populateList()
     {
-        for(int j = 0; j < 36; j++)
-        {
-            float cumulative = 0f;
-            for (int i = 0; i < Events.Count; i++)
-            {
-                cumulative += EventPercentages[i];
-                float rand = Random.Range(0, 100);
-                if (cumulative > rand)
-                {
-                    possibleEvents.Add(Events[i]);
-                    break;
-                }
-            }
-        }
         for(int i = 0; i < 12; i++) 
         {
-            foreach (Event e in possibleEvents.Where(e => e.minimumSteps <= i))
+            List<Event> validEvents = new List<Event>();
+            validEvents.AddRange(events.Where(e => e.minimumSteps <= i));
+            List<Event> weightedEvents = new List<Event>();
+            foreach (Event e in validEvents)
             {
-
+                for (int j = 0; j <= e.weight; j++)
+                {
+                    weightedEvents.Add(e);
+                }
+            }
+            for (int j = 0; j < 3; j++)
+            {
+                hours[i].events.Add(weightedEvents[Random.Range(0, weightedEvents.Count)]);
             }
         }
         

@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 2517336}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 2.72}
+  m_LocalPosition: {x: 0, y: 1.617, z: 2.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3041,7 +3041,7 @@ Transform:
   m_GameObject: {fileID: 271332710}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.86, y: -1.35, z: -8.04}
+  m_LocalPosition: {x: -6.86, y: 1.34, z: -9.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4157,7 +4157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 52.4, y: 0.0000076294}
+  m_AnchoredPosition: {x: 52.399902, y: 0.0000076294}
   m_SizeDelta: {x: 562.1172, y: 465.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &419232832
@@ -5537,6 +5537,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1081748056}
+        m_TargetAssemblyTypeName: MusicController, Assembly-CSharp
+        m_MethodName: NewTrack
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 79716568327ed964288e62cef8e11565,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &538054036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6642,9 +6655,7 @@ MonoBehaviour:
   relicPlacer: {fileID: 338884754}
   gameManager: {fileID: 0}
   relics: []
-  tempRelics:
-  - {fileID: 7145488905630927966, guid: d5339cb68faffa44885cbcecb96da4fe, type: 3}
-  - {fileID: 427940669570293032, guid: ce4e042dee7d6e446b769b335e054556, type: 3}
+  tempRelics: []
 --- !u!4 &597178241
 Transform:
   m_ObjectHideFlags: 0
@@ -9728,6 +9739,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1081748055}
   - component: {fileID: 1081748054}
+  - component: {fileID: 1081748056}
   m_Layer: 0
   m_Name: MusicController
   m_TagString: Untagged
@@ -9745,7 +9757,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 79716568327ed964288e62cef8e11565, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ec9ef765e5b2d7842aa2659a0d329571, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.3
   m_Pitch: 1
@@ -9846,6 +9858,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1081748056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081748053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6dcc59a032b9d24e945508755944b05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicSource: {fileID: 1081748054}
 --- !u!1 &1091097209
 GameObject:
   m_ObjectHideFlags: 0
@@ -10032,7 +10057,7 @@ Transform:
   m_GameObject: {fileID: 1130418654}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 4.22}
+  m_LocalPosition: {x: 0, y: 1.6169999, z: 3.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12294,7 +12319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventArenaController: {fileID: 254521467}
-  Events:
+  events:
   - {fileID: 6136049985017703367, guid: 05e25d6e9becc2c4a9017946e5a258cc, type: 3}
   - {fileID: 1451130872383728637, guid: 12289720055676d489028691d35c989e, type: 3}
   - {fileID: 7163718104939926720, guid: d365e9d08a9e0a44aa722d72326561e0, type: 3}
@@ -12313,21 +12338,27 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 0e6fa9936d05a7e4d975bb3c38147fa6, type: 2}
     - {fileID: 11400000, guid: 9468d403edc143d4b915a83536cb139a, type: 2}
     - {fileID: 11400000, guid: 6b0525a4b3b331843aee90a43d42b968, type: 2}
-    elites: []
+    elites:
+    - {fileID: 11400000, guid: 2d70754f37c78c74b96e52532f6213d3, type: 2}
   - combats: []
     elites: []
   - combats: []
     elites: []
   mapTime: 1
   lineNum: 0
-  combatEvent: {fileID: 5757428224274122107, guid: dd7af8e3f16725c4da3bf5fb29392559,
-    type: 3}
-  eliteEvent: {fileID: 6136049985017703367, guid: 05e25d6e9becc2c4a9017946e5a258cc,
-    type: 3}
-  restEvent: {fileID: 1451130872383728637, guid: 12289720055676d489028691d35c989e,
-    type: 3}
-  storyEvent: {fileID: 7163718104939926720, guid: d365e9d08a9e0a44aa722d72326561e0,
-    type: 3}
+  hours:
+  - events: []
+  - events: []
+  - events: []
+  - events: []
+  - events: []
+  - events: []
+  - events: []
+  - events: []
+  - events: []
+  - events: []
+  - events: []
+  - events: []
   line: {fileID: 0}
   reset: 0
 --- !u!23 &1429474224
@@ -13128,7 +13159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -40.5955}
+  m_AnchoredPosition: {x: 0, y: -40.59546}
   m_SizeDelta: {x: 0, y: 81.1908}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1484060304
@@ -22328,7 +22359,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2071330209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22911,7 +22942,7 @@ Transform:
   m_GameObject: {fileID: 2131422868}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 1.2199999}
+  m_LocalPosition: {x: 0, y: 1.6169999, z: 1.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

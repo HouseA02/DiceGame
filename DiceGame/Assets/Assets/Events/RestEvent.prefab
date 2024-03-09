@@ -118,12 +118,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 992f5e94b6905124383ed4e40921dbaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventArenaController: {fileID: 0}
   eventType: 0
   sprites:
   - {fileID: 4951580965127916487}
   - {fileID: 3249214755354485536}
   - {fileID: 8939619936864947413}
   defaultColor: {r: 0.8666667, g: 0.8666667, b: 0.8666667, a: 1}
+  minimumSteps: 2
+  weight: 1
   id: 0
 --- !u!212 &3249214755354485536 stripped
 SpriteRenderer:

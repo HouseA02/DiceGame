@@ -53,6 +53,7 @@ public class StatusEffect : MonoBehaviour
     public virtual void Expire()
     {
         OnExpire();
+        slot.Expire();
         characterReference.statusEffects.Remove(this);
         Destroy(gameObject);
     }

@@ -25,7 +25,7 @@ public class Die : MonoBehaviour
 
     public virtual void Roll()
     {
-        Vector3 target = new Vector3(Random.Range(-2f, 2f), 5f, Random.Range(-2f, 2f));
+        Vector3 target = transform.position + new Vector3(Random.Range(-2f, 2f), 5f, Random.Range(-2f, 2f));
         Vector3 dir = target - transform.position;
         rb.AddForce(dir * force, ForceMode.Impulse);
         rb.AddTorque(Random.insideUnitSphere * torque, ForceMode.Impulse);
@@ -34,7 +34,7 @@ public class Die : MonoBehaviour
     public virtual IEnumerator WaitForResult()
     {
         yield return new WaitUntil(rb.IsSleeping);
-        if(value == -1)
+        if(value < 1)
         {
             value= 0;
             Roll();

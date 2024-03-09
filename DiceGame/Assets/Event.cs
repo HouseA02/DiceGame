@@ -16,6 +16,8 @@ public class Event : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
     private Color defaultColor;
     [SerializeField]
     public int minimumSteps;
+    [SerializeField]
+    public int weight;
 
     public int id;
     bool inFocus = false;
@@ -24,7 +26,7 @@ public class Event : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
     {
         sprites[1].color = defaultColor;
     }
-    public void OnPointerEnter(PointerEventData eventData)
+    public virtual void OnPointerEnter(PointerEventData eventData)
     {
         if (inFocus)
         {
@@ -32,12 +34,12 @@ public class Event : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
         }
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public virtual void OnPointerExit(PointerEventData eventData)
     {
         sprites[1].color = defaultColor;
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    public virtual void OnPointerClick(PointerEventData eventData)
     {
         if (inFocus)
         {
@@ -57,9 +59,9 @@ public class Event : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
                 break;
             case false:
                 inFocus = false;
-                foreach (SpriteRenderer sprite in sprites)
+                for (int i = 0; i < sprites.Length; i++)
                 {
-                    sprite.sortingOrder = 0;
+                    sprites[i].sortingOrder = i;
                 }
                 break;
         }

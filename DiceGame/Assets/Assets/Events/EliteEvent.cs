@@ -4,8 +4,4 @@ using UnityEngine;
 
 public class EliteEvent : CombatEvent
 {
-    private void Start()
-    {
-        eventType = EventType.Elite;
-    }
 }

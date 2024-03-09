@@ -38,7 +38,7 @@ public class Character : MonoBehaviour
     public List<Character> enemies;
     public Sprite portrait;
     public Ability[] baseAbilities;
-    public Ability[] abilities;
+    public Ability[] abilities = new Ability[6];
     public CharacterPanel characterPanel;
     public Ability currentAbility;
     public bool targetable = true;
@@ -190,6 +190,14 @@ public class Character : MonoBehaviour
                     break;
                 }
             }
+        }
+    }
+
+    public void Cleanse()
+    {
+        while(statusEffects.Count > 0)
+        {
+            statusEffects[0].Expire();
         }
     }
     public virtual void CleanUp()

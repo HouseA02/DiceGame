@@ -31,13 +31,13 @@ public class PlayerController : MonoBehaviour
         soulsMenu = FindObjectOfType<SoulsMenu>();
         mapController = FindObjectOfType<MapController>();
         eventArenaController = FindObjectOfType<EventArenaController>();
-
-        camMoveAnim = mapCam.GetComponent<Animator>();
+        //camMoveAnim = mapCam.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        /* OLD
         if (Input.GetMouseButtonDown(0) && !gameManager.inBattle && false)
         {
             RaycastHit hit;
@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
                     }
                 }
             }
-        }
+        }*/
 
         if(Input.GetKeyDown(KeyCode.Escape))
         {
