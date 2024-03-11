@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634d7a1934b1218408d6c762084d464e, type: 3}
   m_Name: Grizzlith
   m_EditorClassIdentifier: 
-  type: 0
-  enemies: []
+  type: 2
+  enemies:
+  - {fileID: 0}
+  - {fileID: 3265199219874985289, guid: 5ee4a2ff11a627141abb0f93b5275316, type: 3}
+  - {fileID: 0}

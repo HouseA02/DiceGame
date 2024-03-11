@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 public class GameManager : MonoBehaviour
 {
+    public GameObject mapKey;
     [SerializeField]
     private StoryController storyController;
     public EventArenaController eventArenaController;
@@ -169,6 +170,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Win");
             activeHeroes.ForEach(h => h.Cleanse());
             inBattle = false;
+            mapKey.SetActive(true);
             mainCamera.SetActive(true);
         }
         else if(activeHeroes.Count<=0)
@@ -181,6 +183,7 @@ public class GameManager : MonoBehaviour
 
     public void StartCombat(CombatData combatData)
     {
+        mapKey.SetActive(false);
         mainCamera.SetActive(false);
         combatData.GetData(this);
         for (int i = 0; i < enemies.Count; i++)
@@ -238,6 +241,5 @@ public class GameManager : MonoBehaviour
             heroInstance.Initialise(heroInstance);
         }
         player.gameManager = this;
-        player.tempRelics.ForEach(r => player.AddRelic(r));
     }
 }

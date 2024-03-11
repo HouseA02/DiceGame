@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static Unity.VisualScripting.Member;
+using static UnityEngine.Rendering.DebugUI;
 
 public class RandomTarget : Effect
 {
@@ -33,6 +34,18 @@ public class RandomTarget : Effect
         {
             Character randTarget = targets[Random.Range(0, targets.Count)];
             effect.Activate(randTarget, value);
+        }
+    }
+
+    public override void Activate()
+    {
+        List<Character> targets = new List<Character>();
+        if (targetsEnemies) { targets.AddRange(gameManager.activeEnemies); }
+        if (targetsAllies) { targets.AddRange(gameManager.activeHeroes); }
+        if (targets.Count > 0)
+        {
+            Character randTarget = targets[Random.Range(0, targets.Count)];
+            effect.Activate(randTarget);
         }
     }
 }

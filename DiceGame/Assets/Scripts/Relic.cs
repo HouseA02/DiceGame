@@ -13,6 +13,7 @@ public class Relic : Reward
     bool usesValue;
     [SerializeField]
     int initialValue;
+    bool onBattleStart = true;
     [SerializeField]
     public AbilityEffect[] effects;
     public RelicSlot slot;
@@ -27,14 +28,24 @@ public class Relic : Reward
         if (usesValue) { slot.valueSlot.gameObject.SetActive(true); slot.valueSlot.text = initialValue.ToString(); }
         slot.descText.text = relicDescription;
         slot.nameText.text = relicName;
+        gm.gm_OnBattleStart.AddListener(OnTrueBattleStart);
         gm.gm_OnTurnStart.AddListener(OnTurnStart);
-        gm.gm_OnBattleStart.AddListener(OnBattleStart);
+        gm.gm_OnTurnStart.AddListener(OnBattleStart);
         gm.gm_OnTurnEnd.AddListener(OnTurnEnd);
         OnPickUp();
     }
+
+    protected virtual void OnTrueBattleStart()
+    {
+        onBattleStart = true;
+    }
     protected virtual void OnBattleStart()
     {
-        r_OnBattleStart.Invoke();
+        if (onBattleStart)
+        {
+            r_OnBattleStart.Invoke();
+        }
+        onBattleStart = false;
     }
     protected virtual void OnTurnStart()
     {
@@ -43,7 +54,7 @@ public class Relic : Reward
 
     protected virtual void OnTurnEnd()
     {
-        r_OnTurnStart.Invoke();
+        r_OnTurnEnd.Invoke();
     }
 
     protected virtual void OnPickUp()

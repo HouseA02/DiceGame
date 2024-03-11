@@ -12,6 +12,7 @@ public class Character : MonoBehaviour
     [Serializable]
 
     public class ResultEvent : UnityEvent<Ability> { }
+    public class IntEvent : UnityEvent<int> { }
     [SerializeField]
     public Target targetSprite;
     [SerializeField]
@@ -55,6 +56,8 @@ public class Character : MonoBehaviour
     public UnityEvent m_OnRoll = new UnityEvent();
     public UnityEvent m_OnReroll = new UnityEvent();
     public ResultEvent m_OnResult = new ResultEvent();
+    public IntEvent m_OnHeal = new IntEvent();
+    public IntEvent m_OnLoseHP = new IntEvent();
     public virtual void Roll()
     {
         thisTurnRolls++;
@@ -113,7 +116,11 @@ public class Character : MonoBehaviour
         characterPanel.SetHP(HP);
         var damagePopup = Instantiate(damageNumber, characterPanel.HPText.transform);
         damagePopup.GetComponent<Rigidbody2D>().AddForce(new Vector2(UnityEngine.Random.Range(-1f,1f),2) * 10000);
-        if (value > 0) { damagePopup.GetComponent<TMP_Text>().color = Color.green; }
+        if (value > 0) 
+        {
+            damagePopup.GetComponent<TMP_Text>().color = Color.green;
+            m_OnHeal.Invoke(value);
+        }
         damagePopup.GetComponent<TMP_Text>().text = Mathf.Abs(value).ToString();
         if(HP<=0)
         {

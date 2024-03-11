@@ -9,6 +9,7 @@ public class StatusEffect : MonoBehaviour
     public StatusSlot slot;
     public int value;
     public Character characterReference;
+    public string description;
 
     public virtual void Initialise(Character character, int newValue)
     {

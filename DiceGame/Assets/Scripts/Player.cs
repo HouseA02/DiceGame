@@ -8,12 +8,27 @@ public class Player : MonoBehaviour
     public GameManager gameManager;
     public List<Relic> relics = new List<Relic>();
     [SerializeField]
-    public List<Relic> tempRelics;
+    public Relic starterRelic;
+
+    private void Start()
+    {
+        gameManager = FindAnyObjectByType<GameManager>().GetComponent<GameManager>();
+        gameManager.gm_OnBattleStart.AddListener(StartRelic);
+    }
     public void AddRelic(Relic relic)
     {
         Relic relicInstance = Instantiate(relic, this.transform);
         relicPlacer.PlaceRelic(relicInstance);
         relicInstance.Initialise(gameManager);
         relics.Add(relicInstance);
+    }
+
+    void StartRelic()
+    {
+        if (starterRelic != null)
+        {
+            AddRelic(starterRelic);
+            starterRelic = null;
+        }
     }
 }

@@ -55,6 +55,7 @@ MonoBehaviour:
   defaultColor: {r: 0.8666667, g: 0.8666667, b: 0.8666667, a: 1}
   minimumSteps: 0
   weight: 0
+  isBlinded: 0
   id: 0
 --- !u!65 &4225551790600411685
 BoxCollider:

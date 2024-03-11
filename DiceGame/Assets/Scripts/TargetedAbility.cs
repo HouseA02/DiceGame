@@ -17,13 +17,13 @@ public class TargetedAbility : Ability
         validTargets = GetTargets();
         Debug.Log(validTargets);
         if(characterReference.GetType() == typeof(Hero)) { StartCoroutine(WaitForInput()); }
-        if (characterReference.GetType() == typeof(Enemy)) { StartCoroutine(UseAbility(characterReference.GetComponent<Enemy>().target));  }
+        if (characterReference.CompareTag("Enemy")) { StartCoroutine(UseAbility(characterReference.GetComponent<Enemy>().target));  }
     }
 
     IEnumerator WaitForInput()
     {
         validTargets.ForEach(target => { target.indicator.SetActive(true); });
-        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Mouse0));
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Mouse1));
         validTargets.ForEach(target => { target.indicator.SetActive(false); });
         var ray = characterReference.gameManager.battleCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit raycastHit;
@@ -36,6 +36,7 @@ public class TargetedAbility : Ability
             Debug.Log(raycastHit.transform.gameObject);
             if (validTargets.Contains(target))
             {
+                characterReference.GetComponent<Hero>().hasActed = true;
                 StartCoroutine(UseAbility(target));
             }
         }

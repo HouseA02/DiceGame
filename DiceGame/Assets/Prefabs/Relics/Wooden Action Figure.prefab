@@ -157,4 +157,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   status: {fileID: 3275389678381531474, guid: 1837a24d3378dea4f8881b6769276c14, type: 3}
-  defaultValue: 2
+  defaultValue: 1

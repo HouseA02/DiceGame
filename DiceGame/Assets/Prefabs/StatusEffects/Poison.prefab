@@ -49,3 +49,4 @@ MonoBehaviour:
   slot: {fileID: 0}
   value: 0
   characterReference: {fileID: 0}
+  description: Take X unblockable damage on turn end, then reduce by half

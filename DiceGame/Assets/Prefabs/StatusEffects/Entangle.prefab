@@ -49,3 +49,4 @@ MonoBehaviour:
   slot: {fileID: 0}
   value: 0
   characterReference: {fileID: 0}
+  description: This characters die is left out of the next X rerolls

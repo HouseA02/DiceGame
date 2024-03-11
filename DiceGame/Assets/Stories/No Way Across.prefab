@@ -65,8 +65,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
         type: 3}
+      propertyPath: Options.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
       propertyPath: Options.Array.data[0].text
       value: Go through it. (Party takes 2 damage)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      propertyPath: Options.Array.data[1].text
+      value: Scavenge (Party takes 5 damage)
       objectReference: {fileID: 0}
     - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
         type: 3}
@@ -75,9 +85,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
         type: 3}
+      propertyPath: Options.Array.data[1].effects.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
       propertyPath: Options.Array.data[0].effects.Array.data[0]
       value: 
       objectReference: {fileID: 9054401507313036253}
+    - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      propertyPath: Options.Array.data[1].effects.Array.data[0]
+      value: 
+      objectReference: {fileID: 9054401507313036253}
+    - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      propertyPath: Options.Array.data[1].effects.Array.data[1]
+      value: 
+      objectReference: {fileID: 8570037802096173093}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -90,6 +115,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 7388867982555916588}
+    - targetCorrespondingSourceObject: {fileID: 4621839566999463741, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8570037802096173093}
   m_SourcePrefab: {fileID: 100100000, guid: bc8e31d9e0b21924a9c7dcd131f86576, type: 3}
 --- !u!1 &4634951363878631553 stripped
 GameObject:
@@ -126,3 +155,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultDamage: 2
+--- !u!114 &8570037802096173093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634951363878631553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578b1f4a9d63d3e48807cffd24e2729e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reward: {fileID: 0}
+  potentialRewards:
+  - {fileID: 427940669570293032, guid: ce4e042dee7d6e446b769b335e054556, type: 3}

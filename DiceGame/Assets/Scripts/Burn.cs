@@ -5,11 +5,17 @@ using UnityEngine;
 
 public class Burn : StatusEffect
 {
+
     public override void OnTurnEnd()
     {
         base.OnTurnEnd();
         characterReference.ChangeBlock(-value, true);
-        value /= 2;
+        value--;
         UpdateValue();
+    }
+
+    public override void OnTurnStart() 
+    {
+
     }
 }
