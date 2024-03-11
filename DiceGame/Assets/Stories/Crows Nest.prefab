@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &33413249528209340
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 122462218039775841, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 122462218039775841, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 499.40503
+      objectReference: {fileID: 0}
+    - target: {fileID: 122462218039775841, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 122462218039775841, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 122462218039775841, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 122462218039775841, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 122462218039775841, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 122462218039775841, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 122462218039775841, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 122462218039775841, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621839566999463741, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      propertyPath: m_Name
+      value: Crows Nest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      propertyPath: Options.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      propertyPath: Options.Array.data[0].text
+      value: Leave
+      objectReference: {fileID: 0}
+    - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      propertyPath: Options.Array.data[1].text
+      value: Take the shiny item
+      objectReference: {fileID: 0}
+    - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      propertyPath: Options.Array.data[0].effects.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      propertyPath: Options.Array.data[1].effects.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      propertyPath: Options.Array.data[1].effects.Array.data[0]
+      value: 
+      objectReference: {fileID: -8292365160426125201}
+    - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      propertyPath: Options.Array.data[1].effects.Array.data[1]
+      value: 
+      objectReference: {fileID: 3381086015773149934}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4621839566999463741, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8292365160426125201}
+    - targetCorrespondingSourceObject: {fileID: 4621839566999463741, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3381086015773149934}
+  m_SourcePrefab: {fileID: 100100000, guid: bc8e31d9e0b21924a9c7dcd131f86576, type: 3}
+--- !u!1 &4634951363878631553 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4621839566999463741, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+    type: 3}
+  m_PrefabInstance: {fileID: 33413249528209340}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-8292365160426125201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634951363878631553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578b1f4a9d63d3e48807cffd24e2729e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reward: {fileID: 7145488905630927966, guid: d5339cb68faffa44885cbcecb96da4fe, type: 3}
+  potentialRewards:
+  - {fileID: 7145488905630927966, guid: d5339cb68faffa44885cbcecb96da4fe, type: 3}
+  - {fileID: 7358987248259120785, guid: ec7bd80f39fbcff4b8ed72bac0926c21, type: 3}
+--- !u!114 &3381086015773149934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634951363878631553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8a8c1b58a7c0044bbf4eec6804b2fc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combatData: {fileID: 11400000, guid: 2d70754f37c78c74b96e52532f6213d3, type: 2}

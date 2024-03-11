@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 6378266649676763751, guid: 845fbe5dbfae78a4183e5981f973f2f0,
         type: 3}
       propertyPath: m_Name
-      value: Blank Reroll Variant
+      value: Blank Reroll
       objectReference: {fileID: 0}
     - target: {fileID: 9067956561346034717, guid: 845fbe5dbfae78a4183e5981f973f2f0,
         type: 3}
@@ -91,10 +91,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d81cf7476c34dbb438c060657a69022f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rewardType: 1
   relicName: Blank Reroll
+  relicDescription: The first blank rolled each turn is immediately rerolled
   gameManager: {fileID: 0}
   initialValue: 0
   effects: []
   slot: {fileID: 0}
   image: {fileID: 0}
+  r_OnTurnStart:
+    m_PersistentCalls:
+      m_Calls: []
+  r_OnBattleStart:
+    m_PersistentCalls:
+      m_Calls: []
+  r_OnTurnEnd:
+    m_PersistentCalls:
+      m_Calls: []
   canActivate: 1

@@ -99,7 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7465f9f6f5785449962c404373cb395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rewardType: 1
   relicName: Snake Eyes
+  relicDescription: Whenever a hero rolls a blank, deal 1 damage to a random enemy
   gameManager: {fileID: 0}
   initialValue: 1
   effects:
@@ -107,6 +109,15 @@ MonoBehaviour:
     value: 1
   slot: {fileID: 0}
   image: {fileID: 21300000, guid: 1a206c9038d6fe14283bc0a910a148df, type: 3}
+  r_OnTurnStart:
+    m_PersistentCalls:
+      m_Calls: []
+  r_OnBattleStart:
+    m_PersistentCalls:
+      m_Calls: []
+  r_OnTurnEnd:
+    m_PersistentCalls:
+      m_Calls: []
   value: 1
 --- !u!114 &259908860352914649
 MonoBehaviour:
@@ -120,6 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ef0c17aa3409d4697804b51b818819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultDamage: 0
 --- !u!114 &1389431906316467326
 MonoBehaviour:
   m_ObjectHideFlags: 0

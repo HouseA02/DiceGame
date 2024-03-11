@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class ApplyBlock : Effect
 {
+    [SerializeField]
+    private int defaultValue;
     public override void Activate(Character source, Character target, float value)
     {
         target.ChangeBlock((int)value, false);
+    }
+
+    public override void Activate(Character target)
+    {
+        target.ChangeBlock(defaultValue, false);
     }
 }
 

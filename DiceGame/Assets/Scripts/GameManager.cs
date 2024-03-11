@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameObject[] battleUI;
     [SerializeField]
-    Player player;
+    public Player player;
     [SerializeField]
     CharacterPanel[] characterPanelsFriendly;
     [SerializeField]
@@ -42,9 +42,10 @@ public class GameManager : MonoBehaviour
     bool enemyRolled;
     public bool inBattle = false;
     [SerializeField]
-    int rerolls;
+    public int rerolls;
     [SerializeField]
     TMP_Text rerollText;
+    public UnityEvent gm_OnBattleStart = new UnityEvent();
     public UnityEvent gm_OnTurnStart = new UnityEvent();
     public UnityEvent gm_OnTurnEnd = new UnityEvent();
     [SerializeField]
@@ -101,10 +102,10 @@ public class GameManager : MonoBehaviour
 
     void StartTurn()
     {
+        OnTurnStart();
         gm_OnTurnStart.Invoke();
         //activeHeroes.ForEach(h => h.OnTurnStart());
         //activeEnemies.ForEach(e => e.OnTurnEnd());
-        OnTurnStart();
     }
     public void EndTurn()
     {
@@ -167,10 +168,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void StartCombat(CombatEvent e)
+    public void StartCombat(CombatData combatData)
     {
         mainCamera.SetActive(false);
-        e.combatData.GetData(this);
+        combatData.GetData(this);
         for (int i = 0; i < enemies.Count; i++)
         {
             Character enemyInstance = Instantiate(enemies[i]);
@@ -204,6 +205,7 @@ public class GameManager : MonoBehaviour
             element.SetActive(true);
         }
         inBattle = true;
+        gm_OnBattleStart.Invoke();
         StartTurn();
         rerollText.text = new string($"Rerolls: {rerolls}");
         canRoll = true;

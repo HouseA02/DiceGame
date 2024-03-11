@@ -121,6 +121,12 @@ public class Enemy : Character
                 return null;
         }
     }
+
+    public override void Die()
+    {
+        characterPanel.targetContainer.SetActive(false);
+        base.Die();
+    }
     public override void Initialise(Character temp)
     {
         instance = temp;

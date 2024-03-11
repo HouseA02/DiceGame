@@ -44,8 +44,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f62975128ec8c4c8b8a55f716053e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rewardType: 1
+  relicName: 
   gameManager: {fileID: 0}
   initialValue: 0
   effects: []
   slot: {fileID: 0}
   image: {fileID: 0}
+  r_OnTurnStart:
+    m_PersistentCalls:
+      m_Calls: []
+  r_OnTurnEnd:
+    m_PersistentCalls:
+      m_Calls: []

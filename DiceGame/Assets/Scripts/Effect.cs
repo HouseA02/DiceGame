@@ -29,4 +29,13 @@ public class Effect : MonoBehaviour
     {
 
     }
+
+    public virtual void Activate(Character target)
+    {
+
+    }
+    public virtual void Activate()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
 }
