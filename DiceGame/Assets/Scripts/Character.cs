@@ -33,6 +33,7 @@ public class Character : MonoBehaviour
     public int HP;
     public int block;
     public int power = 0;
+    public int thisTurnRolls = 0;
     public float damageMultiplier = 1;
     public List<Character> allies;
     public List<Character> enemies;
@@ -56,6 +57,7 @@ public class Character : MonoBehaviour
     public ResultEvent m_OnResult = new ResultEvent();
     public virtual void Roll()
     {
+        thisTurnRolls++;
         if (isFirstRoll || canRoll)
         {
             CleanUp();
@@ -66,7 +68,7 @@ public class Character : MonoBehaviour
             dieInstance.Roll();
             isFirstRoll = false;
         }
-        if (!isFirstRoll)
+        if (thisTurnRolls>1)
         {
             m_OnReroll.Invoke();
         }
@@ -166,6 +168,7 @@ public class Character : MonoBehaviour
     public virtual void OnTurnEnd()
     {
         m_OnTurnEnd.Invoke();
+        thisTurnRolls = 0;
     }
 
     public virtual void ApplyStatus(StatusEffect status, int value)
