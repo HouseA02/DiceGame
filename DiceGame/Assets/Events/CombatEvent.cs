@@ -34,9 +34,12 @@ public class CombatEvent : Event
         }
         for (int i = 0; i < imageHolders.Length; i++)
         {
-            imageHolders[i].sprite = combatData.enemies[i].portrait;
-            imageHolders[i].transform.localScale = Vector3.one * (1 + combatData.enemies[i].spriteSize);
-            imageHolders[i].transform.localPosition = defaultPositions[i] + combatData.enemies[i].spriteOffset/150;
+            if(combatData.type != CombatData.CombatType.Boss)
+            {
+                imageHolders[i].sprite = combatData.enemies[i].portrait;
+                imageHolders[i].transform.localScale = Vector3.one * (1 + combatData.enemies[i].spriteSize);
+                imageHolders[i].transform.localPosition = defaultPositions[i] + combatData.enemies[i].spriteOffset / 150;
+            }
         }
     }
 }

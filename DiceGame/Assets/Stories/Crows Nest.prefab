@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 578b1f4a9d63d3e48807cffd24e2729e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: {fileID: 7145488905630927966, guid: d5339cb68faffa44885cbcecb96da4fe, type: 3}
+  reward: {fileID: 7358987248259120785, guid: ec7bd80f39fbcff4b8ed72bac0926c21, type: 3}
   potentialRewards:
   - {fileID: 7145488905630927966, guid: d5339cb68faffa44885cbcecb96da4fe, type: 3}
   - {fileID: 7358987248259120785, guid: ec7bd80f39fbcff4b8ed72bac0926c21, type: 3}

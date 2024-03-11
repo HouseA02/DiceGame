@@ -119,11 +119,22 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator EnemyAct()
     {
-        foreach(Enemy enemy in activeEnemies)
+        for (int i = 0; i < activeEnemies.Count; i++)
         {
-            enemy.TakeAction();
-            yield return new WaitForSeconds(0.5f);
+            if (activeEnemies[i] != null)
+            {
+                activeEnemies[i].GetComponent<Enemy>().TakeAction();
+                yield return new WaitForSeconds(0.5f);
+            }
         }
+        /*foreach(Enemy enemy in activeEnemies)
+        {
+            if (enemy != null)
+            {
+                enemy.TakeAction();
+                yield return new WaitForSeconds(0.5f);
+            }
+        }*/
         StartTurn();
     }
 
@@ -174,32 +185,35 @@ public class GameManager : MonoBehaviour
         combatData.GetData(this);
         for (int i = 0; i < enemies.Count; i++)
         {
-            Character enemyInstance = Instantiate(enemies[i]);
-            enemyInstance.characterPanel = characterPanelsEnemy[i];
-            enemyInstance.transform.position = enemyPositions[i].position;
-            enemyInstance.transform.rotation = enemyPositions[i].rotation;
-            enemyInstance.gameManager = this;
-            enemyInstance.id = i;
-            activeEnemies.Add(enemyInstance);
-            enemyInstance.Initialise(enemyInstance);
-            foreach (Character hero in activeHeroes)
+            if (enemies[i] != null)
             {
-                hero.allies = new List<Character>();
-                hero.allies.AddRange(activeHeroes);
-                hero.allies.Remove(hero);
-                hero.enemies = new List<Character>();
-                hero.enemies.AddRange(activeEnemies);
+                Character enemyInstance = Instantiate(enemies[i]);
+                enemyInstance.characterPanel = characterPanelsEnemy[i];
+                enemyInstance.transform.position = enemyPositions[i].position;
+                enemyInstance.transform.rotation = enemyPositions[i].rotation;
+                enemyInstance.gameManager = this;
+                enemyInstance.id = i;
+                activeEnemies.Add(enemyInstance);
+                enemyInstance.Initialise(enemyInstance);
             }
-            foreach (Character enemy in activeEnemies)
-            {
-                enemy.allies = new List<Character>();
-                enemy.allies.AddRange(activeEnemies);
-                enemy.allies.Remove(enemy);
-                enemy.enemies = new List<Character>();
-                enemy.enemies.AddRange(activeHeroes);
-            }
-            battleLight.SetActive(true);
         }
+        foreach (Character hero in activeHeroes)
+        {
+            hero.allies = new List<Character>();
+            hero.allies.AddRange(activeHeroes);
+            hero.allies.Remove(hero);
+            hero.enemies = new List<Character>();
+            hero.enemies.AddRange(activeEnemies);
+        }
+        foreach (Character enemy in activeEnemies)
+        {
+            enemy.allies = new List<Character>();
+            enemy.allies.AddRange(activeEnemies);
+            enemy.allies.Remove(enemy);
+            enemy.enemies = new List<Character>();
+            enemy.enemies.AddRange(activeHeroes);
+        }
+        battleLight.SetActive(true);
         foreach (GameObject element in battleUI)
         {
             element.SetActive(true);

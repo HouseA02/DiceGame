@@ -204,9 +204,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 6560831468754886365}
   m_SourcePrefab: {fileID: 100100000, guid: 1fc89c03347ec4245858eb78b21a5f0e, type: 3}
---- !u!1 &1095560863912265496 stripped
+--- !u!1 &629613682150511832 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 3922729938017786558, guid: 1fc89c03347ec4245858eb78b21a5f0e,
+  m_CorrespondingSourceObject: {fileID: 3600828681541781886, guid: 1fc89c03347ec4245858eb78b21a5f0e,
     type: 3}
   m_PrefabInstance: {fileID: 4126529627631426982}
   m_PrefabAsset: {fileID: 0}
@@ -242,6 +242,7 @@ MonoBehaviour:
   HP: 0
   block: 0
   power: 1
+  thisTurnRolls: 0
   damageMultiplier: 0
   allies: []
   enemies: []
@@ -266,7 +267,7 @@ MonoBehaviour:
   isFirstRoll: 1
   canRoll: 1
   instance: {fileID: 0}
-  indicator: {fileID: 1095560863912265496}
+  indicator: {fileID: 629613682150511832}
   gameManager: {fileID: 0}
   statusEffects: []
   m_OnTurnStart:
@@ -287,6 +288,7 @@ MonoBehaviour:
   m_OnResult:
     m_PersistentCalls:
       m_Calls: []
+  hasActed: 0
 --- !u!65 &6560831468754886365
 BoxCollider:
   m_ObjectHideFlags: 0

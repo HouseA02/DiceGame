@@ -90,6 +90,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1188739410754349240, guid: 766f7ed309991f94493bf7ece06dcf44,
         type: 3}
+    - target: {fileID: 5552512807433134153, guid: 1fc89c03347ec4245858eb78b21a5f0e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.498
+      objectReference: {fileID: 0}
     - target: {fileID: 5991891116200132441, guid: 1fc89c03347ec4245858eb78b21a5f0e,
         type: 3}
       propertyPath: m_TagString
@@ -182,9 +187,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6468321448361155634}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8049144258064303756 stripped
+--- !u!1 &7511070202160567628 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 3922729938017786558, guid: 1fc89c03347ec4245858eb78b21a5f0e,
+  m_CorrespondingSourceObject: {fileID: 3600828681541781886, guid: 1fc89c03347ec4245858eb78b21a5f0e,
     type: 3}
   m_PrefabInstance: {fileID: 6468321448361155634}
   m_PrefabAsset: {fileID: 0}
@@ -220,6 +225,7 @@ MonoBehaviour:
   HP: 0
   block: 0
   power: 1
+  thisTurnRolls: 0
   damageMultiplier: 1
   allies: []
   enemies: []
@@ -244,7 +250,7 @@ MonoBehaviour:
   isFirstRoll: 1
   canRoll: 1
   instance: {fileID: 0}
-  indicator: {fileID: 8049144258064303756}
+  indicator: {fileID: 7511070202160567628}
   gameManager: {fileID: 0}
   statusEffects: []
   m_OnTurnStart:

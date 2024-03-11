@@ -11,6 +11,7 @@ public class MapController : MonoBehaviour
     {
         public List<CombatData> combats = new List<CombatData>();
         public List<CombatData> elites = new List<CombatData>();
+        public List<CombatData> bosses = new List<CombatData>();
         public List<StoryData> stories = new List<StoryData>();
     }
     [System.Serializable]
@@ -18,6 +19,10 @@ public class MapController : MonoBehaviour
     {
         public List<Event> events = new List<Event>();
     }
+    [SerializeField]
+    private BossEvent bossEventPrefab;
+    [SerializeField]
+    private Transform bossPos;
     [SerializeField]
     public EventArenaController eventArenaController;
     public List<Event> events = new List<Event>();
@@ -131,6 +136,11 @@ public class MapController : MonoBehaviour
                 }
                 //e.GetComponent<StoryEvent>().storyData = acts[act].stories[Random.Range(0, acts[act].stories.Count)];
             }
+            var bossEvent = Instantiate(bossEventPrefab, bossPos.position, bossPos.rotation);
+            bossEvent.id = 13;
+            bossEvent.eventArenaController = eventArenaController;
+            SpawnedEvents.Add(bossEvent);
+            bossEvent.combatData = acts[act].bosses[Random.Range(0, acts[act].bosses.Count)];
             eventChoice();
         }
     }

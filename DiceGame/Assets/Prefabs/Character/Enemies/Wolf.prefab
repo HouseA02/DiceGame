@@ -73,9 +73,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1714611300425823242}
   m_SourcePrefab: {fileID: 100100000, guid: 1fc89c03347ec4245858eb78b21a5f0e, type: 3}
---- !u!1 &1060121726722347083 stripped
+--- !u!1 &666162846143644555 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 3922729938017786558, guid: 1fc89c03347ec4245858eb78b21a5f0e,
+  m_CorrespondingSourceObject: {fileID: 3600828681541781886, guid: 1fc89c03347ec4245858eb78b21a5f0e,
     type: 3}
   m_PrefabInstance: {fileID: 4090984866456439541}
   m_PrefabAsset: {fileID: 0}
@@ -107,10 +107,11 @@ MonoBehaviour:
   spriteSize: 0
   mainColor: {r: 0.35686275, g: 0.15294118, b: 0.34117648, a: 1}
   id: 0
-  maxHP: 20
+  maxHP: 12
   HP: 0
   block: 0
   power: 0
+  thisTurnRolls: 0
   damageMultiplier: 1
   allies: []
   enemies: []
@@ -135,7 +136,7 @@ MonoBehaviour:
   isFirstRoll: 1
   canRoll: 1
   instance: {fileID: 0}
-  indicator: {fileID: 1060121726722347083}
+  indicator: {fileID: 666162846143644555}
   gameManager: {fileID: 0}
   statusEffects: []
   m_OnTurnStart:

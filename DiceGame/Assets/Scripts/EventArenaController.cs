@@ -89,6 +89,9 @@ public class EventArenaController : MonoBehaviour
             case Event.EventType.Elite:
                 EliteEvent((EliteEvent)e); 
                 break;
+            case Event.EventType.Boss:
+                BossEvent((BossEvent)e);
+                break;
             case Event.EventType.Rest:
                 RestEvent((RestEvent)e);
                 break;
@@ -105,6 +108,12 @@ public class EventArenaController : MonoBehaviour
         gameManager.StartCombat(e.combatData);
     }
     void EliteEvent(EliteEvent e)
+    {
+        //mapCamAnim.SetTrigger("Activate");
+        eventName = null;
+        gameManager.StartCombat(e.combatData);
+    }
+    void BossEvent(BossEvent e)
     {
         //mapCamAnim.SetTrigger("Activate");
         eventName = null;

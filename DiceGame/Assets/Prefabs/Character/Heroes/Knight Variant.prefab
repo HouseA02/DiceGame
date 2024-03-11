@@ -201,6 +201,7 @@ MonoBehaviour:
   HP: 0
   block: 0
   power: 1
+  thisTurnRolls: 0
   damageMultiplier: 1
   allies: []
   enemies: []
@@ -225,7 +226,7 @@ MonoBehaviour:
   isFirstRoll: 1
   canRoll: 1
   instance: {fileID: 0}
-  indicator: {fileID: 1202148157546582978}
+  indicator: {fileID: 1668024983549722626}
   gameManager: {fileID: 0}
   statusEffects: []
   m_OnTurnStart:
@@ -243,6 +244,10 @@ MonoBehaviour:
   m_OnReroll:
     m_PersistentCalls:
       m_Calls: []
+  m_OnResult:
+    m_PersistentCalls:
+      m_Calls: []
+  hasActed: 0
 --- !u!65 &1878683745370795103
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -264,9 +269,9 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 3, z: 1}
   m_Center: {x: 0, y: 1.5, z: 0}
---- !u!1 &1202148157546582978 stripped
+--- !u!1 &1668024983549722626 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 3922729938017786558, guid: 1fc89c03347ec4245858eb78b21a5f0e,
+  m_CorrespondingSourceObject: {fileID: 3600828681541781886, guid: 1fc89c03347ec4245858eb78b21a5f0e,
     type: 3}
   m_PrefabInstance: {fileID: 2800875549845834108}
   m_PrefabAsset: {fileID: 0}

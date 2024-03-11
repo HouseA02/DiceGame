@@ -58,7 +58,7 @@ public class Character : MonoBehaviour
     public virtual void Roll()
     {
         thisTurnRolls++;
-        if (isFirstRoll || canRoll)
+        if (thisTurnRolls == 1|| canRoll)
         {
             CleanUp();
             AbilityDie dieInstance = Instantiate(die);
