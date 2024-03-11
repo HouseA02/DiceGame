@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
         canRoll = true;
         rerolls = 3;
         enemyRolled = false;
-        activeHeroes.ForEach(h => h.isFirstRoll = true);
+        activeHeroes.ForEach(h => h.GetComponent<Hero>().hasActed = false);
         Roll();
     }
 

@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Hero : Character
 {
-    bool hasActed = false;
+    public bool hasActed = false;
     public override void Roll()
     {
         if (!hasActed)

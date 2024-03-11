@@ -106,7 +106,7 @@ MonoBehaviour:
   initialValue: 1
   effects: []
   slot: {fileID: 0}
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 5b50b82049492874f87ab128910db882, type: 3}
   r_OnTurnStart:
     m_PersistentCalls:
       m_Calls: []
