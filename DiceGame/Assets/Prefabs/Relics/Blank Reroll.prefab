@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rewardType: 1
-  relicName: Recycling
+  relicName: 'Recycling '
   relicDescription: The first blank rolled each turn is immediately rerolled
   gameManager: {fileID: 0}
   initialValue: 0

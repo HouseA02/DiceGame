@@ -4071,6 +4071,7 @@ MonoBehaviour:
   infoPrefab: {fileID: 4989643550602810459, guid: 3baafba0d687b4040857c9197c55a740,
     type: 3}
   statusDesc: 
+  infoOffset: {x: 200, y: 0, z: 0}
 --- !u!61 &5626284251250589620
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5014,6 +5015,7 @@ MonoBehaviour:
   infoPrefab: {fileID: 4989643550602810459, guid: 3baafba0d687b4040857c9197c55a740,
     type: 3}
   statusDesc: 
+  infoOffset: {x: 200, y: 0, z: 0}
 --- !u!61 &7829271688725210016
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5250,6 +5252,7 @@ MonoBehaviour:
   infoPrefab: {fileID: 4989643550602810459, guid: 3baafba0d687b4040857c9197c55a740,
     type: 3}
   statusDesc: 
+  infoOffset: {x: 200, y: 0, z: 0}
 --- !u!61 &6141136225329806328
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6223,6 +6226,7 @@ MonoBehaviour:
   infoPrefab: {fileID: 4989643550602810459, guid: 3baafba0d687b4040857c9197c55a740,
     type: 3}
   statusDesc: 
+  infoOffset: {x: 200, y: 0, z: 0}
 --- !u!61 &5376899051411440651
 BoxCollider2D:
   m_ObjectHideFlags: 0

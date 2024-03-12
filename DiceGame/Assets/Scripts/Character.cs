@@ -13,6 +13,14 @@ public class Character : MonoBehaviour
 
     public class ResultEvent : UnityEvent<Ability> { }
     public class IntEvent : UnityEvent<int> { }
+
+    [Serializable]
+    
+    public class StartStatus
+    {
+        public StatusEffect effect;
+        public int value;
+    }
     [SerializeField]
     public Target targetSprite;
     [SerializeField]
@@ -34,6 +42,7 @@ public class Character : MonoBehaviour
     public int HP;
     public int block;
     public int power = 0;
+    public int damageBlock = 0;
     public int thisTurnRolls = 0;
     public float damageMultiplier = 1;
     public List<Character> allies;
@@ -50,6 +59,8 @@ public class Character : MonoBehaviour
     public GameObject indicator;
     public GameManager gameManager;
     public List<StatusEffect> statusEffects = new List<StatusEffect>();
+    [SerializeField]
+    protected List<StartStatus> startingStatuses = new List<StartStatus>();
     public UnityEvent m_OnTurnStart = new UnityEvent();
     public UnityEvent m_OnTurnEnd = new UnityEvent();
     public UnityEvent m_OnAttacked = new UnityEvent();
@@ -148,6 +159,7 @@ public class Character : MonoBehaviour
     {
         //damagetotake
         float damageToTake = value;
+        damageToTake -= damageBlock;
         damageToTake *= damageMultiplier;
         m_OnAttacked.Invoke();
         ChangeBlock(-(int)damageToTake, true);
@@ -233,6 +245,7 @@ public class Character : MonoBehaviour
         gameManager.gm_OnTurnStart.AddListener(OnTurnStart);
         gameManager.gm_OnTurnEnd.AddListener(OnTurnEnd);
         m_OnResult.AddListener(OnResult);
+        startingStatuses.ForEach(s => ApplyStatus(s.effect, s.value));
     }
 
     void OnResult(Ability ability)

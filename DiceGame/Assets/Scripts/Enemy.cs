@@ -136,5 +136,6 @@ public class Enemy : Character
         characterPanel.Initialise(this);
         gameManager.gm_OnTurnStart.AddListener(OnTurnEnd);
         gameManager.gm_OnTurnEnd.AddListener(OnTurnStart);
+        startingStatuses.ForEach(s => ApplyStatus(s.effect, s.value));
     }
 }

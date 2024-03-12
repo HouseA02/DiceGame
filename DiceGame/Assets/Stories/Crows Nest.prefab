@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 578b1f4a9d63d3e48807cffd24e2729e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: {fileID: 7358987248259120785, guid: ec7bd80f39fbcff4b8ed72bac0926c21, type: 3}
+  reward: {fileID: 7145488905630927966, guid: d5339cb68faffa44885cbcecb96da4fe, type: 3}
   potentialRewards:
   - {fileID: 7145488905630927966, guid: d5339cb68faffa44885cbcecb96da4fe, type: 3}
   - {fileID: 7358987248259120785, guid: ec7bd80f39fbcff4b8ed72bac0926c21, type: 3}
@@ -145,4 +145,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8a8c1b58a7c0044bbf4eec6804b2fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combatData: {fileID: 11400000, guid: 9cfdc3ef4c32e5d4aa102d2889ea3e9d, type: 2}
+  combatData: {fileID: 11400000, guid: 2d70754f37c78c74b96e52532f6213d3, type: 2}

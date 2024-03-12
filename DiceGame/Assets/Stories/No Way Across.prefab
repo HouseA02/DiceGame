@@ -76,7 +76,7 @@ PrefabInstance:
     - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
         type: 3}
       propertyPath: Options.Array.data[1].text
-      value: Scavenge (Party takes 5 damage)
+      value: Scavenge (Party takes 4 damage + ??)
       objectReference: {fileID: 0}
     - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
         type: 3}
@@ -86,7 +86,7 @@ PrefabInstance:
     - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
         type: 3}
       propertyPath: Options.Array.data[1].effects.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
         type: 3}
@@ -101,6 +101,11 @@ PrefabInstance:
     - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
         type: 3}
       propertyPath: Options.Array.data[1].effects.Array.data[1]
+      value: 
+      objectReference: {fileID: 9054401507313036253}
+    - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      propertyPath: Options.Array.data[1].effects.Array.data[2]
       value: 
       objectReference: {fileID: 8570037802096173093}
     m_RemovedComponents: []
@@ -167,6 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 578b1f4a9d63d3e48807cffd24e2729e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: {fileID: 0}
+  reward: {fileID: 427940669570293032, guid: ce4e042dee7d6e446b769b335e054556, type: 3}
   potentialRewards:
   - {fileID: 427940669570293032, guid: ce4e042dee7d6e446b769b335e054556, type: 3}
+  - {fileID: 7145488905630927966, guid: d5339cb68faffa44885cbcecb96da4fe, type: 3}

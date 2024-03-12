@@ -944,7 +944,8 @@ MonoBehaviour:
   - {fileID: 7883282343169903588}
   defaultColor: {r: 0.8666667, g: 0.8666667, b: 0.8666667, a: 1}
   minimumSteps: 0
-  weight: 2
+  weight: 6
+  isBlinded: 0
   id: 0
   combatData: {fileID: 0}
   imageHolders:

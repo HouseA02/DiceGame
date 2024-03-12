@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -169,15 +170,15 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Win");
             activeHeroes.ForEach(h => h.Cleanse());
-            inBattle = false;
             mapKey.SetActive(true);
             mainCamera.SetActive(true);
+            inBattle = false;
         }
         else if(activeHeroes.Count<=0)
         {
             Debug.Log("Lose");
-            inBattle = false;
             mainCamera.SetActive(true);
+            inBattle = false;
         }
     }
 
@@ -186,6 +187,11 @@ public class GameManager : MonoBehaviour
         mapKey.SetActive(false);
         mainCamera.SetActive(false);
         combatData.GetData(this);
+        activeEnemies.Clear();
+        foreach (CharacterPanel panel in characterPanelsEnemy)
+        {
+            panel.gameObject.SetActive(false);
+        }
         for (int i = 0; i < enemies.Count; i++)
         {
             if (enemies[i] != null)
@@ -198,6 +204,10 @@ public class GameManager : MonoBehaviour
                 enemyInstance.id = i;
                 activeEnemies.Add(enemyInstance);
                 enemyInstance.Initialise(enemyInstance);
+            }
+            else
+            {
+                characterPanelsEnemy[i].gameObject.SetActive(false);
             }
         }
         foreach (Character hero in activeHeroes)
@@ -226,6 +236,16 @@ public class GameManager : MonoBehaviour
         StartTurn();
         rerollText.text = new string($"Rerolls: {rerolls}");
         canRoll = true;
+        DelayedStartCombat();
+    }
+
+    void DelayedStartCombat()
+    {
+        foreach(CharacterPanel panel in characterPanelsEnemy.Where(c => c.character != null))
+        {
+            panel.gameObject.SetActive(true);
+            panel.Initialise(panel.character);
+        }
     }
     void Initialise()
     {

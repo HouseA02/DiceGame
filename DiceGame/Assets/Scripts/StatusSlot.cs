@@ -14,10 +14,12 @@ public class StatusSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public GameObject infoPrefab;
     private GameObject infoInstance;
     public string statusDesc;
-
+    [SerializeField]
+    private Vector3 infoOffset;
     public void OnPointerEnter(PointerEventData eventData)
     {
         infoInstance = Instantiate(infoPrefab, this.transform);
+        infoInstance.transform.position = this.transform.position + infoOffset;
         infoInstance.GetComponentInChildren<TMP_Text>().text = statusDesc;
         transform.SetAsLastSibling();
     }

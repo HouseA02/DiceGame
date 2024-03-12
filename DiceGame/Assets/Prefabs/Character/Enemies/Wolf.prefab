@@ -211,7 +211,7 @@ MonoBehaviour:
     type: 3}
   die: {fileID: 4597255273898579344, guid: d13d564d5706d794eadd5420829568d6, type: 3}
   dieReference: {fileID: 0}
-  spriteOffset: {x: 0, y: 0}
+  spriteOffset: {x: 15, y: 5}
   spriteSize: 0
   mainColor: {r: 0.35686275, g: 0.15294118, b: 0.34117648, a: 1}
   id: 0
@@ -219,11 +219,12 @@ MonoBehaviour:
   HP: 0
   block: 0
   power: 0
+  damageBlock: 0
   thisTurnRolls: 0
   damageMultiplier: 1
   allies: []
   enemies: []
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: f83decd0059d45f479342d9dad9878d4, type: 3}
   baseAbilities:
   - {fileID: 1729044955415721312, guid: 0b783cc1bca53b748b88773af31fe322, type: 3}
   - {fileID: 1729044955415721312, guid: 0b783cc1bca53b748b88773af31fe322, type: 3}
@@ -247,6 +248,7 @@ MonoBehaviour:
   indicator: {fileID: 666162846143644555}
   gameManager: {fileID: 0}
   statusEffects: []
+  startingStatuses: []
   m_OnTurnStart:
     m_PersistentCalls:
       m_Calls: []
@@ -287,7 +289,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.67, y: 1.0051131, z: 2.0185564}
-  m_Center: {x: 0, y: -0.17486362, z: 0.09365702}
+  m_Center: {x: 0, y: 0.37, z: -0.13}
 --- !u!4 &5687507603175020077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8514071621138783448, guid: 1fc89c03347ec4245858eb78b21a5f0e,

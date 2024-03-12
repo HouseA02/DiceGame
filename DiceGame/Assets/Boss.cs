@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Boss : Enemy
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Roll()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        base.Roll();
+        dieReference.transform.localScale *= 2;
+        foreach(DecalProjector decal in dieReference.decals) 
+        {
+            decal.size *= 2;
+        }
     }
 }
