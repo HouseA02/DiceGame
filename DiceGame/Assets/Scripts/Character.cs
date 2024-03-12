@@ -167,6 +167,7 @@ public class Character : MonoBehaviour
     public virtual void Die()
     {
         CleanUp();
+        Cleanse();
         statusEffects.Clear();
         characterPanel.gameObject.SetActive(false);
         gameManager.OnDeath(this);

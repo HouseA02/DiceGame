@@ -4,9 +4,14 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
+    [SerializeField]
+    private Tutorial tutorial;
     public GameObject mapKey;
+    [SerializeField]
+    private Button endTurn;
     [SerializeField]
     private StoryController storyController;
     public EventArenaController eventArenaController;
@@ -20,6 +25,10 @@ public class GameManager : MonoBehaviour
     GameObject battleLight;
     [SerializeField]
     GameObject[] battleUI;
+    [SerializeField]
+    GameObject winScreen;
+    [SerializeField]
+    GameObject loseScreen;
     [SerializeField]
     public Player player;
     [SerializeField]
@@ -111,6 +120,7 @@ public class GameManager : MonoBehaviour
     }
     public void EndTurn()
     {
+        endTurn.enabled = false;
         gm_OnTurnEnd.Invoke();
         OnTurnEnd();
         //activeHeroes.ForEach(h  => h.OnTurnEnd());
@@ -121,6 +131,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator EnemyAct()
     {
+        yield return new WaitForSeconds(1f);
         for (int i = 0; i < activeEnemies.Count; i++)
         {
             if (activeEnemies[i] != null)
@@ -129,6 +140,8 @@ public class GameManager : MonoBehaviour
                 yield return new WaitForSeconds(0.5f);
             }
         }
+        activeEnemies.ForEach(e => e.GetComponent<Enemy>().UpdateTarget(null));
+        endTurn.enabled = true;
         /*foreach(Enemy enemy in activeEnemies)
         {
             if (enemy != null)
@@ -170,8 +183,14 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Win");
             activeHeroes.ForEach(h => h.Cleanse());
+            activeHeroes.ForEach(h=>h.SetAbility(-1));
+            foreach (GameObject element in battleUI)
+            {
+                element.SetActive(false);
+            }
             mapKey.SetActive(true);
             mainCamera.SetActive(true);
+            tutorial.isMap = true;
             inBattle = false;
         }
         else if(activeHeroes.Count<=0)
@@ -179,11 +198,13 @@ public class GameManager : MonoBehaviour
             Debug.Log("Lose");
             mainCamera.SetActive(true);
             inBattle = false;
+            loseScreen.SetActive(true);
         }
     }
 
     public void StartCombat(CombatData combatData)
     {
+        tutorial.isMap = false;
         mapKey.SetActive(false);
         mainCamera.SetActive(false);
         combatData.GetData(this);

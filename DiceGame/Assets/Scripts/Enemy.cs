@@ -33,7 +33,7 @@ public class Enemy : Character
         }
         else
         {
-            transform.LookAt(enemies[id].transform);
+            //if (gameManager.activeHeroes[id] != null && gameManager.activeHeroes[id].HP > 0) { transform.LookAt(gameManager.activeHeroes[id].transform); }
         }
     }
 
@@ -74,10 +74,14 @@ public class Enemy : Character
         target = newTarget;
         //target.characterPanel.targetSprite.gameObject.SetActive(true);
         //target.targetSprite.gameObject.SetActive(true);
-        if (characterPanel.targetContainer != null)
+        if (characterPanel.targetContainer != null && target != null)
         {
             characterPanel.targetContainer.gameObject.SetActive(true);
             characterPanel.targetImage.sprite = target.portrait;
+        }
+        if(target == null)
+        {
+            characterPanel.targetContainer.gameObject.SetActive(false);
         }
     }
     public override void OnTurnStart()
