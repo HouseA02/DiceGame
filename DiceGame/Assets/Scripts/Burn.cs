@@ -11,6 +11,7 @@ public class Burn : StatusEffect
         base.OnTurnEnd();
         characterReference.ChangeBlock(-value, true);
         value /= 2;
+        TriggerEffect();
         UpdateValue();
     }
 

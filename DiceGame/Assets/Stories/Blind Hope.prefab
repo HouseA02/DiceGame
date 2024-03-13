@@ -76,7 +76,7 @@ PrefabInstance:
     - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
         type: 3}
       propertyPath: Options.Array.data[1].text
-      value: Burn the map
+      value: <link="shudder">Burn the map</link>
       objectReference: {fileID: 0}
     - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
         type: 3}

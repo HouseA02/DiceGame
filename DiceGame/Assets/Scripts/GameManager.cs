@@ -206,9 +206,13 @@ public class GameManager : MonoBehaviour
             loseScreen.SetActive(true);
         }
     }
-
+    
     public void StartCombat(CombatData combatData)
     {
+        foreach(var item in FindObjectsOfType<Die>())
+        {
+            Destroy(item);
+        }
         tutorial.isMap = false;
         mapKey.SetActive(false);
         mainCamera.SetActive(false);

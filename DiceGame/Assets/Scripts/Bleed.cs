@@ -14,6 +14,7 @@ public class Bleed : StatusEffect
         base.OnTurnEnd();
         characterReference.ChangeHP(-value);
         value--;
+        TriggerEffect();
         UpdateValue();
     }
 

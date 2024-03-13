@@ -13,6 +13,7 @@ public class Entangle : StatusEffect
     public void OnReroll()
     {
         value--;
+        TriggerEffect();
         UpdateValue();
     }
     public override void OnApplied()

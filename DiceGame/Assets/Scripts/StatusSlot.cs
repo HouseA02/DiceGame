@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 
 public class StatusSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    public StatusEffect statusReference;
     public Image image;
     public TMP_Text valueText;
     public bool isTaken = false;
@@ -19,6 +20,8 @@ public class StatusSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     private Vector3 infoOffset;
     [SerializeField]
     private Color valueColor;
+    [SerializeField]
+    private GameObject[] parts;
     public void OnPointerEnter(PointerEventData eventData)
     {
         infoInstance = Instantiate(infoPrefab, this.transform);
@@ -34,15 +37,19 @@ public class StatusSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public void Initialise(StatusEffect statusEffect, int value)
     {
         statusEffect.slot = this;
+        statusReference = statusEffect;
         baseDesc = statusEffect.description;
         valueColor = statusEffect.valueColor;
         valueText.text = value.ToString();
         string coloredValue = $"<b><color=#" + valueColor.ToHexString() + ">" + value + "</color></b>";
         statusDesc = string.Format(statusEffect.description, coloredValue);
-        this.gameObject.SetActive(true);
+        foreach(var part in parts)
+        {
+            part.SetActive(true);
+        }
         image.sprite = statusEffect.sprite;
         valueText.text = value.ToString();
-        
+        statusEffect.OnApplied();
         isTaken = true;
     }
 
@@ -65,6 +72,9 @@ public class StatusSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         isTaken = false;
         image.sprite = null;
-        gameObject.SetActive(false);
+        foreach(var part in parts)
+        {
+            part.SetActive(false);
+        }
     }
 }
