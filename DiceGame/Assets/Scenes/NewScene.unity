@@ -6267,7 +6267,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!224 &510895608
 RectTransform:
@@ -6734,14 +6734,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1081748056}
-        m_TargetAssemblyTypeName: MusicController, Assembly-CSharp
-        m_MethodName: NewTrack
+      - m_Target: {fileID: 1518231515}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: StartCombat
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 6fc12db60ff575b4b9caa5208cbbffcb,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: ec523fd247eb2c94f9b1081154d07572,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: CombatData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -9588,6 +9588,11 @@ PrefabInstance:
       propertyPath: Rerolls
       value: 
       objectReference: {fileID: 1634169006}
+    - target: {fileID: 2789766159149707274, guid: d83a868a6f5073b429c1284b99951747,
+        type: 3}
+      propertyPath: dialogueManager
+      value: 
+      objectReference: {fileID: 880001274}
     - target: {fileID: 2994946033912517975, guid: d83a868a6f5073b429c1284b99951747,
         type: 3}
       propertyPath: m_IsActive
@@ -10099,6 +10104,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 870864152}
   m_CullTransparentMesh: 1
+--- !u!1 &880001273
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 880001275}
+  - component: {fileID: 880001274}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &880001274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880001273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a0c86a91396d0a4c8fc1f5adc62fb32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &880001275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880001273}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &887913415 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2122948162387547046, guid: c5b2e3346bc35d941b86ffbc1bc6114d,
@@ -27261,7 +27310,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2071330209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27338,7 +27387,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!224 &2071330213
 RectTransform:
@@ -28230,3 +28279,4 @@ SceneRoots:
   - {fileID: 1081748055}
   - {fileID: 1518231516}
   - {fileID: 780036072}
+  - {fileID: 880001275}
