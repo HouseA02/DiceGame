@@ -159,7 +159,7 @@ public class GameManager : MonoBehaviour
         {
             activeEnemies.Remove(character);
         }
-        if(activeHeroes.Contains(character))
+        if (activeHeroes.Contains(character))
         {
             activeHeroes.Remove(character);
         }
@@ -179,7 +179,7 @@ public class GameManager : MonoBehaviour
             enemy.enemies = new List<Character>();
             enemy.enemies.AddRange(activeHeroes);
         }
-        if (activeEnemies.Count<=0)
+        if (activeEnemies.Count <= 0)
         {
             Debug.Log("Win");
             activeHeroes.ForEach(h => h.Cleanse());
@@ -191,14 +191,13 @@ public class GameManager : MonoBehaviour
             }
             mapKey.SetActive(true);
             mainCamera.SetActive(true);
-            tutorial.isMap = true;
             inBattle = false;
-            if(FindAnyObjectByType<MapController>().GetComponent<MapController>().mapTime == 14) 
+            if (FindAnyObjectByType<MapController>().GetComponent<MapController>().mapTime == 14)
             {
                 winScreen.SetActive(true);
             }
         }
-        else if(activeHeroes.Count<=0)
+        else if (activeHeroes.Count <= 0)
         {
             Debug.Log("Lose");
             mainCamera.SetActive(true);
@@ -263,7 +262,10 @@ public class GameManager : MonoBehaviour
         }
         inBattle = true;
         gm_OnBattleStart.Invoke();
-        StartTurn();
+        if (tutorial.isComplete)
+        {
+            StartTurn();
+        }
         rerollText.text = new string($"Rerolls: {rerolls}");
         canRoll = true;
         DelayedStartCombat();
@@ -271,7 +273,7 @@ public class GameManager : MonoBehaviour
 
     void DelayedStartCombat()
     {
-        foreach(CharacterPanel panel in characterPanelsEnemy.Where(c => c.character != null))
+        foreach (CharacterPanel panel in characterPanelsEnemy.Where(c => c.character != null))
         {
             panel.gameObject.SetActive(true);
             panel.Initialise(panel.character);
