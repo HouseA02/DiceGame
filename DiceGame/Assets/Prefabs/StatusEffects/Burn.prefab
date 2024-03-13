@@ -49,4 +49,6 @@ MonoBehaviour:
   slot: {fileID: 0}
   value: 0
   characterReference: {fileID: 0}
-  description: Take X blockable damage on turn end, then reduce by half
+  description: Take {0} blockable damage on turn end, then reduce by half, rounding
+    down
+  valueColor: {r: 1, g: 0.30566552, b: 0, a: 1}

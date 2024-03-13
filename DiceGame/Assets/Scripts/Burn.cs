@@ -10,7 +10,7 @@ public class Burn : StatusEffect
     {
         base.OnTurnEnd();
         characterReference.ChangeBlock(-value, true);
-        value--;
+        value /= 2;
         UpdateValue();
     }
 

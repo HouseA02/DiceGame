@@ -50,3 +50,4 @@ MonoBehaviour:
   value: 0
   characterReference: {fileID: 0}
   description: Immune to attacks, reduce by 1 when attacked, or at turn end
+  valueColor: {r: 0, g: 0.9706273, b: 1, a: 1}

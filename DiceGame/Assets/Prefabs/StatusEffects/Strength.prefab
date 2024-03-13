@@ -49,4 +49,5 @@ MonoBehaviour:
   slot: {fileID: 0}
   value: 0
   characterReference: {fileID: 0}
-  description: Deal X more damage on all attacks
+  description: Deal {0} more damage on all attacks
+  valueColor: {r: 0.7529412, g: 0, b: 0, a: 1}

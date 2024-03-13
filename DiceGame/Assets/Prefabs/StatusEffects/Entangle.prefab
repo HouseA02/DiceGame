@@ -49,4 +49,5 @@ MonoBehaviour:
   slot: {fileID: 0}
   value: 0
   characterReference: {fileID: 0}
-  description: This characters die is left out of the next X rerolls
+  description: This characters die is left out of the next {0} rerolls
+  valueColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

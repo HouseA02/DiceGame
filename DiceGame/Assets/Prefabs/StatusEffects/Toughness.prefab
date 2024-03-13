@@ -49,4 +49,5 @@ MonoBehaviour:
   slot: {fileID: 0}
   value: 1
   characterReference: {fileID: 0}
-  description: Takes 1 less damage from attacks
+  description: Takes {0} less damage from attacks
+  valueColor: {r: 0.5896226, g: 1, b: 0.9541072, a: 1}

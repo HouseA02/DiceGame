@@ -49,5 +49,6 @@ MonoBehaviour:
   slot: {fileID: 0}
   value: 0
   characterReference: {fileID: 0}
-  description: Take X Unblockable damage on turn end, then reduce by 1, cleansed
+  description: Take {0} Unblockable damage on turn end, then reduce by 1, cleansed
     by any healing
+  valueColor: {r: 0.990566, g: 0, b: 0, a: 1}

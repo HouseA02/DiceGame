@@ -13,7 +13,7 @@ public class Bleed : StatusEffect
     {
         base.OnTurnEnd();
         characterReference.ChangeHP(-value);
-        value /= 2;
+        value--;
         UpdateValue();
     }
 

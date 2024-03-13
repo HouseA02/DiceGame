@@ -10,6 +10,7 @@ public class StatusEffect : MonoBehaviour
     public int value;
     public Character characterReference;
     public string description;
+    public Color valueColor;
 
     public virtual void Initialise(Character character, int newValue)
     {

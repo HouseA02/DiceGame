@@ -183,7 +183,8 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Win");
             activeHeroes.ForEach(h => h.Cleanse());
-            activeHeroes.ForEach(h=>h.SetAbility(-1));
+            activeHeroes.ForEach(h => h.SetAbility(-1));
+            activeHeroes.ForEach(h => Destroy(h.dieReference));
             foreach (GameObject element in battleUI)
             {
                 element.SetActive(false);
@@ -192,6 +193,10 @@ public class GameManager : MonoBehaviour
             mainCamera.SetActive(true);
             tutorial.isMap = true;
             inBattle = false;
+            if(FindAnyObjectByType<MapController>().GetComponent<MapController>().mapTime == 14) 
+            {
+                winScreen.SetActive(true);
+            }
         }
         else if(activeHeroes.Count<=0)
         {

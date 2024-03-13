@@ -14,8 +14,11 @@ public class StatusSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public GameObject infoPrefab;
     private GameObject infoInstance;
     public string statusDesc;
+    public string baseDesc;
     [SerializeField]
     private Vector3 infoOffset;
+    [SerializeField]
+    private Color valueColor;
     public void OnPointerEnter(PointerEventData eventData)
     {
         infoInstance = Instantiate(infoPrefab, this.transform);
@@ -31,10 +34,15 @@ public class StatusSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public void Initialise(StatusEffect statusEffect, int value)
     {
         statusEffect.slot = this;
-        statusDesc = statusEffect.description;
+        baseDesc = statusEffect.description;
+        valueColor = statusEffect.valueColor;
+        valueText.text = value.ToString();
+        string coloredValue = $"<b><color=#" + valueColor.ToHexString() + ">" + value + "</color></b>";
+        statusDesc = string.Format(statusEffect.description, coloredValue);
         this.gameObject.SetActive(true);
         image.sprite = statusEffect.sprite;
         valueText.text = value.ToString();
+        
         isTaken = true;
     }
 
@@ -43,6 +51,8 @@ public class StatusSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         if (value > 0)
         {
             valueText.text = value.ToString();
+            string coloredValue = $"<b><color=#" + valueColor.ToHexString() + ">" + value + "</color></b>";
+            statusDesc = string.Format(baseDesc, coloredValue);
         }
         else
         {
