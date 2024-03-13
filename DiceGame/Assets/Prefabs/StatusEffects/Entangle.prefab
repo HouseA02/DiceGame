@@ -51,3 +51,5 @@ MonoBehaviour:
   characterReference: {fileID: 0}
   description: This characters die is left out of the next {0} rerolls
   valueColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  triggerEffect: {fileID: 1271195921766436121, guid: acfe2e24a5591d3408fd44930eca4302,
+    type: 3}

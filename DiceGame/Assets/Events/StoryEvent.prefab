@@ -132,8 +132,10 @@ MonoBehaviour:
   - {fileID: 8796914714343369211}
   defaultColor: {r: 0.8666667, g: 0.8666667, b: 0.8666667, a: 1}
   minimumSteps: 0
-  weight: 1
+  weight: 2
+  isBlinded: 0
   id: 0
+  storyData: {fileID: 0}
 --- !u!212 &4804372148884549353 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 8033003223694239930, guid: 0795ff228dc108848a643e9886ade7d9,

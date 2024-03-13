@@ -11,6 +11,7 @@ public class StatusEffect : MonoBehaviour
     public Character characterReference;
     public string description;
     public Color valueColor;
+    public TriggerEffect triggerEffect;
 
     public virtual void Initialise(Character character, int newValue)
     {
@@ -19,7 +20,6 @@ public class StatusEffect : MonoBehaviour
         transform.parent = characterReference.transform;
         characterReference.m_OnTurnStart.AddListener(OnTurnStart);
         characterReference.m_OnTurnEnd.AddListener(OnTurnEnd);
-        OnApplied();
     }
 
     public virtual void OnTurnStart()
@@ -34,7 +34,16 @@ public class StatusEffect : MonoBehaviour
 
     public virtual void OnApplied()
     {
+        TriggerEffect();
+    }
 
+    public virtual void TriggerEffect()
+    {
+        if (triggerEffect != null)
+        {
+            var effectInstance = Instantiate(triggerEffect, slot.transform);
+            effectInstance.image.sprite = sprite;
+        }
     }
     public virtual void AddValue(int addValue)
     {

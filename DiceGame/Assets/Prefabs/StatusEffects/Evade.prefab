@@ -51,3 +51,5 @@ MonoBehaviour:
   characterReference: {fileID: 0}
   description: Immune to attacks, reduce by 1 when attacked, or at turn end
   valueColor: {r: 0, g: 0.9706273, b: 1, a: 1}
+  triggerEffect: {fileID: 1271195921766436121, guid: acfe2e24a5591d3408fd44930eca4302,
+    type: 3}

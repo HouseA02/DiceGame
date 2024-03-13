@@ -9,6 +9,7 @@ public class Poison : StatusEffect
         base.OnTurnEnd();
         characterReference.ChangeHP(-value);
         value /= 2;
+        TriggerEffect();
         UpdateValue();
     }
 }

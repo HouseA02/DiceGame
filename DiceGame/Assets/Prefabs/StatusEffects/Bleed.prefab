@@ -52,3 +52,5 @@ MonoBehaviour:
   description: Take {0} Unblockable damage on turn end, then reduce by 1, cleansed
     by any healing
   valueColor: {r: 0.990566, g: 0, b: 0, a: 1}
+  triggerEffect: {fileID: 1271195921766436121, guid: acfe2e24a5591d3408fd44930eca4302,
+    type: 3}

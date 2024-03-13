@@ -12,6 +12,7 @@ public class Evade : StatusEffect
     }
     public override void OnApplied()
     {
+        base.OnApplied();
         characterReference.damageMultiplier = 0;
     }
 
@@ -25,6 +26,7 @@ public class Evade : StatusEffect
     public void OnAttacked()
     {
         value--;
+        TriggerEffect();
         slot.UpdateValue(value);
         if (value <= 0) { Expire(); }
     }

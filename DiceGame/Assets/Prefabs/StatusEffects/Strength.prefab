@@ -51,3 +51,5 @@ MonoBehaviour:
   characterReference: {fileID: 0}
   description: Deal {0} more damage on all attacks
   valueColor: {r: 0.7529412, g: 0, b: 0, a: 1}
+  triggerEffect: {fileID: 1271195921766436121, guid: acfe2e24a5591d3408fd44930eca4302,
+    type: 3}

@@ -52,3 +52,5 @@ MonoBehaviour:
   description: Take {0} unblockable damage on turn end, then reduce by half, rounding
     down
   valueColor: {r: 0.084590435, g: 1, b: 0, a: 1}
+  triggerEffect: {fileID: 1271195921766436121, guid: acfe2e24a5591d3408fd44930eca4302,
+    type: 3}

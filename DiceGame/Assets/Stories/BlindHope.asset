@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BlindHope
   m_EditorClassIdentifier: 
   storyName: Blind Hope
-  storyDescription: Throw your directions away, embrace cHaOs!
+  storyDescription: Throw your directions away, embrace <link="wavy">cHaOs!</link>
   storyArt: {fileID: 21300000, guid: 6da70c9fb8a99e7458c4d1b72fd3129d, type: 3}
   storyOptions: {fileID: 7785611719946470518, guid: 4a3a699bf19a5234faa99e1aa7c1e51f,
     type: 3}
