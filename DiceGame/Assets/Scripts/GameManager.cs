@@ -11,12 +11,14 @@ public class GameManager : MonoBehaviour
     private Tutorial tutorial;
     public GameObject mapKey;
     [SerializeField]
+    private LootScreen lootScreen;
+    [SerializeField]
     private Button endTurn;
     [SerializeField]
     private StoryController storyController;
     public EventArenaController eventArenaController;
     [SerializeField]
-    public CombatData CombatData;
+    public CombatData combatData;
     [SerializeField]
     public Transform dieOrigin;
     [SerializeField]
@@ -203,16 +205,14 @@ public class GameManager : MonoBehaviour
             Debug.Log("Win");
             activeHeroes.ForEach(h => h.Cleanse());
             activeHeroes.ForEach(h => h.CleanUp());
-            foreach (GameObject element in battleUI)
-            {
-                element.SetActive(false);
-            }
-            mapKey.SetActive(true);
-            mainCamera.SetActive(true);
-            inBattle = false;
             if (FindAnyObjectByType<MapController>().GetComponent<MapController>().mapTime == 14)
             {
                 winScreen.SetActive(true);
+            }
+            else
+            {
+                lootScreen.gameObject.SetActive(true);
+                lootScreen.FindLoot(combatData);
             }
         }
         else if (activeHeroes.Count <= 0)
@@ -222,6 +222,18 @@ public class GameManager : MonoBehaviour
             inBattle = false;
             loseScreen.SetActive(true);
         }
+    }
+
+    public void ReturnToMap()
+    {
+        foreach (GameObject element in battleUI)
+        {
+            element.SetActive(false);
+        }
+        mapKey.SetActive(true);
+        mainCamera.SetActive(true);
+        inBattle = false;
+        lootScreen.gameObject.SetActive(false);
     }
     
     public void StartCombat(CombatData combatData)
@@ -233,6 +245,7 @@ public class GameManager : MonoBehaviour
         mapKey.SetActive(false);
         mainCamera.SetActive(false);
         combatData.GetData(this);
+        this.combatData = combatData;
         activeEnemies.Clear();
         foreach (CharacterPanel panel in characterPanelsEnemy)
         {

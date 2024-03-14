@@ -12,7 +12,6 @@ public class Fly : MonoBehaviour
     private float minHeight;
     private float yPos;
     private float t = 0;
-    private float target = 1;
 
     // Start is called before the first frame update
     void Start()
