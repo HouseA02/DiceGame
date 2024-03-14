@@ -53,8 +53,10 @@ MonoBehaviour:
   effects:
   - effect: {fileID: 450409208095363994}
     value: 5
+    VFX: {fileID: 0}
   - effect: {fileID: 7468616248458780980}
     value: 3
+    VFX: {fileID: 0}
   targetingType: 1
   image: {fileID: 2100000, guid: bf2a82f5ccf7ae74fb64d9c2eac9273d, type: 2}
   UIImage: {fileID: 21300000, guid: f2d0e9f1e02df2f489d8a54623bf48cc, type: 3}
@@ -76,6 +78,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ef0c17aa3409d4697804b51b818819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VFX: {fileID: 5299712934791405230, guid: df44b6c718240354db9aca261c78b5ec, type: 3}
+  offset: {x: 0, y: 1, z: 0}
   defaultDamage: 0
 --- !u!114 &7468616248458780980
 MonoBehaviour:
@@ -89,5 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d6c845cd4cf914badfef85a5ad15a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VFX: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
   status: {fileID: 866319987337119846, guid: 953c881eda8ba5440bf91ebf420c8f64, type: 3}
   defaultValue: 0

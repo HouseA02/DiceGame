@@ -8,6 +8,8 @@ public class Effect : MonoBehaviour
 {
     protected GameManager gameManager;
     public VisualEffect VFX;
+    [SerializeField]
+    protected Vector3 offset = new Vector3(0,1,0);
     private void Awake()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -16,7 +18,7 @@ public class Effect : MonoBehaviour
     {
         if (VFX != null)
         {
-            Instantiate(VFX, target.transform.position, Quaternion.identity);
+            Instantiate(VFX, target.transform.position + offset, Quaternion.identity);
         }
     }
 
@@ -34,7 +36,7 @@ public class Effect : MonoBehaviour
     {
         if (VFX != null)
         {
-            Instantiate(VFX, target.transform.position, Quaternion.identity);
+            Instantiate(VFX, target.transform.position + offset, Quaternion.identity);
         }
     }
 
@@ -42,7 +44,7 @@ public class Effect : MonoBehaviour
     {
         if (VFX != null)
         {
-            Instantiate(VFX, target.transform.position, Quaternion.identity);
+            Instantiate(VFX, target.transform.position + offset, Quaternion.identity);
         }
     }
     public virtual void Activate()
