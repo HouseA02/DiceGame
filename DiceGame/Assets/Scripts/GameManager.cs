@@ -202,8 +202,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Win");
             activeHeroes.ForEach(h => h.Cleanse());
-            activeHeroes.ForEach(h => h.SetAbility(-1));
-            activeHeroes.ForEach(h => Destroy(h.dieReference));
+            activeHeroes.ForEach(h => h.CleanUp());
             foreach (GameObject element in battleUI)
             {
                 element.SetActive(false);
