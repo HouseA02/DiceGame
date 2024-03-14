@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Windows;
+using System.Text.RegularExpressions;
+using System;
 
 public class StoryController : MonoBehaviour
 {
@@ -25,6 +28,7 @@ public class StoryController : MonoBehaviour
         storyPanel.SetActive(true);
         currentStory = storyData;
         nameSlot.text = currentStory.storyName;
+        descriptionSlot.textInfo.linkInfo = Array.Empty<TMP_LinkInfo>();
         descriptionSlot.text = currentStory.storyDescription;
         if (currentStory.storyArt != null) { artSlot.sprite = currentStory.storyArt; }
         if(storyData.storyOptions != null)
@@ -37,6 +41,7 @@ public class StoryController : MonoBehaviour
             for(int i = 0;i < currentStory.storyOptions.Options.Length; i++)
             {
                 buttons[i].gameObject.SetActive(true);
+                buttonText[i].textInfo.linkInfo = Array.Empty<TMP_LinkInfo>();
                 buttonText[i].text = currentStory.storyOptions.Options[i].text;
                 buttons[i].onClick.AddListener(storyData.storyOptions.Options[i].Activate);
             }

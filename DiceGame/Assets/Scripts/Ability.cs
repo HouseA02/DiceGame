@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using static UnityEngine.GraphicsBuffer;
 
 public class Ability : MonoBehaviour
 {
@@ -68,6 +69,7 @@ public class Ability : MonoBehaviour
         foreach (AbilityEffect effect in effects)
         {
             effect.Activate(characterReference, targets);
+
             yield return new WaitForSeconds(0.2f);
         }
         characterReference.OnAbilityUsed();

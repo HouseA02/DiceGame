@@ -18,6 +18,10 @@ public class AllTarget : Effect
         if (targetsEnemies) { targets.AddRange(source.enemies); }
         if (targetsAllies) {  targets.AddRange(source.allies); }
         if (targetsSelf) { targets.Add(source); }
+        if (VFX != null)
+        {
+            effect.VFX = VFX;
+        }
         targets.ForEach(t => effect.Activate(source, t, value));
     }
 
@@ -27,6 +31,10 @@ public class AllTarget : Effect
         if (targetsEnemies) { targets.AddRange(gameManager.activeEnemies); }
         if (targetsAllies) { targets.AddRange(gameManager.activeHeroes); }
         Debug.Log("List Count" + targets.Count);
+        if (VFX != null)
+        {
+            effect.VFX = VFX;
+        }
         targets.ForEach(t => effect.Activate(t, value));
     }
 
@@ -36,6 +44,10 @@ public class AllTarget : Effect
         List<Character> targets = new List<Character>();
         if (targetsEnemies) { targets.AddRange(gameManager.activeEnemies); }
         if (targetsAllies) { targets.AddRange(gameManager.activeHeroes); }
+        if (VFX != null)
+        {
+            effect.VFX = VFX;
+        }
         targets.ForEach(t => effect.Activate(t));
     }
 }

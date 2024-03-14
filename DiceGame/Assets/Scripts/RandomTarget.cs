@@ -21,6 +21,10 @@ public class RandomTarget : Effect
         if (targets.Count > 0)
         {
             Character randTarget = targets[Random.Range(0, targets.Count)];
+            if (VFX != null)
+            {
+                effect.VFX = VFX;
+            }
             effect.Activate(source, randTarget, value);
         }
     }
@@ -33,6 +37,10 @@ public class RandomTarget : Effect
         if (targets.Count > 0)
         {
             Character randTarget = targets[Random.Range(0, targets.Count)];
+            if (VFX != null)
+            {
+                effect.VFX = VFX;
+            }
             effect.Activate(randTarget, value);
         }
     }
@@ -45,6 +53,10 @@ public class RandomTarget : Effect
         if (targets.Count > 0)
         {
             Character randTarget = targets[Random.Range(0, targets.Count)];
+            if (VFX != null)
+            {
+                effect.VFX = VFX;
+            }
             effect.Activate(randTarget);
         }
     }

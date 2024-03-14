@@ -61,20 +61,22 @@ public class GameManager : MonoBehaviour
     public UnityEvent gm_OnTurnEnd = new UnityEvent();
     [SerializeField]
     private GameObject mainCamera;
+    [SerializeField]
+    private GameObject webs;
 
     private void Start()
     {
         Initialise();
     }
 
-
-    private void Update()
+    public void TryRoll()
     {
-        if (Input.GetMouseButtonDown(1) && canRoll)
+        if (canRoll)
         {
             Roll();
         }
     }
+
 
     public void Roll()
     {
@@ -86,6 +88,14 @@ public class GameManager : MonoBehaviour
             }
             rerolls--;
             rerollText.text = new string($"Rerolls: {rerolls}");
+            if (FindObjectsOfType<Entangle>().Length > 0)
+            {
+                webs.SetActive(true);
+            }
+            else
+            {
+                webs.SetActive(false);
+            }
         }
         if (!enemyRolled)
         {
@@ -95,6 +105,7 @@ public class GameManager : MonoBehaviour
             }
             enemyRolled = true;
         }
+
     }
 
     private void OnTurnStart()
@@ -103,6 +114,14 @@ public class GameManager : MonoBehaviour
         rerolls = 3;
         enemyRolled = false;
         activeHeroes.ForEach(h => h.GetComponent<Hero>().hasActed = false);
+        if(FindObjectsOfType<Entangle>().Length > 0)
+        {
+            webs.SetActive(true);
+        }
+        else
+        {
+            webs.SetActive(false);
+        }
         Roll();
     }
 
@@ -208,11 +227,10 @@ public class GameManager : MonoBehaviour
     
     public void StartCombat(CombatData combatData)
     {
-        foreach(var item in FindObjectsOfType<Die>())
+        foreach(var item in FindObjectsOfType<AbilityDie>())
         {
             Destroy(item);
         }
-        tutorial.isMap = false;
         mapKey.SetActive(false);
         mainCamera.SetActive(false);
         combatData.GetData(this);
@@ -278,6 +296,11 @@ public class GameManager : MonoBehaviour
             panel.gameObject.SetActive(true);
             panel.Initialise(panel.character);
         }
+        foreach (CharacterPanel panel in characterPanelsEnemy.Where(c => c.character == null))
+        {
+            panel.gameObject.SetActive(false);
+        }
+        StartTurn();
     }
     void Initialise()
     {

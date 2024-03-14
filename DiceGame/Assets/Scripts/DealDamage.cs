@@ -9,15 +9,18 @@ public class DealDamage : Effect
     public override void Activate(Character source, Character target, float value)
     {
         target.TakeDamage((int)(value + source.power));
+        base.Activate(source, target, value);
     }
 
     public override void Activate(Character target, float value)
     {
         target.TakeDamage((int)value);
+        base.Activate(target, value);
     }
 
     public override void Activate(Character target)
     {
         target.TakeDamage(defaultDamage);
+        base.Activate(target);
     }
 }
