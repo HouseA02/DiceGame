@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private GameObject cube;
+
+    private string speaker, text;
+    private GameObject speakerObject;
+
+    public void Initiate(string line)
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    public void Initiate(GameObject speaker, string text)
-    {
-
+        var half = line.Split(':');
+        speaker = half[0];
+        text = half[1];
+        speakerObject = GameObject.Find(speaker);
+        cube.transform.position = speakerObject.transform.position;
+        print(text);
     }
 }
