@@ -6,6 +6,15 @@ using UnityEngine.Events;
 public class Hero : Character
 {
     public bool hasActed = false;
+    public enum Class
+    {
+        None,
+        Rogue,
+        Knight,
+        Mage
+    }
+    [SerializeField] 
+    public Class m_Class;
     public override void Roll()
     {
         if (!hasActed)

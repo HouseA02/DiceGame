@@ -8,7 +8,6 @@ public class Enemy : Character
     public Character target;
     [SerializeField]
     Quaternion defaultRotation;
-    GameObject model;
     public override void SetAbility(int value)
     {
         base.SetAbility(value);

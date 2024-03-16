@@ -46,8 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4acced62494eb22418e11e65e195d5a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleEffect: {fileID: 1900326521528012949, guid: f6ec5a816692e7144acbdb59eccb8259,
-    type: 3}
   abilityName: Fireball
   targetsEnemy: 1
   targetsAlly: 0
@@ -78,6 +76,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ef0c17aa3409d4697804b51b818819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VFX: {fileID: 1525665169395181317, guid: df44b6c718240354db9aca261c78b5ec, type: 3}
+  sound: {fileID: 8300000, guid: 33f28354b441e1c46a2a90e1fffe4ef4, type: 3}
+  soundVolumeScale: 1
+  offset: {x: 0, y: 1, z: 0}
   defaultDamage: 0
 --- !u!114 &-7999166616261077386
 MonoBehaviour:
@@ -91,5 +93,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d6c845cd4cf914badfef85a5ad15a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VFX: {fileID: 0}
+  sound: {fileID: 0}
+  soundVolumeScale: 1
+  offset: {x: 0, y: 1, z: 0}
   status: {fileID: 6005423267790290626, guid: 43c55e3969c707c41aff889d0f72d226, type: 3}
   defaultValue: 0

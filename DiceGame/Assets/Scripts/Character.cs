@@ -22,6 +22,9 @@ public class Character : MonoBehaviour
         public int value;
     }
     [SerializeField]
+    private GameObject model;
+    private AudioSource audioSource;
+    [SerializeField]
     public Target targetSprite;
     [SerializeField]
     public string characterName;
@@ -171,7 +174,8 @@ public class Character : MonoBehaviour
         statusEffects.Clear();
         characterPanel.gameObject.SetActive(false);
         gameManager.OnDeath(this);
-        gameObject.SetActive(false);
+        model.SetActive(false);
+        //gameObject.SetActive(false);
     }
 
     public virtual void OnAbilityUsed()
@@ -230,11 +234,17 @@ public class Character : MonoBehaviour
     }
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         for (int i = 0; i < baseAbilities.Length; i++)
         {
             abilities[i] = Instantiate(baseAbilities[i], this.transform);
         }
         power = 0;
+    }
+
+    public void AddAbility(Ability ability, int faceTarget)
+    {
+        abilities[faceTarget] = Instantiate(ability, this.transform);
     }
     public virtual void Initialise(Character temp)
     {
@@ -255,5 +265,10 @@ public class Character : MonoBehaviour
         {
             Debug.Log(ability.abilityName);
         }
+    }
+
+    public void PlaySound(AudioClip sound, float volume)
+    {
+        audioSource.PlayOneShot(sound, volume);
     }
 }

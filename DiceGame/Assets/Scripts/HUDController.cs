@@ -6,9 +6,13 @@ public class HUDController : MonoBehaviour
 {
     public GameObject Compendium;
     public GameObject Achievements;
-
+    [SerializeField]
+    private GameObject relicContainer;
     public GameObject mapCam;
     private Animator camMoveAnim;
+    bool isTabOpen = false;
+    [SerializeField]
+    private float tabDistance;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +25,21 @@ public class HUDController : MonoBehaviour
         
     }
 
+    public void ToggleUITab()
+    {
+        switch (isTabOpen)
+        {
+            case true:
+                relicContainer.transform.Translate(-tabDistance, 0f, 0f);
+                isTabOpen = false;
+                break;
+            case false:
+                relicContainer.transform.Translate(tabDistance, 0f, 0f); 
+                isTabOpen = true;
+                break;
+
+        }
+    }
     public void OpenMap()
     {
         camMoveAnim.SetTrigger("Deactivate");

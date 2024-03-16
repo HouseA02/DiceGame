@@ -355,6 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9a2c115c59751c4284a6803c42867bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  model: {fileID: 2160371093433722911}
   targetSprite: {fileID: 3313201928708467157}
   characterName: Crow
   damageNumber: {fileID: 8191174509523100527, guid: f084f7d7b806fb842b5731787320fff1,
@@ -369,6 +370,7 @@ MonoBehaviour:
   HP: 0
   block: 0
   power: 1
+  damageBlock: 0
   thisTurnRolls: 0
   damageMultiplier: 1
   allies: []
@@ -397,6 +399,7 @@ MonoBehaviour:
   indicator: {fileID: 7511070202160567628}
   gameManager: {fileID: 0}
   statusEffects: []
+  startingStatuses: []
   m_OnTurnStart:
     m_PersistentCalls:
       m_Calls: []

@@ -74,6 +74,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7480954210288397592}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7714905743706476617 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2d7808e3e6a8fbb4f87d9bcc5861fbda,
+    type: 3}
+  m_PrefabInstance: {fileID: 7480954210288397592}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9013560076996513882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -280,6 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4472070bc848b4248b58fd4792ef0941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  model: {fileID: 7714905743706476617}
   targetSprite: {fileID: 659877048316126653}
   characterName: Mage
   damageNumber: {fileID: 8191174509523100527, guid: f084f7d7b806fb842b5731787320fff1,
@@ -294,6 +301,7 @@ MonoBehaviour:
   HP: 0
   block: 0
   power: 1
+  damageBlock: 0
   thisTurnRolls: 0
   damageMultiplier: 1
   allies: []
@@ -322,6 +330,7 @@ MonoBehaviour:
   indicator: {fileID: 5543420666366335268}
   gameManager: {fileID: 0}
   statusEffects: []
+  startingStatuses: []
   m_OnTurnStart:
     m_PersistentCalls:
       m_Calls: []
@@ -341,6 +350,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   hasActed: 0
+  m_Class: 3
 --- !u!65 &2532658161053458275
 BoxCollider:
   m_ObjectHideFlags: 0

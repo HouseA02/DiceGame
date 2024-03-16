@@ -7,7 +7,9 @@ using UnityEngine.VFX;
 public class Effect : MonoBehaviour
 {
     protected GameManager gameManager;
-    public VisualEffect VFX;
+    public GameObject VFX;
+    public AudioClip sound;
+    public float soundVolumeScale = 1.0f;
     [SerializeField]
     protected Vector3 offset = new Vector3(0,1,0);
     private void Awake()
@@ -16,9 +18,13 @@ public class Effect : MonoBehaviour
     }
     public virtual void Activate(Character source, Character target, float value)
     {
-        if (VFX != null)
+        if (VFX != null && target.isActiveAndEnabled == true)
         {
             Instantiate(VFX, target.transform.position + offset, Quaternion.identity);
+        }
+        if(sound != null)
+        {
+            target.PlaySound(sound, soundVolumeScale);
         }
     }
 
@@ -34,17 +40,25 @@ public class Effect : MonoBehaviour
 
     public virtual void Activate(Character target, float value) 
     {
-        if (VFX != null)
+        if (VFX != null && target.isActiveAndEnabled == true)
         {
             Instantiate(VFX, target.transform.position + offset, Quaternion.identity);
+        }
+        if (sound != null)
+        {
+            target.PlaySound(sound, soundVolumeScale);
         }
     }
 
     public virtual void Activate(Character target)
     {
-        if (VFX != null)
+        if (VFX != null && target.isActiveAndEnabled == true)
         {
             Instantiate(VFX, target.transform.position + offset, Quaternion.identity);
+        }
+        if (sound != null)
+        {
+            target.PlaySound(sound, soundVolumeScale);
         }
     }
     public virtual void Activate()

@@ -73,3 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aefceedba3dbe7640b164136e4b15767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VFX: {fileID: 0}
+  sound: {fileID: 8300000, guid: 3898093e85fe201418c42df601973e94, type: 3}
+  soundVolumeScale: 1
+  offset: {x: 0, y: 1, z: 0}

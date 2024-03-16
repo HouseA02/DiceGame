@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9a2c115c59751c4284a6803c42867bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  model: {fileID: 5812845773976763772}
   targetSprite: {fileID: 0}
   characterName: Wolf
   damageNumber: {fileID: 8191174509523100527, guid: f084f7d7b806fb842b5731787320fff1,
@@ -290,6 +291,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6ffde811e0795c48a8635a24f3b2e36, type: 3}
+--- !u!1 &5812845773976763772 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d6ffde811e0795c48a8635a24f3b2e36,
+    type: 3}
+  m_PrefabInstance: {fileID: 6659145714428198957}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6620485806462314438 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d6ffde811e0795c48a8635a24f3b2e36,

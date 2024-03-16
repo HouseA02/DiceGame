@@ -228,6 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4472070bc848b4248b58fd4792ef0941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  model: {fileID: 7769459349301199166}
   targetSprite: {fileID: 5582954299069917249}
   characterName: Rogue
   damageNumber: {fileID: 8191174509523100527, guid: f084f7d7b806fb842b5731787320fff1,
@@ -242,6 +243,7 @@ MonoBehaviour:
   HP: 0
   block: 0
   power: 1
+  damageBlock: 0
   thisTurnRolls: 0
   damageMultiplier: 0
   allies: []
@@ -270,6 +272,7 @@ MonoBehaviour:
   indicator: {fileID: 629613682150511832}
   gameManager: {fileID: 0}
   statusEffects: []
+  startingStatuses: []
   m_OnTurnStart:
     m_PersistentCalls:
       m_Calls: []
@@ -289,6 +292,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   hasActed: 0
+  m_Class: 1
 --- !u!65 &6560831468754886365
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -399,6 +403,12 @@ PrefabInstance:
 --- !u!4 &6960729602815679364 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 65f7ac0c07c97d345aba3c891d5f6647,
+    type: 3}
+  m_PrefabInstance: {fileID: 7427495494758349935}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7769459349301199166 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 65f7ac0c07c97d345aba3c891d5f6647,
     type: 3}
   m_PrefabInstance: {fileID: 7427495494758349935}
   m_PrefabAsset: {fileID: 0}

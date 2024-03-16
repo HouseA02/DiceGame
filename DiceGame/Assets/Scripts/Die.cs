@@ -52,18 +52,17 @@ public class Die : MonoBehaviour
         if (sounds != null && audioSource != null)
         {
             if(rb.velocity.magnitude > 10) 
-            { 
-                audioSource.clip = sounds[2];
+            {
+                audioSource.PlayOneShot(sounds[2],0.75f);
             }
             else if(rb.velocity.magnitude > 3)
             {
-                audioSource.clip = sounds[1];
+                audioSource.PlayOneShot(sounds[1]);
             }
             else
             {
-                audioSource.clip = sounds[0];
+                audioSource.PlayOneShot(sounds[0]);
             }
-            audioSource.Play();
         }   
     }
     public virtual void Activate(int value)

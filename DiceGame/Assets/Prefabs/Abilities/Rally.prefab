@@ -72,7 +72,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d6c845cd4cf914badfef85a5ad15a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VFX: {fileID: 0}
+  sound: {fileID: 8300000, guid: 3898093e85fe201418c42df601973e94, type: 3}
+  soundVolumeScale: 0.2
+  offset: {x: 0, y: 1, z: 0}
   status: {fileID: 7000505098621613580, guid: 8db3113fcb06a6e4e8baba7f02083ee3, type: 3}
+  defaultValue: 0
 --- !u!114 &7951265529605090933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,6 +90,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa83094fed1ec09478e61fbe6c5dd367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VFX: {fileID: 0}
+  sound: {fileID: 0}
+  soundVolumeScale: 1
+  offset: {x: 0, y: 1, z: 0}
   effect: {fileID: 2844890928674047174}
   targetsEnemies: 0
   targetsAllies: 1

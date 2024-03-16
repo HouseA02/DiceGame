@@ -8,13 +8,8 @@ public class AbilityEffect
 {
     public Effect effect;
     public float value;
-    public VisualEffect VFX;
     public void Activate(Character source, Character target)
     {
-        if (VFX != null)
-        {
-            effect.VFX = VFX;
-        }
         effect.Activate(source, target, value);
     }
 
@@ -30,10 +25,6 @@ public class AbilityEffect
 
     public virtual void Activate(Character target)
     {
-        if (VFX != null)
-        {
-            effect.VFX = VFX;
-        }
         effect.Activate(target, value);
     }
 }

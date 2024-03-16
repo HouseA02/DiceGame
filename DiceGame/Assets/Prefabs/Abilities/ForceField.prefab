@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3850923961877480175}
   - component: {fileID: 1569130403751858231}
-  - component: {fileID: 6737121441404787003}
+  - component: {fileID: 8378168337197622487}
+  - component: {fileID: 5803020596531084244}
   m_Layer: 0
   m_Name: ForceField
   m_TagString: Untagged
@@ -50,7 +51,7 @@ MonoBehaviour:
   targetsAlly: 1
   targetsSelf: 0
   effects:
-  - effect: {fileID: 6737121441404787003}
+  - effect: {fileID: 8378168337197622487}
     value: 2
   targetingType: 0
   image: {fileID: 2100000, guid: e81470f2f1ff44b459eb3542cbf68d7d, type: 2}
@@ -59,7 +60,7 @@ MonoBehaviour:
   description: Apply 2 block to all allies
   gameManager: {fileID: 0}
   characterReference: {fileID: 0}
---- !u!114 &6737121441404787003
+--- !u!114 &8378168337197622487
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -68,6 +69,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 388602141677596200}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1abb0193f9526994c8b54b9bffc0f15c, type: 3}
+  m_Script: {fileID: 11500000, guid: fa83094fed1ec09478e61fbe6c5dd367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VFX: {fileID: 0}
+  sound: {fileID: 0}
+  soundVolumeScale: 1
+  offset: {x: 0, y: 1, z: 0}
+  effect: {fileID: 5803020596531084244}
+  targetsEnemies: 0
+  targetsAllies: 1
+  targetsSelf: 1
+--- !u!114 &5803020596531084244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388602141677596200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04a38b3cc8422054a8cf37e51188787b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VFX: {fileID: 0}
+  sound: {fileID: 8300000, guid: 7dfb39542358f2a4ab1b54335b2d4ae7, type: 3}
+  soundVolumeScale: 0.3
+  offset: {x: 0, y: 1, z: 0}
+  defaultValue: 0

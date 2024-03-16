@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
+    private LootManager lootManager;
+    [SerializeField]
     private Tutorial tutorial;
     public GameObject mapKey;
     [SerializeField]
@@ -205,15 +207,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Win");
             activeHeroes.ForEach(h => h.Cleanse());
             activeHeroes.ForEach(h => h.CleanUp());
-            if (FindAnyObjectByType<MapController>().GetComponent<MapController>().mapTime == 14)
-            {
-                winScreen.SetActive(true);
-            }
-            else
-            {
-                lootScreen.gameObject.SetActive(true);
-                lootScreen.FindLoot(combatData);
-            }
+            StartCoroutine(CombatWin());
         }
         else if (activeHeroes.Count <= 0)
         {
@@ -221,6 +215,20 @@ public class GameManager : MonoBehaviour
             mainCamera.SetActive(true);
             inBattle = false;
             loseScreen.SetActive(true);
+        }
+    }
+
+    IEnumerator CombatWin()
+    {
+        yield return new WaitForSeconds(1);
+        if (FindAnyObjectByType<MapController>().GetComponent<MapController>().mapTime == 14)
+        {
+            winScreen.SetActive(true);
+        }
+        else
+        {
+            lootScreen.gameObject.SetActive(true);
+            lootScreen.FindLoot(combatData);
         }
     }
 
@@ -328,5 +336,6 @@ public class GameManager : MonoBehaviour
             heroInstance.Initialise(heroInstance);
         }
         player.gameManager = this;
+        activeHeroes.ForEach(hero => lootManager.AddFacePool(hero.GetComponent<Hero>().m_Class));
     }
 }

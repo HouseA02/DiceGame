@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8985009869171208413}
   - component: {fileID: 8698208988420570346}
-  - component: {fileID: 2159692600143568192}
+  - component: {fileID: -4209475679863651743}
+  - component: {fileID: 5737413730518252481}
   m_Layer: 0
   m_Name: Dodge
   m_TagString: Untagged
@@ -50,7 +51,7 @@ MonoBehaviour:
   targetsAlly: 0
   targetsSelf: 0
   effects:
-  - effect: {fileID: 2159692600143568192}
+  - effect: {fileID: -4209475679863651743}
     value: 1
   targetingType: 0
   image: {fileID: 2100000, guid: 740110531f7c799439f0e6d3c42350db, type: 2}
@@ -59,7 +60,7 @@ MonoBehaviour:
   description: Gain 1 Evade ( Dodge 1 attack this turn )
   gameManager: {fileID: 0}
   characterReference: {fileID: 0}
---- !u!114 &2159692600143568192
+--- !u!114 &-4209475679863651743
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -68,7 +69,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 8134483133241528592}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abedb07fb5d4dfd49ac75dcadc594cd8, type: 3}
+  m_Script: {fileID: 11500000, guid: fa83094fed1ec09478e61fbe6c5dd367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VFX: {fileID: 0}
+  sound: {fileID: 0}
+  soundVolumeScale: 1
+  offset: {x: 0, y: 1, z: 0}
+  effect: {fileID: 5737413730518252481}
+  targetsEnemies: 0
+  targetsAllies: 0
+  targetsSelf: 1
+--- !u!114 &5737413730518252481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8134483133241528592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d6c845cd4cf914badfef85a5ad15a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VFX: {fileID: 0}
+  sound: {fileID: 8300000, guid: 4aace03ce2e5b0148938863a61a5353c, type: 3}
+  soundVolumeScale: 1
+  offset: {x: 0, y: 1, z: 0}
   status: {fileID: 3275389678381531474, guid: 1837a24d3378dea4f8881b6769276c14, type: 3}
+  defaultValue: 0

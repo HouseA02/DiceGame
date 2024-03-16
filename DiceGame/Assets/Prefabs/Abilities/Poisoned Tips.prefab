@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2980007215630300167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4635544633146629090}
+  - component: {fileID: 7989625350886807226}
+  - component: {fileID: 7401836906271883021}
+  - component: {fileID: 8318608277018943349}
+  m_Layer: 0
+  m_Name: Poisoned Tips
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4635544633146629090
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2980007215630300167}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.7995834, y: 0.8430803, z: 75.4338}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7989625350886807226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2980007215630300167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acced62494eb22418e11e65e195d5a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityName: Poisoned Tips
+  targetsEnemy: 1
+  targetsAlly: 0
+  targetsSelf: 0
+  effects:
+  - effect: {fileID: 7401836906271883021}
+    value: 6
+  - effect: {fileID: 8318608277018943349}
+    value: 3
+  targetingType: 0
+  image: {fileID: 2100000, guid: df1aa9e7af0c88744a848182afb483cb, type: 2}
+  UIImage: {fileID: 21300000, guid: 584db495ddf57fb48a8138b80bd37ac6, type: 3}
+  decal: {fileID: 0}
+  description: Deal 6 damage and apply 3 poison to target
+  gameManager: {fileID: 0}
+  characterReference: {fileID: 0}
+  validTargets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  isHealing: 0
+--- !u!114 &7401836906271883021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2980007215630300167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ef0c17aa3409d4697804b51b818819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VFX: {fileID: 1525665169395181317, guid: df44b6c718240354db9aca261c78b5ec, type: 3}
+  sound: {fileID: 8300000, guid: bc02cd9d7130b3b4498ae2e7a3e36134, type: 3}
+  soundVolumeScale: 1
+  offset: {x: 0, y: 1, z: 0}
+  defaultDamage: 0
+--- !u!114 &8318608277018943349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2980007215630300167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d6c845cd4cf914badfef85a5ad15a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VFX: {fileID: 712559067005720099, guid: 00301d577caf05c44b3b2176a9b45637, type: 3}
+  sound: {fileID: 0}
+  soundVolumeScale: 1
+  offset: {x: 0, y: 1, z: 0}
+  status: {fileID: 5283018372578735935, guid: 00301d577caf05c44b3b2176a9b45637, type: 3}
+  defaultValue: 0
