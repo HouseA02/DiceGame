@@ -6,6 +6,8 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     [SerializeField]
+    private TMP_Text nameBox;
+    [SerializeField]
     private TMP_Text textBox;
     [SerializeField]
     private Transform battleArenaCam;
@@ -24,6 +26,7 @@ public class DialogueManager : MonoBehaviour
         textParent.SetActive(true);
         textParent.transform.LookAt(battleArenaCam);
         textBox.text = text;
+        nameBox.text = speaker;
     }
 
     public void EndDialogue()
