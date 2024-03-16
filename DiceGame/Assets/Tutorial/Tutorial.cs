@@ -7,15 +7,40 @@ using TMPro;
 public class Tutorial : MonoBehaviour
 {
     public bool isComplete;
-    public DialogueManager dialogueManager;
 
-    private GameObject speaker;
-    private string text;
+    [SerializeField]
+    private DialogueManager dialogueManager;
+    [SerializeField]
+    private TextAsset textFile;
+
+    [SerializeField]
+    private List<string> dialogues = new List<string>();
+
+    int currentLine;
+    void Start()
+    {
+        PopulateDialogues();
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            dialogueManager.Initiate(speaker, text);
+            dialogueManager.Initiate(dialogues[currentLine]);
+            currentLine++;
+        }
+    }
+
+    void PopulateDialogues()
+    {
+        string[] speakers = textFile.text.Split('\n');
+        foreach(string line in speakers)
+        {
+            if(line.Length > 1)
+            {
+                dialogues.Add(line);
+            }
+            //replace this if statement with something that just skips empty lines
         }
     }
 }
