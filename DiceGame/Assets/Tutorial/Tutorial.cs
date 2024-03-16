@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class Tutorial : MonoBehaviour
 {
@@ -16,7 +15,8 @@ public class Tutorial : MonoBehaviour
     [SerializeField]
     private List<string> dialogues = new List<string>();
 
-    int currentLine;
+    public int currentLine;
+    private bool continueDialogue;
     void Start()
     {
         PopulateDialogues();
@@ -24,10 +24,19 @@ public class Tutorial : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && continueDialogue)
         {
-            dialogueManager.Initiate(dialogues[currentLine]);
             currentLine++;
+            if(currentLine < dialogues.Count) 
+            {
+                dialogueManager.Initiate(dialogues[currentLine]);
+            }
+            else
+            {
+                dialogueManager.EndDialogue();
+                continueDialogue = false;
+                currentLine = 0;
+            }
         }
     }
 
@@ -42,5 +51,11 @@ public class Tutorial : MonoBehaviour
             }
             //replace this if statement with something that just skips empty lines
         }
+    }
+
+    public void nextLine()
+    {
+        continueDialogue = true;
+        dialogueManager.Initiate(dialogues[currentLine]);
     }
 }
