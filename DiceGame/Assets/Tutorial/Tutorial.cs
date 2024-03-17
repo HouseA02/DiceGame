@@ -11,11 +11,22 @@ public class Tutorial : MonoBehaviour
     private DialogueManager dialogueManager;
     [SerializeField]
     private TextAsset textFile;
-
     [SerializeField]
+    private GameObject CharacterPanels;
+    [SerializeField]
+    private GameObject EnemyPanels;
+    [SerializeField]
+    private GameObject RerollPanel;
+    [SerializeField]
+    private GameObject EndTurnPanel;
+    [SerializeField]
+    private GameObject RelicPanel;
+    [SerializeField]
+    private GameObject textBox;
+
     private List<string> dialogues = new List<string>();
 
-    public int currentLine;
+    private int currentLine;
     private bool continueDialogue;
     void Start()
     {
@@ -36,6 +47,7 @@ public class Tutorial : MonoBehaviour
                 dialogueManager.EndDialogue();
                 continueDialogue = false;
                 currentLine = 0;
+                Initiate();
             }
         }
     }
@@ -57,5 +69,15 @@ public class Tutorial : MonoBehaviour
     {
         continueDialogue = true;
         dialogueManager.Initiate(dialogues[currentLine]);
+        CharacterPanels.SetActive(false);
+        EnemyPanels.SetActive(false);
+        RerollPanel.SetActive(false);
+        EndTurnPanel.SetActive(false);
+        RelicPanel.SetActive(false);
+    }
+
+    void Initiate()
+    {
+        textBox.SetActive(true);
     }
 }

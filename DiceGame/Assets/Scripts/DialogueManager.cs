@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class DialogueManager : MonoBehaviour
@@ -31,6 +32,6 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
-        textBox.transform.parent.gameObject.SetActive(false);
+        textParent.SetActive(false);
     }
 }
