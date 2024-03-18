@@ -227,6 +227,7 @@ MonoBehaviour:
   targetable: 1
   isFirstRoll: 1
   canRoll: 1
+  isDead: 0
   instance: {fileID: 0}
   indicator: {fileID: 1668024983549722626}
   gameManager: {fileID: 0}
@@ -251,7 +252,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   hasActed: 0
-  m_Class: 2
+  m_Class: 02000000
 --- !u!65 &1878683745370795103
 BoxCollider:
   m_ObjectHideFlags: 0

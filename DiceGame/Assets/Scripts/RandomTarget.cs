@@ -29,6 +29,23 @@ public class RandomTarget : Effect
         }
     }
 
+    public override void Activate(Character source, Character target)
+    {
+        List<Character> targets = new List<Character>();
+        if (targetsEnemies) { targets.AddRange(source.enemies); }
+        if (targetsAllies) { targets.AddRange(source.allies); }
+        if (targetsSelf) { targets.Add(source); }
+        if (targets.Count > 0)
+        {
+            Character randTarget = targets[Random.Range(0, targets.Count)];
+            if (VFX != null)
+            {
+                effect.VFX = VFX;
+            }
+            effect.Activate(source, randTarget);
+        }
+    }
+
     public override void Activate(float value)
     {
         List<Character> targets = new List<Character>();

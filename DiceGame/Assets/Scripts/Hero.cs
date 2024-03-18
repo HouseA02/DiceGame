@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine.Events;
 public class Hero : Character
 {
     public bool hasActed = false;
+    [Serializable]
     public enum Class
     {
         None,
@@ -14,7 +16,7 @@ public class Hero : Character
         Mage
     }
     [SerializeField] 
-    public Class m_Class;
+    public List<Class> m_Class;
     public override void Roll()
     {
         if (!hasActed)

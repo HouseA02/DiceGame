@@ -10,12 +10,12 @@ public class ApplyStatus : Effect
     private int defaultValue;
     public override void Activate(Character source, Character target, float value)
     {
-        target.ApplyStatus(status, (int)value);
+        if (target.isDead == false) { target.ApplyStatus(status, (int)value); }
         base.Activate(source, target, value);
     }
     public override void Activate(Character target)
     {
-        target.ApplyStatus(status, defaultValue);
+        if (target.isDead == false) { target.ApplyStatus(status, defaultValue); } 
         base.Activate(target);
     }
 }

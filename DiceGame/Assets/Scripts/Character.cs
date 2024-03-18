@@ -58,6 +58,7 @@ public class Character : MonoBehaviour
     public bool targetable = true;
     public bool isFirstRoll = true;
     public bool canRoll = true;
+    public bool isDead = false;
     public Character instance;
     public GameObject indicator;
     public GameManager gameManager;
@@ -106,6 +107,7 @@ public class Character : MonoBehaviour
             abilities[value].characterReference = instance;
             characterPanel.resultImage.gameObject.SetActive(true);
             characterPanel.resultImage.sprite = currentAbility.UIImage;
+            characterPanel.resultImage.GetComponent<DieSpreadImage>().Initialise(currentAbility);
             /*if (characterPanel.descContainer != null) 
             { 
                 characterPanel.descContainer.SetActive(true);
@@ -169,10 +171,12 @@ public class Character : MonoBehaviour
     }
     public virtual void Die()
     {
+        isDead = true;
+        targetable = false;
         CleanUp();
         Cleanse();
         statusEffects.Clear();
-        characterPanel.gameObject.SetActive(false);
+        characterPanel.deathOverlay.SetActive(true);
         gameManager.OnDeath(this);
         model.SetActive(false);
         //gameObject.SetActive(false);
@@ -245,6 +249,7 @@ public class Character : MonoBehaviour
     public void AddAbility(Ability ability, int faceTarget)
     {
         abilities[faceTarget] = Instantiate(ability, this.transform);
+        characterPanel.dieSpreadImages[faceTarget].Initialise(ability);
     }
     public virtual void Initialise(Character temp)
     {
@@ -270,5 +275,10 @@ public class Character : MonoBehaviour
     public void PlaySound(AudioClip sound, float volume)
     {
         audioSource.PlayOneShot(sound, volume);
+    }
+
+    public void PlaySound(AudioClip sound, float volume, float pitch)
+    {
+        audioSource.PlayOneShot(sound, volume, pitch);
     }
 }

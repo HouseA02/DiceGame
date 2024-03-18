@@ -35,9 +35,15 @@ public class Ability : MonoBehaviour
     public string description;
     public GameManager gameManager;
     public Character characterReference;
+    public float delay = 0.2f;
+    [HideInInspector]
+    public int lastHitDamage = 0;
+    [HideInInspector]
+    public int totalDamage = 0;
     public virtual void Activate()
     {
-
+        lastHitDamage = 0;
+        totalDamage = 0;
     }
 
     public virtual IEnumerator UseAbility()
@@ -47,7 +53,7 @@ public class Ability : MonoBehaviour
         foreach (AbilityEffect effect in effects)
         {
             effect.Activate(characterReference, characterReference);
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(delay);
         }
         characterReference.OnAbilityUsed();
     }

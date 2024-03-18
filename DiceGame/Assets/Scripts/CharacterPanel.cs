@@ -18,6 +18,8 @@ public class CharacterPanel : MonoBehaviour
     public Image background;
     public Target targetSprite;
     public DieSpreadImage[] dieSpreadImages;
+    public GameObject dieSpread;
+    public GameObject deathOverlay;
     ///
     public GameObject descContainer;
     public TMP_Text descriptionText;
@@ -28,6 +30,13 @@ public class CharacterPanel : MonoBehaviour
     /// 
     public StatusSlot[] statusSlots;
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            dieSpread.SetActive(false);
+        }
+    }
     private void Awake()
     {
         defaultPosition = portraitSlot.transform.position;
@@ -35,6 +44,7 @@ public class CharacterPanel : MonoBehaviour
     public void Initialise(Character newCharacter)
     {
         //defaultPosition = portraitSlot.transform.position;
+        deathOverlay.SetActive(false);
         character = newCharacter;
         nameText.text = character.characterName;
         HPText.text = character.HP.ToString();

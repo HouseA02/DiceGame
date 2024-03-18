@@ -75,6 +75,7 @@ MonoBehaviour:
   VFX: {fileID: 0}
   sound: {fileID: 0}
   soundVolumeScale: 1
+  pitchRange: {x: 1, y: 1}
   offset: {x: 0, y: 1, z: 0}
   effect: {fileID: 5737413730518252481}
   targetsEnemies: 0
@@ -95,6 +96,7 @@ MonoBehaviour:
   VFX: {fileID: 0}
   sound: {fileID: 8300000, guid: 4aace03ce2e5b0148938863a61a5353c, type: 3}
   soundVolumeScale: 1
+  pitchRange: {x: 0.8, y: 1.2}
   offset: {x: 0, y: 1, z: 0}
   status: {fileID: 3275389678381531474, guid: 1837a24d3378dea4f8881b6769276c14, type: 3}
   defaultValue: 0

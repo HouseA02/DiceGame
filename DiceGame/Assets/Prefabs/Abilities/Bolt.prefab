@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1681701865131517839}
   - component: {fileID: -6573479054482762722}
   - component: {fileID: -3115318971344395765}
+  - component: {fileID: 48186663059408138}
   m_Layer: 0
   m_Name: Bolt
   m_TagString: Untagged
@@ -51,12 +52,8 @@ MonoBehaviour:
   targetsAlly: 0
   targetsSelf: 0
   effects:
-  - effect: {fileID: -3115318971344395765}
-    value: 2
-  - effect: {fileID: -3115318971344395765}
-    value: 2
-  - effect: {fileID: -3115318971344395765}
-    value: 2
+  - effect: {fileID: 48186663059408138}
+    value: 3
   targetingType: 0
   image: {fileID: 2100000, guid: 3da252083f8dd884c9401ccf2f432c76, type: 2}
   UIImage: {fileID: 21300000, guid: a7830149b8623bd4991da7bc4efce2f5, type: 3}
@@ -79,8 +76,9 @@ MonoBehaviour:
   VFX: {fileID: 8201467558939563305, guid: 47ffeb9b47437d248b9e8fa03018f804, type: 3}
   sound: {fileID: 8300000, guid: cbbf5f2f30b3dc446b478b4255f9bd28, type: 3}
   soundVolumeScale: 0.5
+  pitchRange: {x: 0.7, y: 1.3}
   offset: {x: 0, y: 1, z: 0}
-  defaultDamage: 0
+  defaultDamage: 2
 --- !u!114 &-3115318971344395765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,8 +94,30 @@ MonoBehaviour:
   VFX: {fileID: 0}
   sound: {fileID: 0}
   soundVolumeScale: 1
+  pitchRange: {x: 1, y: 1}
   offset: {x: 0, y: 1, z: 0}
   effect: {fileID: -6573479054482762722}
   targetsEnemies: 1
   targetsAllies: 0
   targetsSelf: 0
+--- !u!114 &48186663059408138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9171285988972593555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb856ba1ceed1844382b46157580b1fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VFX: {fileID: 0}
+  sound: {fileID: 0}
+  soundVolumeScale: 1
+  pitchRange: {x: 0.7, y: 1.3}
+  offset: {x: 0, y: 1, z: 0}
+  effects:
+  - effect: {fileID: -3115318971344395765}
+    value: 2
+  delay: 0.2

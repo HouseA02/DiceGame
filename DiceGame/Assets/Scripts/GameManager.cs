@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
+    private Compendium compendium;
+    [SerializeField]
     private LootManager lootManager;
     [SerializeField]
     private Tutorial tutorial;
@@ -103,7 +105,7 @@ public class GameManager : MonoBehaviour
         }
         if (!enemyRolled)
         {
-            foreach (Character character in activeEnemies)
+            foreach (Character character in activeEnemies.Where(e => e.isDead == false))
             {
                 character.Roll();
             }
@@ -178,6 +180,7 @@ public class GameManager : MonoBehaviour
 
     public void OnDeath(Character character)
     {
+        /*
         if (activeEnemies.Contains(character))
         {
             activeEnemies.Remove(character);
@@ -185,24 +188,24 @@ public class GameManager : MonoBehaviour
         if (activeHeroes.Contains(character))
         {
             activeHeroes.Remove(character);
-        }
+        }*/
         foreach (Character hero in activeHeroes)
         {
             hero.allies = new List<Character>();
-            hero.allies.AddRange(activeHeroes);
+            hero.allies.AddRange(activeHeroes.Where(h => h.isDead == false));
             hero.allies.Remove(hero);
             hero.enemies = new List<Character>();
-            hero.enemies.AddRange(activeEnemies);
+            hero.enemies.AddRange(activeEnemies.Where(e => e.isDead == false));
         }
         foreach (Character enemy in activeEnemies)
         {
             enemy.allies = new List<Character>();
-            enemy.allies.AddRange(activeEnemies);
+            enemy.allies.AddRange(activeEnemies.Where(e => e.isDead == false));
             enemy.allies.Remove(enemy);
             enemy.enemies = new List<Character>();
-            enemy.enemies.AddRange(activeHeroes);
+            enemy.enemies.AddRange(activeHeroes.Where(e => e.isDead == false));
         }
-        if (activeEnemies.Count <= 0)
+        if (!activeEnemies.Where(e => e.isDead == false).Any())
         {
             Debug.Log("Win");
             activeHeroes.ForEach(h => h.Cleanse());
@@ -234,6 +237,11 @@ public class GameManager : MonoBehaviour
 
     public void ReturnToMap()
     {
+        while(activeEnemies.Count > 0)
+        {
+            Destroy(activeEnemies[0].gameObject);
+            activeEnemies.Remove(activeEnemies[0]);
+        }
         foreach (GameObject element in battleUI)
         {
             element.SetActive(false);
@@ -242,6 +250,11 @@ public class GameManager : MonoBehaviour
         mainCamera.SetActive(true);
         inBattle = false;
         lootScreen.gameObject.SetActive(false);
+        foreach(CharacterPanel panel in characterPanelsEnemy)
+        {
+            panel.gameObject.SetActive(false);
+        }
+        SaveManager.SaveData(player);
     }
     
     public void StartCombat(CombatData combatData)
@@ -263,6 +276,11 @@ public class GameManager : MonoBehaviour
         {
             if (enemies[i] != null)
             {
+                ///
+                if (!compendium.enemies.Contains(enemies[i]))
+                {
+                    compendium.AddEnemy(enemies[i].GetComponent<Enemy>());
+                }
                 Character enemyInstance = Instantiate(enemies[i]);
                 enemyInstance.characterPanel = characterPanelsEnemy[i];
                 enemyInstance.transform.position = enemyPositions[i].position;
@@ -336,6 +354,6 @@ public class GameManager : MonoBehaviour
             heroInstance.Initialise(heroInstance);
         }
         player.gameManager = this;
-        activeHeroes.ForEach(hero => lootManager.AddFacePool(hero.GetComponent<Hero>().m_Class));
+        activeHeroes.ForEach(hero => lootManager.AddFacePool(hero.GetComponent<Hero>().m_Class[0]));
     }
 }

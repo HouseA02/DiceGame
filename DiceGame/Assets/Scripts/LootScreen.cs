@@ -74,7 +74,7 @@ public class LootScreen : MonoBehaviour
     {
         foreach (Hero hero in gameManager.activeHeroes)
         {
-            if (hero.m_Class == faceToLoot.pool)
+            if (hero.m_Class.Contains(faceToLoot.pool))
             {
                 validHero = hero;
                 break;

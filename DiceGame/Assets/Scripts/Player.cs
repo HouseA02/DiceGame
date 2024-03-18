@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private int souls = 0;
+    public int souls = 0;
     public TMP_Text soulsText;
     public RelicPlacer relicPlacer;
     public GameManager gameManager;
@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
         gameManager = FindAnyObjectByType<GameManager>().GetComponent<GameManager>();
         gameManager.gm_OnBattleStart.AddListener(StartRelic);
         ChangeSouls(0);
+        LoadData();
     }
     public void AddRelic(Relic relic)
     {
@@ -40,5 +41,12 @@ public class Player : MonoBehaviour
     {
         souls += amount;
         soulsText.text = souls.ToString();
+    }
+
+    public void LoadData()
+    {
+        SaveData data = SaveManager.LoadData();
+        souls = data.souls;
+        ChangeSouls(0);
     }
 }

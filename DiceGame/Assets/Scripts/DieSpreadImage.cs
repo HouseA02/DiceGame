@@ -27,6 +27,10 @@ public class DieSpreadImage : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         description.SetActive(false);
     }
 
+    public void Hide()
+    {
+        description.SetActive(false);
+    }
     public void Initialise(Ability ability)
     {
         image.sprite = ability.UIImage;

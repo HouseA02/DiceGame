@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8410254069729984297}
   - component: {fileID: 7895579443002058059}
   - component: {fileID: 8193684166589782526}
+  - component: {fileID: 8506106650657038064}
   m_Layer: 0
   m_Name: Blazing Torrent
   m_TagString: Untagged
@@ -52,16 +53,19 @@ MonoBehaviour:
   targetsSelf: 0
   effects:
   - effect: {fileID: 7895579443002058059}
-    value: 4
-  - effect: {fileID: 8193684166589782526}
-    value: 5
+    value: 2
+  - effect: {fileID: 8506106650657038064}
+    value: 2
   targetingType: 0
   image: {fileID: 2100000, guid: 12ca688a26f90d64180c67d214784b6f, type: 2}
   UIImage: {fileID: 21300000, guid: 0e9fe5052c60dea4bb1453dfaff47ab2, type: 3}
   decal: {fileID: 0}
-  description: Deal 4 damage and apply 5 burn to target
+  description: Deal 2 damage, apply double the HP lost as burn
   gameManager: {fileID: 0}
   characterReference: {fileID: 0}
+  delay: 0.2
+  lastHitDamage: 0
+  totalDamage: 0
   validTargets: []
   isHealing: 0
 --- !u!114 &7895579443002058059
@@ -79,6 +83,8 @@ MonoBehaviour:
   VFX: {fileID: 1525665169395181317, guid: df44b6c718240354db9aca261c78b5ec, type: 3}
   sound: {fileID: 8300000, guid: 33f28354b441e1c46a2a90e1fffe4ef4, type: 3}
   soundVolumeScale: 1
+  pitchRange: {x: 0.7, y: 1.3}
+  abilityReference: {fileID: 0}
   offset: {x: 0, y: 1, z: 0}
   defaultDamage: 0
 --- !u!114 &8193684166589782526
@@ -96,6 +102,27 @@ MonoBehaviour:
   VFX: {fileID: 0}
   sound: {fileID: 0}
   soundVolumeScale: 1
+  pitchRange: {x: 1, y: 1}
+  abilityReference: {fileID: 0}
   offset: {x: 0, y: 1, z: 0}
   status: {fileID: 6005423267790290626, guid: 43c55e3969c707c41aff889d0f72d226, type: 3}
   defaultValue: 0
+--- !u!114 &8506106650657038064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741759383861746528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ce76727e9734d4882df044054b1ffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VFX: {fileID: 0}
+  sound: {fileID: 0}
+  soundVolumeScale: 1
+  pitchRange: {x: 0.7, y: 1.3}
+  abilityReference: {fileID: 0}
+  offset: {x: 0, y: 1, z: 0}
+  effect: {fileID: 8193684166589782526}

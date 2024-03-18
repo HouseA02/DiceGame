@@ -8,8 +8,16 @@ public class DealDamage : Effect
     int defaultDamage;
     public override void Activate(Character source, Character target, float value)
     {
+        int preHP = target.HP;
         target.TakeDamage((int)(value + source.power));
+        ReturnDamage(preHP - target.HP);
         base.Activate(source, target, value);
+    }
+
+    public override void Activate(Character source, Character target)
+    {
+        target.TakeDamage(defaultDamage + source.power);
+        base.Activate(source, target);
     }
 
     public override void Activate(Character target, float value)
@@ -22,5 +30,14 @@ public class DealDamage : Effect
     {
         target.TakeDamage(defaultDamage);
         base.Activate(target);
+    }
+
+    public void ReturnDamage(int damage)
+    {
+        if(abilityReference != null)
+        {
+            abilityReference.lastHitDamage = damage;
+            abilityReference.totalDamage += damage;
+        }
     }
 }
