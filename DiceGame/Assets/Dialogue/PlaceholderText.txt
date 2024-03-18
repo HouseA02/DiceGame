@@ -1,5 +1,0 @@
-Warrior:This is placeholder text
-
-Rogue:Second line
-
-Wizard:Final line

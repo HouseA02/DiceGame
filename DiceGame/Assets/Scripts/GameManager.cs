@@ -338,7 +338,7 @@ public class GameManager : MonoBehaviour
         {
             panel.gameObject.SetActive(false);
         }
-        //StartTurn();
+        StartTurn();
     }
     void Initialise()
     {
