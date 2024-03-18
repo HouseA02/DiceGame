@@ -237,6 +237,11 @@ public class GameManager : MonoBehaviour
 
     public void ReturnToMap()
     {
+        if (!tutorial.mapTutorialComplete)
+        {
+            tutorial.currentFunc = 0;
+            tutorial.nextMapFunc();
+        }
         while(activeEnemies.Count > 0)
         {
             Destroy(activeEnemies[0].gameObject);

@@ -7,6 +7,7 @@ using TMPro;
 public class Tutorial : MonoBehaviour
 {
     public bool isComplete;
+    public bool mapTutorialComplete;
 
     [SerializeField]
     private DialogueManager dialogueManager;
@@ -29,14 +30,18 @@ public class Tutorial : MonoBehaviour
     [SerializeField]
     private GameObject textBoxButton;
     [SerializeField]
+    private GameObject mapFuncButton;
+    [SerializeField]
     private RectTransform[] quads;
 
     [SerializeField]
     private GameManager gameManager;
 
     private List<string> dialogues = new List<string>();
-    private delegate void FunctionDelegate();
-    private List<FunctionDelegate> tutorialFunctions = new List<FunctionDelegate>();
+    private delegate void CombatFunctionDelegate();
+    private delegate void MapFunctionDelagate();
+    private List<CombatFunctionDelegate> combatFunctions = new List<CombatFunctionDelegate>();
+    private List<MapFunctionDelagate> mapFunctions = new List<MapFunctionDelagate>();
 
     public List<GameObject> dice = new List<GameObject>();
 
@@ -46,7 +51,8 @@ public class Tutorial : MonoBehaviour
     void Start()
     {
         PopulateDialogues();
-        PopulateFuncList();
+        PopulateCombatFunctions();
+        PopulateMapFunctions();
     }
 
     void Update()
@@ -82,16 +88,27 @@ public class Tutorial : MonoBehaviour
         }
     }
 
-    void PopulateFuncList()
+    void PopulateCombatFunctions()
     {
-        tutorialFunctions.Add(Func1);
-        tutorialFunctions.Add(Func2);
-        tutorialFunctions.Add(Func3);
-        tutorialFunctions.Add(Func4);
-        tutorialFunctions.Add(Func5);
-        tutorialFunctions.Add(Func6);
-        //tutorialFunctions.Add(Func7);
-        tutorialFunctions.Add(endFunc);
+        combatFunctions.Add(Func1);
+        combatFunctions.Add(Func2);
+        combatFunctions.Add(Func3);
+        combatFunctions.Add(Func4);
+        combatFunctions.Add(Func5);
+        combatFunctions.Add(Func6);
+        //combatFunctions.Add(Func7);
+        combatFunctions.Add(endFunc);
+    }
+    void PopulateMapFunctions()
+    {
+        mapFunctions.Add(MapFunc1);
+        mapFunctions.Add(MapFunc2);
+        mapFunctions.Add(MapFunc3);
+        mapFunctions.Add(MapFunc4);
+        mapFunctions.Add(MapFunc5);
+        mapFunctions.Add(MapFunc6);
+        mapFunctions.Add(MapFunc7);
+        mapFunctions.Add(MapFuncEnd);
     }
 
     public void nextLine()
@@ -107,7 +124,12 @@ public class Tutorial : MonoBehaviour
 
     public void nextFunc()
     {
-        tutorialFunctions[currentFunc]();
+        combatFunctions[currentFunc]();
+        currentFunc++;
+    }
+    public void nextMapFunc()
+    {
+        mapFunctions[currentFunc]();
         currentFunc++;
     }
 
@@ -188,5 +210,57 @@ public class Tutorial : MonoBehaviour
         RerollPanel.SetActive(true);
         EndTurnPanel.SetActive(true);
         RelicPanel.SetActive(true);
+        isComplete = false;
+    }
+
+
+    void MapFunc1()
+    {
+        textBoxParent.gameObject.SetActive(true);
+        textBox.text = "This is the map view. Your objective is to travel around the clock face, choosing which path you wish to take.";
+        textBoxParent.rectTransform.localPosition = quads[1].localPosition;
+        mapFuncButton.SetActive(true);
+    }
+    void MapFunc2()
+    {
+        textBox.text = "Every hour of the clock presents 3 choices, of which you may only pick 1 before the clock hand moves forward";
+        textBoxParent.rectTransform.localPosition = quads[1].localPosition;
+        textBoxAnim.SetTrigger("Animate");
+    }
+    void MapFunc3()
+    {
+        textBox.text = "Each choice you make will be one of 4 options: Normal Enemy Encounter, \nElite Enemy Encounters, \nStory Encounters, \nOr Rest Encounters";
+        textBoxParent.rectTransform.localPosition = quads[0].localPosition;
+        textBoxAnim.SetTrigger("Animate");
+    }
+    void MapFunc4()
+    {
+        textBox.text = "Normal and Elite Enemy Encounters. Normal enemies bare little challenge and little reward, whereas Elite enemies will provide a greater challenge, and a greater reward.";
+        textBoxParent.rectTransform.localPosition = quads[0].localPosition;
+        textBoxAnim.SetTrigger("Animate");
+    }
+    void MapFunc5()
+    {
+        textBox.text = "Story Encounters may grant helpful reward items for future combat, or they may throw you into combat themselves. Are the rewards worth the chance?";
+        textBoxParent.rectTransform.localPosition = quads[1].localPosition;
+        textBoxAnim.SetTrigger("Animate");
+    }
+    void MapFunc6()
+    {
+        textBox.text = "Rest Encounters present neither combat nor items, but will allow your team to recover some health before the next battle.";
+        textBoxParent.rectTransform.localPosition = quads[3].localPosition;
+        textBoxAnim.SetTrigger("Animate");
+    }
+    void MapFunc7()
+    {
+        textBox.text = "Traversing the entire clock face presents the honor to battle the strongest opponent at the centre of the map, an opponent stronger than all the rest.";
+        textBoxParent.rectTransform.localPosition = quads[2].localPosition;
+        textBoxAnim.SetTrigger("Animate");
+    }
+    void MapFuncEnd()
+    {
+        textBoxParent.gameObject.SetActive(false);
+        isComplete = false;
+        mapTutorialComplete = true;
     }
 }
