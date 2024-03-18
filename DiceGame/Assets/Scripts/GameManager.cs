@@ -136,7 +136,7 @@ public class GameManager : MonoBehaviour
         canRoll = false;
     }
 
-    void StartTurn()
+    public void StartTurn()
     {
         OnTurnStart();
         gm_OnTurnStart.Invoke();
@@ -318,7 +318,7 @@ public class GameManager : MonoBehaviour
         }
         inBattle = true;
         gm_OnBattleStart.Invoke();
-        if (tutorial.isComplete)
+        if (!tutorial.isComplete)
         {
             StartTurn();
         }
@@ -338,7 +338,6 @@ public class GameManager : MonoBehaviour
         {
             panel.gameObject.SetActive(false);
         }
-        //StartTurn();
     }
     void Initialise()
     {

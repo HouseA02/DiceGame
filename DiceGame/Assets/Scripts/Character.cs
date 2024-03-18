@@ -22,6 +22,8 @@ public class Character : MonoBehaviour
         public int value;
     }
     [SerializeField]
+    private Tutorial tutorial;
+    [SerializeField]
     private GameObject model;
     private AudioSource audioSource;
     [SerializeField]
@@ -73,6 +75,12 @@ public class Character : MonoBehaviour
     public ResultEvent m_OnResult = new ResultEvent();
     public IntEvent m_OnHeal = new IntEvent();
     public IntEvent m_OnLoseHP = new IntEvent();
+
+    void Start()
+    {
+        tutorial = FindObjectOfType<Tutorial>();
+    }
+
     public virtual void Roll()
     {
         thisTurnRolls++;
@@ -168,6 +176,10 @@ public class Character : MonoBehaviour
         damageToTake *= damageMultiplier;
         m_OnAttacked.Invoke();
         ChangeBlock(-(int)damageToTake, true);
+        if (tutorial.isComplete && tutorial.currentFunc == 4)
+        {
+            tutorial.nextFunc();
+        }
     }
     public virtual void Die()
     {

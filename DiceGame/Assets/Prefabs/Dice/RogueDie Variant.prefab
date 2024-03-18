@@ -132,27 +132,27 @@ PrefabInstance:
     - target: {fileID: 8743819316722395808, guid: d35d4e0f185c83c48b7d692c8fb22112,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 8743819316722395808, guid: d35d4e0f185c83c48b7d692c8fb22112,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 8743819316722395808, guid: d35d4e0f185c83c48b7d692c8fb22112,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8743819316722395808, guid: d35d4e0f185c83c48b7d692c8fb22112,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8743819316722395808, guid: d35d4e0f185c83c48b7d692c8fb22112,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 8743819316722395808, guid: d35d4e0f185c83c48b7d692c8fb22112,
         type: 3}
@@ -192,12 +192,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4acced62494eb22418e11e65e195d5a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilityName: 
+  targetsEnemy: 1
+  targetsAlly: 0
+  targetsSelf: 0
+  effects: []
+  targetingType: 0
   image: {fileID: 2100000, guid: 708329228375b6d45be4426606b02c23, type: 2}
   UIImage: {fileID: 21300000, guid: ef252b6e57ea81f43bfe3878c31f3202, type: 3}
   decal: {fileID: 0}
-  debugText: Bow
+  description: 
   gameManager: {fileID: 0}
   characterReference: {fileID: 0}
+  delay: 0.2
+  lastHitDamage: 0
+  totalDamage: 0
   validTargets: []
-  targetsEnemy: 1
-  targetsAlly: 0
+  isHealing: 0

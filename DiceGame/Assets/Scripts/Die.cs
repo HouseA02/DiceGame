@@ -7,6 +7,7 @@ using UnityEngine.Rendering;
 
 public class Die : MonoBehaviour
 {
+    private Tutorial tutorial;
     [SerializeField]
     public float force;
     [SerializeField]
@@ -19,17 +20,26 @@ public class Die : MonoBehaviour
     public AudioClip[] sounds;
     private void Awake()
     {
+        tutorial = FindObjectOfType<Tutorial>();
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
     }
 
     public virtual void Roll()
     {
-        Vector3 target = transform.position + new Vector3(Random.Range(-2f, 2f), 5f, Random.Range(-2f, 2f));
-        Vector3 dir = target - transform.position;
-        rb.AddForce(dir * force, ForceMode.Impulse);
-        rb.AddTorque(Random.insideUnitSphere * torque, ForceMode.Impulse);
-        StartCoroutine("WaitForResult");
+        if (!tutorial.isComplete)
+        {
+            Vector3 target = transform.position + new Vector3(Random.Range(-2f, 2f), 5f, Random.Range(-2f, 2f));
+            Vector3 dir = target - transform.position;
+            rb.AddForce(dir * force, ForceMode.Impulse);
+            rb.AddTorque(Random.insideUnitSphere * torque, ForceMode.Impulse);
+            StartCoroutine("WaitForResult");
+        }
+        else
+        {
+            tutorial.dice.Add(gameObject);
+            StartCoroutine("WaitForResult");
+        }
     }
     public virtual IEnumerator WaitForResult()
     {

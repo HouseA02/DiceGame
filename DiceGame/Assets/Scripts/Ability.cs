@@ -6,7 +6,6 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Ability : MonoBehaviour
 {
-    [SerializeField]
     public string abilityName;
     [SerializeField]
     public bool targetsEnemy;

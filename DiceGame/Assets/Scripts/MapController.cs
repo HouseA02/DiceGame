@@ -173,6 +173,7 @@ public class MapController : MonoBehaviour
 
     public void Next(Event e)
     {
+        Debug.Log("!");
         line.positionCount++;
         mapTime++;
         eventChoice();

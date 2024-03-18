@@ -6,6 +6,9 @@ using TMPro;
 
 public class CharacterPanel : MonoBehaviour
 {
+    [SerializeField]
+    private Tutorial tutorial;
+
     public int HP;
     public TMP_Text nameText;
     public TMP_Text HPText;
@@ -69,6 +72,10 @@ public class CharacterPanel : MonoBehaviour
         if (character.currentAbility != null)
         {
             character.PrimeAbility();
+        }
+        if (tutorial.isComplete)
+        {
+            tutorial.nextFunc();
         }
     }
 

@@ -69,10 +69,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ed2531114c7934eb9a23f42f373df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilityName: 
+  targetsEnemy: 0
+  targetsAlly: 0
+  targetsSelf: 0
+  effects: []
+  targetingType: 0
   image: {fileID: 0}
   UIImage: {fileID: 0}
   decal: {fileID: 0}
-  debugText: 
+  description: 
+  gameManager: {fileID: 0}
+  characterReference: {fileID: 0}
+  delay: 0.2
+  lastHitDamage: 0
+  totalDamage: 0
 --- !u!1 &843358820652271688
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,10 +153,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ed2531114c7934eb9a23f42f373df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilityName: 
+  targetsEnemy: 0
+  targetsAlly: 0
+  targetsSelf: 0
+  effects: []
+  targetingType: 0
   image: {fileID: 0}
   UIImage: {fileID: 0}
   decal: {fileID: 0}
-  debugText: 
+  description: 
+  gameManager: {fileID: 0}
+  characterReference: {fileID: 0}
+  delay: 0.2
+  lastHitDamage: 0
+  totalDamage: 0
 --- !u!1 &894463907763685173
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,10 +408,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ed2531114c7934eb9a23f42f373df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilityName: 
+  targetsEnemy: 0
+  targetsAlly: 0
+  targetsSelf: 0
+  effects: []
+  targetingType: 0
   image: {fileID: 0}
   UIImage: {fileID: 0}
   decal: {fileID: 0}
-  debugText: 
+  description: 
+  gameManager: {fileID: 0}
+  characterReference: {fileID: 0}
+  delay: 0.2
+  lastHitDamage: 0
+  totalDamage: 0
 --- !u!1 &3431357823445282579
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,10 +492,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ed2531114c7934eb9a23f42f373df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilityName: 
+  targetsEnemy: 0
+  targetsAlly: 0
+  targetsSelf: 0
+  effects: []
+  targetingType: 0
   image: {fileID: 0}
   UIImage: {fileID: 0}
   decal: {fileID: 0}
-  debugText: 
+  description: 
+  gameManager: {fileID: 0}
+  characterReference: {fileID: 0}
+  delay: 0.2
+  lastHitDamage: 0
+  totalDamage: 0
 --- !u!1 &3483207913367653613
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,10 +643,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ed2531114c7934eb9a23f42f373df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilityName: 
+  targetsEnemy: 0
+  targetsAlly: 0
+  targetsSelf: 0
+  effects: []
+  targetingType: 0
   image: {fileID: 0}
   UIImage: {fileID: 0}
   decal: {fileID: 0}
-  debugText: 
+  description: 
+  gameManager: {fileID: 0}
+  characterReference: {fileID: 0}
+  delay: 0.2
+  lastHitDamage: 0
+  totalDamage: 0
 --- !u!1 &5181952297182331090
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,10 +727,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ed2531114c7934eb9a23f42f373df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilityName: 
+  targetsEnemy: 0
+  targetsAlly: 0
+  targetsSelf: 0
+  effects: []
+  targetingType: 0
   image: {fileID: 0}
   UIImage: {fileID: 0}
   decal: {fileID: 0}
-  debugText: 
+  description: 
+  gameManager: {fileID: 0}
+  characterReference: {fileID: 0}
+  delay: 0.2
+  lastHitDamage: 0
+  totalDamage: 0
 --- !u!1 &5200847452651206193
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,37 +1010,37 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 31fc8cbe82b70ba4ca86014d7df73c1d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.205808
+      value: 2.1920402
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 31fc8cbe82b70ba4ca86014d7df73c1d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.7508111
+      value: 0.74650306
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 31fc8cbe82b70ba4ca86014d7df73c1d,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 31fc8cbe82b70ba4ca86014d7df73c1d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 31fc8cbe82b70ba4ca86014d7df73c1d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 31fc8cbe82b70ba4ca86014d7df73c1d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 31fc8cbe82b70ba4ca86014d7df73c1d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 31fc8cbe82b70ba4ca86014d7df73c1d,
         type: 3}
@@ -1103,14 +1169,10 @@ MonoBehaviour:
   - {fileID: 8199494956505346888}
   value: 0
   rb: {fileID: 0}
-  abilities:
-  - {fileID: 498803367288053974}
-  - {fileID: 4111325471169894825}
-  - {fileID: 6866522391597792531}
-  - {fileID: 5968343738479124320}
-  - {fileID: 2663796003805077234}
-  - {fileID: 7818108404825358428}
+  sounds: []
   characterReference: {fileID: 0}
+  landedAbility: {fileID: 0}
+  decals: []
 --- !u!4 &8743819316722395808 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 31fc8cbe82b70ba4ca86014d7df73c1d,
