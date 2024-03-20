@@ -237,7 +237,7 @@ public class GameManager : MonoBehaviour
 
     public void ReturnToMap()
     {
-        if (!tutorial.mapTutorialComplete)
+        if (tutorial.isComplete)
         {
             tutorial.currentFunc = 0;
             tutorial.nextMapFunc();

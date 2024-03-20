@@ -176,10 +176,6 @@ public class Character : MonoBehaviour
         damageToTake *= damageMultiplier;
         m_OnAttacked.Invoke();
         ChangeBlock(-(int)damageToTake, true);
-        if (tutorial.isComplete && tutorial.currentFunc == 4)
-        {
-            tutorial.nextFunc();
-        }
     }
     public virtual void Die()
     {

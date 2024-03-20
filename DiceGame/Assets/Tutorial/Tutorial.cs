@@ -171,7 +171,7 @@ public class Tutorial : MonoBehaviour
         textBox.text = "Use the Rogue's primary attack on Timecaster.";
         textBoxParent.rectTransform.localPosition = quads[2].localPosition;
         textBoxAnim.SetTrigger("Animate");
-        textBoxButton.SetActive(false);
+        //textBoxButton.SetActive(false);
     }
     void Func4()
     {
@@ -210,12 +210,13 @@ public class Tutorial : MonoBehaviour
         RerollPanel.SetActive(true);
         EndTurnPanel.SetActive(true);
         RelicPanel.SetActive(true);
-        isComplete = false;
+        //isComplete = false;
     }
 
 
     void MapFunc1()
     {
+        isComplete = false;
         textBoxParent.gameObject.SetActive(true);
         textBox.text = "This is the map view. Your objective is to travel around the clock face, choosing which path you wish to take.";
         textBoxParent.rectTransform.localPosition = quads[1].localPosition;
