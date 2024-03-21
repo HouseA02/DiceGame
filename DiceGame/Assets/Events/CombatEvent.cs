@@ -42,4 +42,29 @@ public class CombatEvent : Event
             }
         }
     }
+
+    public void InitialiseRand(List<Enemy> validEnemies)
+    {
+        combatData = (CombatData)ScriptableObject.CreateInstance("CombatData");
+        List<Character> randEnemies = new List<Character>();
+        for(int i = 0; i < 3; i++)
+        {
+            randEnemies.Add(validEnemies[Random.Range(0, validEnemies.Count)]);
+        }
+        combatData.type = CombatData.CombatType.Normal;
+        combatData.enemies = randEnemies;
+        for (int i = 0; i < imageHolders.Length; i++)
+        {
+            defaultPositions[i] = imageHolders[i].transform.localPosition;
+        }
+        for (int i = 0; i < imageHolders.Length; i++)
+        {
+            if (combatData.type != CombatData.CombatType.Boss)
+            {
+                imageHolders[i].sprite = combatData.enemies[i].portrait;
+                imageHolders[i].transform.localScale = Vector3.one * (1 + combatData.enemies[i].spriteSize);
+                imageHolders[i].transform.localPosition = defaultPositions[i] + combatData.enemies[i].spriteOffset / 150;
+            }
+        }
+    }
 }

@@ -17,7 +17,7 @@ public class Compendium : MonoBehaviour
 
     public void AddEnemy(Enemy enemy)
     {
-        //enemies.Add(enemy);
+        enemies.Add(enemy);
         EnemyEntry newEntry = Instantiate(p_enemyEntry, Vector2.zero, Quaternion.identity, enemyListParent);
         var rt = enemyListParent.GetComponent<RectTransform>();
         rt.sizeDelta = new Vector2(rt.sizeDelta.x, rt.sizeDelta.y + 400);
@@ -39,10 +39,6 @@ public class Compendium : MonoBehaviour
         foreach (StatusEffect statusEffect in statuses)
         {
             AddStatus(statusEffect);
-        }
-        foreach(Enemy enemy in enemies)
-        {
-            AddEnemy(enemy);
         }
     }
 }

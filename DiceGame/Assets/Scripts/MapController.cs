@@ -9,7 +9,7 @@ public class MapController : MonoBehaviour
     [System.Serializable]
     public class CombatList
     {
-        public List<CombatData> combats = new List<CombatData>();
+        public List<Enemy> normalEnemies = new List<Enemy>();
         public List<CombatData> elites = new List<CombatData>();
         public List<CombatData> bosses = new List<CombatData>();
         public List<StoryData> stories = new List<StoryData>();
@@ -35,7 +35,6 @@ public class MapController : MonoBehaviour
     [SerializeField]
     public CombatList[] acts;
     private int act = 0;
-
     public float mapTime;
     public int lineNum;
 
@@ -116,7 +115,8 @@ public class MapController : MonoBehaviour
             }
             foreach(Event e in SpawnedEvents.Where(e => e.eventType == Event.EventType.Combat))
             {
-                e.GetComponent<CombatEvent>().Initialise(acts[act].combats[Random.Range(0, acts[act].combats.Count)]);
+                //e.GetComponent<CombatEvent>().Initialise(acts[act].combats[Random.Range(0, acts[act].combats.Count)]);
+                e.GetComponent<CombatEvent>().InitialiseRand(acts[act].normalEnemies);
             }
             foreach (Event e in SpawnedEvents.Where(e => e.eventType == Event.EventType.Elite))
             {
