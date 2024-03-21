@@ -6,6 +6,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Ability : MonoBehaviour
 {
+    public int id;
     public string abilityName;
     [SerializeField]
     public bool targetsEnemy;
@@ -23,6 +24,7 @@ public class Ability : MonoBehaviour
     }
     [SerializeField]
     public List<AbilityEffect> effects = new List<AbilityEffect>();
+    public List<AbilityEffect> cantripEffects = new List<AbilityEffect>();
     public TargetingType targetingType;
     [SerializeField]
     public Material image;
@@ -54,7 +56,7 @@ public class Ability : MonoBehaviour
             effect.Activate(characterReference, characterReference);
             yield return new WaitForSeconds(delay);
         }
-        characterReference.OnAbilityUsed();
+        characterReference.OnAbilityUsed(this);
     }
     public virtual IEnumerator UseAbility(Character target)
     {
@@ -65,7 +67,7 @@ public class Ability : MonoBehaviour
             effect.Activate(characterReference, target);
             yield return new WaitForSeconds(0.2f);
         }
-        characterReference.OnAbilityUsed();
+        characterReference.OnAbilityUsed(this);
     }
     public virtual IEnumerator UseAbility(List<Character> targets)
     {
@@ -77,11 +79,22 @@ public class Ability : MonoBehaviour
 
             yield return new WaitForSeconds(0.2f);
         }
-        characterReference.OnAbilityUsed();
+        characterReference.OnAbilityUsed(this);
+    }
+    public void OnSet()
+    {
+        StartCoroutine(OnSetEffect());
     }
 
-
-
+    protected virtual IEnumerator OnSetEffect()
+    {
+        Debug.Log("active");
+        foreach (AbilityEffect effect in cantripEffects)
+        {
+            effect.Activate(characterReference, characterReference);
+            yield return new WaitForSeconds(0.2f);
+        }
+    }
     private void Awake()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();

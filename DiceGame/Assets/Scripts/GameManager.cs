@@ -224,6 +224,7 @@ public class GameManager : MonoBehaviour
     IEnumerator CombatWin()
     {
         yield return new WaitForSeconds(1);
+        activeHeroes.ForEach(h => h.ResetAbilities());
         if (FindAnyObjectByType<MapController>().GetComponent<MapController>().mapTime == 14)
         {
             winScreen.SetActive(true);
@@ -307,6 +308,7 @@ public class GameManager : MonoBehaviour
             hero.allies.Remove(hero);
             hero.enemies = new List<Character>();
             hero.enemies.AddRange(activeEnemies);
+            hero.SetResetAbilites();
         }
         foreach (Character enemy in activeEnemies)
         {
@@ -315,6 +317,7 @@ public class GameManager : MonoBehaviour
             enemy.allies.Remove(enemy);
             enemy.enemies = new List<Character>();
             enemy.enemies.AddRange(activeHeroes);
+            enemy.SetResetAbilites();
         }
         battleLight.SetActive(true);
         foreach (GameObject element in battleUI)

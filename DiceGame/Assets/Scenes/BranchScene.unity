@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -22996,11 +22996,7 @@ MonoBehaviour:
     type: 3}
   EventsNum: 36
   acts:
-  - combats:
-    - {fileID: 11400000, guid: 2d70754f37c78c74b96e52532f6213d3, type: 2}
-    - {fileID: 11400000, guid: 0e6fa9936d05a7e4d975bb3c38147fa6, type: 2}
-    - {fileID: 11400000, guid: 9468d403edc143d4b915a83536cb139a, type: 2}
-    - {fileID: 11400000, guid: 6b0525a4b3b331843aee90a43d42b968, type: 2}
+  - normalEnemies: []
     elites:
     - {fileID: 11400000, guid: 0c3042d235b059c418aa4e6892ad059f, type: 2}
     bosses:
@@ -23011,11 +23007,11 @@ MonoBehaviour:
     - {fileID: 11400000, guid: ea187bf9716831843af8dd9d4903165a, type: 2}
     - {fileID: 11400000, guid: 0325a00763e1ed846b96e895b2bc8d48, type: 2}
     - {fileID: 11400000, guid: c4e3c3c5115d8ec4ba4bcae7c77043b1, type: 2}
-  - combats: []
+  - normalEnemies: []
     elites: []
     bosses: []
     stories: []
-  - combats: []
+  - normalEnemies: []
     elites: []
     bosses: []
     stories: []
@@ -37950,7 +37946,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2071330209
 MonoBehaviour:
   m_ObjectHideFlags: 0

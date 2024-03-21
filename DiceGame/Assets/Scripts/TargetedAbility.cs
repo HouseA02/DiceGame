@@ -31,7 +31,17 @@ public class TargetedAbility : Ability
         if (Physics.Raycast(ray, out raycastHit, 100f, layermask))
         {
             Debug.Log("Attack");
-            Character target = raycastHit.collider.GetComponentInParent<Character>();
+            Character target = null;
+            if (characterReference.isBlind)
+            {
+                List<Character> validEnemies = new List<Character>();
+                validEnemies.AddRange(gameManager.activeEnemies.Where(e => e.isDead == false));
+                target = validEnemies[Random.Range(0, validEnemies.Count)];
+            }
+            else
+            {
+                target = raycastHit.collider.GetComponentInParent<Character>();
+            }
             Debug.Log(target);
             Debug.Log(raycastHit.transform.gameObject);
             if (validTargets.Contains(target))

@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Entangle : StatusEffect
+public class Blindness : StatusEffect
 {
     public override void Initialise(Character character, int newValue)
     {
         base.Initialise(character, newValue);
-        characterReference.m_OnReroll.AddListener(OnReroll);
+        characterReference.m_OnAbilityUsed.AddListener(OnAbilityUsed);
     }
 
     public override void OnTurnEnd()
@@ -17,19 +17,22 @@ public class Entangle : StatusEffect
         UpdateValue();
     }
 
-    public void OnReroll()
+    public void OnAbilityUsed(Ability ability)
     {
-        TriggerEffect();
-        UpdateValue();
+        if(ability.targetingType == Ability.TargetingType.single)
+        {
+            TriggerEffect();
+            UpdateValue();
+        }
     }
     public override void OnApplied()
     {
         base.OnApplied();
-        characterReference.canRoll = false;
+        characterReference.isBlind = true;
     }
     public override void OnExpire()
     {
-        characterReference.canRoll = true;
+        characterReference.isBlind = false;
         base.OnExpire();
     }
 }

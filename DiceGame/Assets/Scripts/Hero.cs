@@ -25,9 +25,9 @@ public class Hero : Character
         }
     }
 
-    public override void OnAbilityUsed()
+    public override void OnAbilityUsed(Ability ability)
     {
-        base.OnAbilityUsed();
+        base.OnAbilityUsed(ability);
         hasActed = true;
     }
 

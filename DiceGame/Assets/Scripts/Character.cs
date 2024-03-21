@@ -55,12 +55,14 @@ public class Character : MonoBehaviour
     public Sprite portrait;
     public Ability[] baseAbilities;
     public Ability[] abilities = new Ability[6];
+    public List<Ability> resetAbilities = new List<Ability>();
     public CharacterPanel characterPanel;
     public Ability currentAbility;
     public bool targetable = true;
     public bool isFirstRoll = true;
     public bool canRoll = true;
     public bool isDead = false;
+    public bool isBlind = false;
     public Character instance;
     public GameObject indicator;
     public GameManager gameManager;
@@ -73,6 +75,7 @@ public class Character : MonoBehaviour
     public UnityEvent m_OnRoll = new UnityEvent();
     public UnityEvent m_OnReroll = new UnityEvent();
     public ResultEvent m_OnResult = new ResultEvent();
+    public ResultEvent m_OnAbilityUsed = new ResultEvent();
     public IntEvent m_OnHeal = new IntEvent();
     public IntEvent m_OnLoseHP = new IntEvent();
 
@@ -123,6 +126,7 @@ public class Character : MonoBehaviour
                 characterPanel.abilityNameText.text = currentAbility.abilityName;
             }*/
             m_OnResult.Invoke(currentAbility);
+            currentAbility.OnSet();
         }
     }
 
@@ -190,9 +194,9 @@ public class Character : MonoBehaviour
         //gameObject.SetActive(false);
     }
 
-    public virtual void OnAbilityUsed()
+    public virtual void OnAbilityUsed(Ability ability)
     {
-
+        m_OnAbilityUsed.Invoke(ability);
     }
 
     public virtual void OnTurnStart()
@@ -232,6 +236,20 @@ public class Character : MonoBehaviour
         }
     }
 
+    public void ResetAbilities()
+    {
+        for (int i = 0; i < abilities.Length; i++)
+        {
+            AddAbility(resetAbilities[i], i);
+        }
+    }
+
+    public void SetResetAbilites()
+    {
+        resetAbilities = new List<Ability>();
+        resetAbilities.AddRange(abilities);
+
+    }
     public void Cleanse()
     {
         while(statusEffects.Count > 0)
@@ -250,6 +268,7 @@ public class Character : MonoBehaviour
         for (int i = 0; i < baseAbilities.Length; i++)
         {
             abilities[i] = Instantiate(baseAbilities[i], this.transform);
+            abilities[i].id = i;
         }
         power = 0;
     }
@@ -257,6 +276,7 @@ public class Character : MonoBehaviour
     public void AddAbility(Ability ability, int faceTarget)
     {
         abilities[faceTarget] = Instantiate(ability, this.transform);
+        abilities[faceTarget].id = faceTarget;
         characterPanel.dieSpreadImages[faceTarget].Initialise(ability);
     }
     public virtual void Initialise(Character temp)

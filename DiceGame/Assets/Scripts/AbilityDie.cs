@@ -19,7 +19,6 @@ public class AbilityDie : Die
     {
         for (int i = 0; i < abilities.Length; i++)
         {
-            Debug.Log(i);
             if (abilities[i] != null)
             {
                 decals[i].material = abilities[i].image;

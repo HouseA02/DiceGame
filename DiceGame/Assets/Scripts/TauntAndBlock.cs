@@ -15,7 +15,7 @@ public class TauntAndBlock : SelfBuff
             }
         }
         characterReference.CleanUp();
-        characterReference.OnAbilityUsed();
+        characterReference.OnAbilityUsed(this);
     }
 }
 
