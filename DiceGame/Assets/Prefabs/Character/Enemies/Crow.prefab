@@ -355,6 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9a2c115c59751c4284a6803c42867bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorial: {fileID: 0}
   model: {fileID: 2160371093433722911}
   targetSprite: {fileID: 3313201928708467157}
   characterName: Crow
@@ -380,9 +381,9 @@ MonoBehaviour:
   - {fileID: 134639085946065000, guid: 334599d2db14e11449128524ea2adf09, type: 3}
   - {fileID: 134639085946065000, guid: 334599d2db14e11449128524ea2adf09, type: 3}
   - {fileID: 1188739410754349240, guid: 766f7ed309991f94493bf7ece06dcf44, type: 3}
-  - {fileID: 1188739410754349240, guid: 766f7ed309991f94493bf7ece06dcf44, type: 3}
+  - {fileID: 5556463949544326708, guid: 4af817ee951d2034ca589f232c89ee25, type: 3}
   - {fileID: 8698208988420570346, guid: c38d6efd1e4f65a428c2753026374810, type: 3}
-  - {fileID: 1796183200955546193, guid: c8e31431fce7c7b458e14fcbf6a0fdb1, type: 3}
+  - {fileID: 5275060744721275236, guid: d0c444b2ecd37cd42b03e2fb1a28e509, type: 3}
   abilities:
   - {fileID: 0}
   - {fileID: 0}
@@ -390,11 +391,14 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  resetAbilities: []
   characterPanel: {fileID: 0}
   currentAbility: {fileID: 0}
   targetable: 1
   isFirstRoll: 1
   canRoll: 1
+  isDead: 0
+  isBlind: 0
   instance: {fileID: 0}
   indicator: {fileID: 7511070202160567628}
   gameManager: {fileID: 0}
@@ -416,6 +420,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_OnResult:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnAbilityUsed:
     m_PersistentCalls:
       m_Calls: []
   target: {fileID: 0}

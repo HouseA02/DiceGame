@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &388602141677596200
+--- !u!1 &2708736009349655437
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,70 +8,71 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3850923961877480175}
-  - component: {fileID: 1569130403751858231}
-  - component: {fileID: 8378168337197622487}
-  - component: {fileID: 5803020596531084244}
+  - component: {fileID: 6312470157588733751}
+  - component: {fileID: 5275060744721275236}
+  - component: {fileID: 402944986079299318}
+  - component: {fileID: 1742230549992303660}
+  - component: {fileID: 6940960135139027773}
   m_Layer: 0
-  m_Name: ForceField
+  m_Name: Umbral Obscuration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3850923961877480175
+--- !u!4 &6312470157588733751
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 388602141677596200}
+  m_GameObject: {fileID: 2708736009349655437}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 326.7002, y: 366.19995, z: 0}
+  m_LocalPosition: {x: 6.445895, y: 4.455656, z: 95.537285}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1569130403751858231
+--- !u!114 &5275060744721275236
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 388602141677596200}
+  m_GameObject: {fileID: 2708736009349655437}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7650b1bef1cdb04d864b4d131449bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  abilityName: Force Field
-  targetsEnemy: 0
-  targetsAlly: 1
+  abilityName: Umbral Obscuration
+  targetsEnemy: 1
+  targetsAlly: 0
   targetsSelf: 0
   effects:
-  - effect: {fileID: 8378168337197622487}
-    value: 2
+  - effect: {fileID: 402944986079299318}
+    value: 1
   cantripEffects: []
-  targetingType: 0
-  image: {fileID: 2100000, guid: e81470f2f1ff44b459eb3542cbf68d7d, type: 2}
-  UIImage: {fileID: 21300000, guid: 9a9fccebaf83d0f42b2ead026d33abf4, type: 3}
+  targetingType: 2
+  image: {fileID: 2100000, guid: 3da252083f8dd884c9401ccf2f432c76, type: 2}
+  UIImage: {fileID: 21300000, guid: a7830149b8623bd4991da7bc4efce2f5, type: 3}
   decal: {fileID: 0}
-  description: Apply 2 block to all allies
+  description: Deal 2 damage and apply 1 blind to all enemies
   gameManager: {fileID: 0}
   characterReference: {fileID: 0}
   delay: 0.2
   lastHitDamage: 0
   totalDamage: 0
---- !u!114 &8378168337197622487
+--- !u!114 &402944986079299318
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 388602141677596200}
+  m_GameObject: {fileID: 2708736009349655437}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa83094fed1ec09478e61fbe6c5dd367, type: 3}
@@ -84,27 +85,49 @@ MonoBehaviour:
   abilityReference: {fileID: 0}
   offset: {x: 0, y: 1, z: 0}
   effects:
-  - effect: {fileID: 5803020596531084244}
+  - effect: {fileID: 1742230549992303660}
     value: 2
-  targetsEnemies: 0
-  targetsAllies: 1
-  targetsSelf: 1
---- !u!114 &5803020596531084244
+  - effect: {fileID: 6940960135139027773}
+    value: 1
+  targetsEnemies: 1
+  targetsAllies: 0
+  targetsSelf: 0
+--- !u!114 &1742230549992303660
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 388602141677596200}
+  m_GameObject: {fileID: 2708736009349655437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04a38b3cc8422054a8cf37e51188787b, type: 3}
+  m_Script: {fileID: 11500000, guid: a8ef0c17aa3409d4697804b51b818819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   VFX: {fileID: 0}
-  sound: {fileID: 8300000, guid: 7dfb39542358f2a4ab1b54335b2d4ae7, type: 3}
-  soundVolumeScale: 0.3
+  sound: {fileID: 0}
+  soundVolumeScale: 1
   pitchRange: {x: 0.7, y: 1.3}
   abilityReference: {fileID: 0}
   offset: {x: 0, y: 1, z: 0}
-  defaultValue: 0
+  defaultDamage: 0
+--- !u!114 &6940960135139027773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2708736009349655437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d6c845cd4cf914badfef85a5ad15a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VFX: {fileID: 0}
+  sound: {fileID: 0}
+  soundVolumeScale: 1
+  pitchRange: {x: 0.7, y: 1.3}
+  abilityReference: {fileID: 0}
+  offset: {x: 0, y: 1, z: 0}
+  status: {fileID: -3185824038663203204, guid: e2c02c510c8ed2544a99eeda51ef7286, type: 3}
+  defaultValue: 1

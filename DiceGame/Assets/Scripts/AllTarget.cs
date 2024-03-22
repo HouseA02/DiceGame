@@ -7,7 +7,7 @@ using static UnityEngine.Rendering.DebugUI;
 public class AllTarget : Effect
 {
     [SerializeField]
-    Effect effect;
+    List<AbilityEffect> effects = new List<AbilityEffect>();
     public bool targetsEnemies;
     public bool targetsAllies;
     public bool targetsSelf;
@@ -18,11 +18,10 @@ public class AllTarget : Effect
         if (targetsEnemies) { targets.AddRange(source.enemies); }
         if (targetsAllies) {  targets.AddRange(source.allies); }
         if (targetsSelf) { targets.Add(source); }
-        if (VFX != null)
+        foreach(AbilityEffect effect in effects) 
         {
-            effect.VFX = VFX;
+            targets.ForEach(t => effect.Activate(source, t));
         }
-        targets.ForEach(t => effect.Activate(source, t, value));
     }
 
     public override void Activate(float value)
@@ -31,11 +30,10 @@ public class AllTarget : Effect
         if (targetsEnemies) { targets.AddRange(gameManager.activeEnemies); }
         if (targetsAllies) { targets.AddRange(gameManager.activeHeroes); }
         Debug.Log("List Count" + targets.Count);
-        if (VFX != null)
+        foreach(AbilityEffect effect in effects)
         {
-            effect.VFX = VFX;
+            targets.ForEach(t => effect.Activate(t));
         }
-        targets.ForEach(t => effect.Activate(t, value));
     }
 
     public override void Activate()
@@ -44,10 +42,9 @@ public class AllTarget : Effect
         List<Character> targets = new List<Character>();
         if (targetsEnemies) { targets.AddRange(gameManager.activeEnemies); }
         if (targetsAllies) { targets.AddRange(gameManager.activeHeroes); }
-        if (VFX != null)
+        foreach (AbilityEffect effect in effects)
         {
-            effect.VFX = VFX;
+            targets.ForEach(t => effect.Activate(t));
         }
-        targets.ForEach(t => effect.Activate(t));
     }
 }

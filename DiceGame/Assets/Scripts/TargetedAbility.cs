@@ -34,9 +34,7 @@ public class TargetedAbility : Ability
             Character target = null;
             if (characterReference.isBlind)
             {
-                List<Character> validEnemies = new List<Character>();
-                validEnemies.AddRange(gameManager.activeEnemies.Where(e => e.isDead == false));
-                target = validEnemies[Random.Range(0, validEnemies.Count)];
+                target = validTargets[Random.Range(0, validTargets.Count)];
             }
             else
             {

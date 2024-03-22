@@ -44,3 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8c5a1fb3bce3148835ffa118936a54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statusName: Blindness
+  sprite: {fileID: 0}
+  slot: {fileID: 0}
+  value: 0
+  characterReference: {fileID: 0}
+  description: All targeted abilities hit random targets for {0} turns
+  valueColor: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
+  triggerEffect: {fileID: 0}
