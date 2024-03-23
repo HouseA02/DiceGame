@@ -24,7 +24,7 @@ public class Character : MonoBehaviour
     [SerializeField]
     private Tutorial tutorial;
     [SerializeField]
-    private GameObject model;
+    public GameObject model;
     private AudioSource audioSource;
     [SerializeField]
     public Target targetSprite;

@@ -6,4 +6,10 @@ public class EffectTest : MonoBehaviour
 {
     [SerializeField]
     public VisualEffect effect;
+
+    private void Awake()
+    {
+        effect = GetComponent<VisualEffect>();
+        effect.SetSkinnedMeshRenderer("TargetMesh_", GetComponentInParent<SkinnedMeshRenderer>());
+    }
 }

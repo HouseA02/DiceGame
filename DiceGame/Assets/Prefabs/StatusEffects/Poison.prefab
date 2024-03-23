@@ -54,3 +54,5 @@ MonoBehaviour:
   valueColor: {r: 0.084590435, g: 1, b: 0, a: 1}
   triggerEffect: {fileID: 1271195921766436121, guid: acfe2e24a5591d3408fd44930eca4302,
     type: 3}
+  visualEffect: {fileID: 8113940774355081089, guid: 68fb251ace2339147b5e46b2c1d0c1f9,
+    type: 3}

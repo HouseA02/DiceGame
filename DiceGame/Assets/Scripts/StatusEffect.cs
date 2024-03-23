@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.VFX;
 public class StatusEffect : MonoBehaviour
 {
     public string statusName;
@@ -12,6 +13,8 @@ public class StatusEffect : MonoBehaviour
     public string description;
     public Color valueColor;
     public TriggerEffect triggerEffect;
+    public VisualEffect visualEffect;
+    private VisualEffect effectInstance;
 
     public virtual void Initialise(Character character, int newValue)
     {
@@ -20,6 +23,10 @@ public class StatusEffect : MonoBehaviour
         transform.parent = characterReference.transform;
         characterReference.m_OnTurnStart.AddListener(OnTurnStart);
         characterReference.m_OnTurnEnd.AddListener(OnTurnEnd);
+        if(visualEffect != null)
+        {
+            effectInstance = Instantiate(visualEffect, characterReference.model.transform);
+        }
     }
 
     public virtual void OnTurnStart()
@@ -35,6 +42,7 @@ public class StatusEffect : MonoBehaviour
     public virtual void OnApplied()
     {
         TriggerEffect();
+        UpdateValue();
     }
 
     public virtual void TriggerEffect()
@@ -60,6 +68,10 @@ public class StatusEffect : MonoBehaviour
     {
         slot.UpdateValue(value);
         if (value <= 0) { Expire(); }
+        if(effectInstance != null) 
+        {
+            effectInstance.SetInt("Value", value);
+        }
     }
     public virtual void Expire()
     {
