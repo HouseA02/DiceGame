@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4acced62494eb22418e11e65e195d5a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   abilityName: Heal
   targetsEnemy: 0
   targetsAlly: 1
@@ -52,6 +53,7 @@ MonoBehaviour:
   effects:
   - effect: {fileID: -2650888136583005596}
     value: 3
+  cantripEffects: []
   targetingType: 1
   image: {fileID: 2100000, guid: 4e37eeaf3f38d274d9bb86fc7e9adcdd, type: 2}
   UIImage: {fileID: 21300000, guid: b8785dcf2bb05a347a15d21956561f5c, type: 3}
@@ -59,6 +61,9 @@ MonoBehaviour:
   description: Heal target ally for 3 HP reduce by 1 per use
   gameManager: {fileID: 0}
   characterReference: {fileID: 0}
+  delay: 0.2
+  lastHitDamage: 0
+  totalDamage: 0
   validTargets: []
   isHealing: 1
 --- !u!114 &-2650888136583005596
@@ -73,7 +78,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aefceedba3dbe7640b164136e4b15767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VFX: {fileID: 0}
+  VFX: {fileID: 7782876850352111338, guid: 11850f206725181448b889e50308c5a5, type: 3}
   sound: {fileID: 8300000, guid: 3898093e85fe201418c42df601973e94, type: 3}
   soundVolumeScale: 1
+  pitchRange: {x: 0.7, y: 1.3}
+  abilityReference: {fileID: 0}
   offset: {x: 0, y: 1, z: 0}

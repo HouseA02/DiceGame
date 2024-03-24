@@ -28,7 +28,21 @@ public class Effect : MonoBehaviour
     {
         if (VFX != null && target.isActiveAndEnabled == true)
         {
-            Instantiate(VFX, target.transform.position + offset, Quaternion.identity);
+            var varEffectInstance = Instantiate(VFX, target.model.transform.position, Quaternion.identity, target.model.transform);
+            varEffectInstance.transform.localScale = new Vector3(1f / target.model.transform.localScale.x, 1f / target.model.transform.localScale.y, 1f / target.model.transform.localScale.z);
+            VisualEffect effectInstance;
+            if (varEffectInstance.GetComponent<VisualEffect>() != null)
+            {
+                effectInstance = varEffectInstance.GetComponent<VisualEffect>();
+            }
+            else
+            {
+                effectInstance = varEffectInstance.GetComponentInChildren<VisualEffect>();
+            }
+            if (effectInstance.HasVector3("Direction"))
+            {
+                effectInstance.SetVector3("Direction", (target.transform.position - source.transform.position));
+            }
         }
         if (sound != null)
         {
@@ -74,7 +88,11 @@ public class Effect : MonoBehaviour
     {
         if (VFX != null && target.isActiveAndEnabled == true)
         {
-            Instantiate(VFX, target.transform.position + offset, Quaternion.identity);
+            VisualEffect effectInstance = Instantiate(VFX, target.model.transform.position, Quaternion.identity).GetComponent<VisualEffect>();
+            if (effectInstance.HasVector3("Direction"))
+            {
+                effectInstance.SetVector3("Direction", (target.transform.position - source.transform.position));
+            }
         }
         if (sound != null)
         {

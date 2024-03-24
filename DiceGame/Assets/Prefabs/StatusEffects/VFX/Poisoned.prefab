@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1641761711685773479}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -61,11 +61,14 @@ VisualEffect:
       - m_Value: {x: 0.029807542, y: 2.72662, z: 0, w: 1}
         m_Name: Color
         m_Overridden: 1
+      - m_Value: {x: 0.049744114, y: 0.3160377, z: 0, w: 0}
+        m_Name: Decal Color
+        m_Overridden: 1
     m_Uint:
       m_Array: []
     m_Int:
       m_Array:
-      - m_Value: 0
+      - m_Value: 5
         m_Name: Value
         m_Overridden: 1
     m_Matrix4x4f:
