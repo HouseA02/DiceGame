@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
     public List<Character> reinforcements = new List<Character>();
     bool canRoll;
     bool enemyRolled;
+    int thisTurnRolls = 0;
     public bool inBattle = false;
     [SerializeField]
     public int rerolls;
@@ -65,6 +66,8 @@ public class GameManager : MonoBehaviour
     public UnityEvent gm_OnBattleStart = new UnityEvent();
     public UnityEvent gm_OnTurnStart = new UnityEvent();
     public UnityEvent gm_OnTurnEnd = new UnityEvent();
+    public UnityEvent gm_OnRoll = new UnityEvent();
+    public UnityEvent gm_OnReroll = new UnityEvent();
     [SerializeField]
     private GameObject mainCamera;
     [SerializeField]
@@ -102,6 +105,12 @@ public class GameManager : MonoBehaviour
             {
                 webs.SetActive(false);
             }
+            gm_OnRoll.Invoke();
+            if(thisTurnRolls > 0)
+            {
+                gm_OnReroll.Invoke();
+            }
+            thisTurnRolls++;
         }
         if (!enemyRolled)
         {
@@ -119,6 +128,7 @@ public class GameManager : MonoBehaviour
         canRoll = true;
         rerolls = 3;
         enemyRolled = false;
+        thisTurnRolls = 0;
         activeHeroes.ForEach(h => h.GetComponent<Hero>().hasActed = false);
         if(FindObjectsOfType<Entangle>().Length > 0)
         {

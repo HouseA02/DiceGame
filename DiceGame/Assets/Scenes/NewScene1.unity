@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -23156,7 +23156,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 9ac0d53b21c465748a49180198cba9fc, type: 2}
     - {fileID: 11400000, guid: ea187bf9716831843af8dd9d4903165a, type: 2}
     - {fileID: 11400000, guid: 0325a00763e1ed846b96e895b2bc8d48, type: 2}
-    - {fileID: 11400000, guid: c4e3c3c5115d8ec4ba4bcae7c77043b1, type: 2}
+    - {fileID: 11400000, guid: 4737d082a1cefa84eb200aa2e9ad4492, type: 2}
   - normalEnemies: []
     elites: []
     bosses: []
@@ -24804,6 +24804,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   gm_OnTurnEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  gm_OnRoll:
+    m_PersistentCalls:
+      m_Calls: []
+  gm_OnReroll:
     m_PersistentCalls:
       m_Calls: []
   mainCamera: {fileID: 963194225}

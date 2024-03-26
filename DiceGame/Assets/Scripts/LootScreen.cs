@@ -87,6 +87,23 @@ public class LootScreen : MonoBehaviour
         }
     }
 
+    public void ClaimFace(FaceReward faceToLoot)
+    {
+        foreach (Hero hero in gameManager.activeHeroes)
+        {
+            if (hero.m_Class.Contains(faceToLoot.pool))
+            {
+                validHero = hero;
+                break;
+            }
+        }
+        addFacePanel.gameObject.SetActive(true);
+        for (int i = 0; i < addFacePanelFaces.Length; i++)
+        {
+            addFacePanelFaces[i].sprite = validHero.abilities[i].UIImage;
+        }
+    }
+
     public void AddFace(int faceTarget)
     {
         validHero.AddAbility(faceToLoot.face , faceTarget);

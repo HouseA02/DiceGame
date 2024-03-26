@@ -17,3 +17,5 @@ MonoBehaviour:
     little ones and I will help you Vanquish your foes, Come with me little ones
     and I will give you something no one else can '
   storyArt: {fileID: 0}
+  storyOptions: {fileID: 7785611719946470518, guid: ae68b0747b788d841bc58d4b16f5bc9b,
+    type: 3}

@@ -1,0 +1,162 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6329829679913061760
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6378266649676763751, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blood Money
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067956561346034717, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.6370677
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067956561346034717, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2342551
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067956561346034717, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.832865
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067956561346034717, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067956561346034717, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067956561346034717, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067956561346034717, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067956561346034717, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067956561346034717, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067956561346034717, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3779562413222193278, guid: 845fbe5dbfae78a4183e5981f973f2f0, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6378266649676763751, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6237052900299773496}
+    - targetCorrespondingSourceObject: {fileID: 6378266649676763751, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 259908860352914649}
+    - targetCorrespondingSourceObject: {fileID: 6378266649676763751, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1942677397703414505}
+  m_SourcePrefab: {fileID: 100100000, guid: 845fbe5dbfae78a4183e5981f973f2f0, type: 3}
+--- !u!1 &1106818122645839847 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6378266649676763751, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 6329829679913061760}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-6237052900299773496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106818122645839847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 702336454eae34240bda33656c762fd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rewardType: 1
+  relicName: Blood Money
+  relicDescription: On Reroll, a random hero takes 1 damage
+  gameManager: {fileID: 0}
+  initialValue: 0
+  effects:
+  - effect: {fileID: 1942677397703414505}
+    value: 1
+  slot: {fileID: 0}
+  image: {fileID: 0}
+  r_OnTurnStart:
+    m_PersistentCalls:
+      m_Calls: []
+  r_OnBattleStart:
+    m_PersistentCalls:
+      m_Calls: []
+  r_OnTurnEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  value: 0
+--- !u!114 &259908860352914649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106818122645839847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ef0c17aa3409d4697804b51b818819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VFX: {fileID: 0}
+  sound: {fileID: 0}
+  soundVolumeScale: 1
+  pitchRange: {x: 0.7, y: 1.3}
+  abilityReference: {fileID: 0}
+  offset: {x: 0, y: 1, z: 0}
+  defaultDamage: 0
+--- !u!114 &1942677397703414505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106818122645839847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69cac3f0a4afe1f459bc924ba590a1ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VFX: {fileID: 0}
+  sound: {fileID: 0}
+  soundVolumeScale: 1
+  pitchRange: {x: 0.7, y: 1.3}
+  abilityReference: {fileID: 0}
+  offset: {x: 0, y: 1, z: 0}
+  effect: {fileID: 259908860352914649}
+  targetsEnemies: 0
+  targetsAllies: 1
+  targetsSelf: 0
