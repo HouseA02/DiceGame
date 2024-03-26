@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4acced62494eb22418e11e65e195d5a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   abilityName: Ensnare
   targetsEnemy: 1
   targetsAlly: 0
@@ -77,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16363f08f458e74428044afea218133c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VFX: {fileID: 0}
+  VFX: {fileID: 6516193429953615699, guid: 8eaadb6e364f16549a3e586c47821ee8, type: 3}
   sound: {fileID: 0}
   soundVolumeScale: 1
   pitchRange: {x: 0.7, y: 1.3}

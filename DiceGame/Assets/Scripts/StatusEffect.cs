@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.VFX;
+using static UnityEngine.GraphicsBuffer;
 public class StatusEffect : MonoBehaviour
 {
     public string statusName;
@@ -26,19 +27,15 @@ public class StatusEffect : MonoBehaviour
         if(visualEffect != null)
         {
             effectInstance = Instantiate(visualEffect, characterReference.model.transform);
+            effectInstance.transform.localScale = new Vector3(1f / characterReference.model.transform.localScale.x, 1f / characterReference.model.transform.localScale.y, 1f / characterReference.model.transform.localScale.z);
         }
     }
-
     public virtual void OnTurnStart()
     {
-
     }
-
     public virtual void OnTurnEnd()
     {
-
     }
-
     public virtual void OnApplied()
     {
         TriggerEffect();

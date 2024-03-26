@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4acced62494eb22418e11e65e195d5a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   abilityName: Poisoned Tips
   targetsEnemy: 1
   targetsAlly: 0
@@ -55,6 +56,7 @@ MonoBehaviour:
     value: 6
   - effect: {fileID: 8318608277018943349}
     value: 3
+  cantripEffects: []
   targetingType: 1
   image: {fileID: 2100000, guid: df1aa9e7af0c88744a848182afb483cb, type: 2}
   UIImage: {fileID: 21300000, guid: 584db495ddf57fb48a8138b80bd37ac6, type: 3}
@@ -82,7 +84,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ef0c17aa3409d4697804b51b818819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VFX: {fileID: 0}
+  VFX: {fileID: 1525665169395181317, guid: df44b6c718240354db9aca261c78b5ec, type: 3}
   sound: {fileID: 8300000, guid: bc02cd9d7130b3b4498ae2e7a3e36134, type: 3}
   soundVolumeScale: 1
   pitchRange: {x: 0.7, y: 1.3}

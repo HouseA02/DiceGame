@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using static UnityEngine.GraphicsBuffer;
 
 public class Hero : Character
 {
     public bool hasActed = false;
+    public GameObject parentModel;
     [Serializable]
     public enum Class
     {
@@ -34,6 +36,7 @@ public class Hero : Character
     public override void OnTurnStart()
     {
         hasActed = false;
+        transform.rotation = defaultRotation;
         base.OnTurnStart();
     }
 

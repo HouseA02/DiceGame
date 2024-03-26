@@ -50,6 +50,7 @@ public class Character : MonoBehaviour
     public int damageBlock = 0;
     public int thisTurnRolls = 0;
     public float damageMultiplier = 1;
+    protected Quaternion defaultRotation;
     public List<Character> allies;
     public List<Character> enemies;
     public Sprite portrait;
@@ -181,22 +182,86 @@ public class Character : MonoBehaviour
         m_OnAttacked.Invoke();
         ChangeBlock(-(int)damageToTake, true);
     }
+
+    public void TakeDamage(int value, Vector3 dir)
+    {
+        //damagetotake
+        float damageToTake = value;
+        damageToTake -= damageBlock;
+        damageToTake *= damageMultiplier;
+        m_OnAttacked.Invoke();
+        ChangeBlock(-(int)damageToTake, true, dir);
+    }
+
+    public void ChangeBlock(int value, bool isOverflowing, Vector3 dir)
+    {
+        block += value;
+        if (block <= 0)
+        {
+            characterPanel.blockContainer.SetActive(false);
+            if (isOverflowing) { ChangeHP(block, dir); }
+            block = 0;
+        }
+        else
+        {
+            characterPanel.blockContainer.SetActive(true);
+            characterPanel.blockText.text = block.ToString();
+        }
+    }
+
+    public virtual void Die(Vector3 dir)
+    {
+        isDead = true;
+        targetable = false;
+        CleanUp();
+        Cleanse();
+        //statusEffects.Clear();
+        characterPanel.deathOverlay.SetActive(true);
+        gameManager.OnDeath(this);
+        //model.SetActive(false);
+        //gameObject.SetActive(false);
+    }
+
+    public void ChangeHP(int value, Vector3 dir)
+    {
+        HP += value;
+        HP = Mathf.Clamp(HP, 0, maxHP);
+        characterPanel.SetHP(HP);
+        var damagePopup = Instantiate(damageNumber, characterPanel.HPText.transform);
+        damagePopup.GetComponent<Rigidbody2D>().AddForce(new Vector2(UnityEngine.Random.Range(-1f, 1f), 2) * 10000);
+        if (value > 0)
+        {
+            damagePopup.GetComponent<TMP_Text>().color = Color.green;
+            m_OnHeal.Invoke(value);
+        }
+        damagePopup.GetComponent<TMP_Text>().text = Mathf.Abs(value).ToString();
+        if (HP <= 0)
+        {
+            Die(dir);
+        }
+    }
     public virtual void Die()
     {
         isDead = true;
         targetable = false;
         CleanUp();
         Cleanse();
-        statusEffects.Clear();
+        //statusEffects.Clear();
         characterPanel.deathOverlay.SetActive(true);
         gameManager.OnDeath(this);
-        model.SetActive(false);
+        //model.SetActive(false);
         //gameObject.SetActive(false);
     }
 
     public virtual void OnAbilityUsed(Ability ability)
     {
         m_OnAbilityUsed.Invoke(ability);
+    }
+
+    public virtual void OnAbilityUsed(Ability ability, Character target)
+    {
+        m_OnAbilityUsed.Invoke(ability);
+        transform.LookAt(target.transform.position);
     }
 
     public virtual void OnTurnStart()
@@ -262,7 +327,7 @@ public class Character : MonoBehaviour
         SetAbility(-1);
         if (dieReference != null) { Destroy(dieReference.gameObject); }
     }
-    private void Awake()
+    protected virtual void Awake()
     {
         audioSource = GetComponent<AudioSource>();
         for (int i = 0; i < baseAbilities.Length; i++)
@@ -290,6 +355,7 @@ public class Character : MonoBehaviour
         gameManager.gm_OnTurnEnd.AddListener(OnTurnEnd);
         m_OnResult.AddListener(OnResult);
         startingStatuses.ForEach(s => ApplyStatus(s.effect, s.value));
+        defaultRotation = transform.rotation;
     }
 
     void OnResult(Ability ability)

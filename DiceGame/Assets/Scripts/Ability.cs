@@ -65,6 +65,7 @@ public class Ability : MonoBehaviour
         foreach (AbilityEffect effect in effects)
         {
             effect.Activate(characterReference, target);
+            characterReference.transform.LookAt(target.transform.position);
             yield return new WaitForSeconds(0.2f);
         }
         characterReference.OnAbilityUsed(this);

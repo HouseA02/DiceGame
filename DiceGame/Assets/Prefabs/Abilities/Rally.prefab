@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d6c845cd4cf914badfef85a5ad15a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VFX: {fileID: 0}
+  VFX: {fileID: 4015533821066734087, guid: 7254e1eee6df5694e84a0f0008a7c3af, type: 3}
   sound: {fileID: 8300000, guid: 3898093e85fe201418c42df601973e94, type: 3}
   soundVolumeScale: 0.2
   pitchRange: {x: 0.7, y: 1.3}

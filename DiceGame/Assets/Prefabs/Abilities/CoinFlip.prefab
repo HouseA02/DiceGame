@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4acced62494eb22418e11e65e195d5a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   abilityName: Coin
   targetsEnemy: 1
   targetsAlly: 0
@@ -54,6 +55,7 @@ MonoBehaviour:
   effects:
   - effect: {fileID: 6228306730393676796}
     value: 6
+  cantripEffects: []
   targetingType: 0
   image: {fileID: 2100000, guid: cba03fdda3b263044b04f0eaad4acfcc, type: 2}
   UIImage: {fileID: 21300000, guid: 68f2497e115cdb645b1d5f95f06cdd44, type: 3}
@@ -62,6 +64,9 @@ MonoBehaviour:
     enemy
   gameManager: {fileID: 0}
   characterReference: {fileID: 0}
+  delay: 0.2
+  lastHitDamage: 0
+  totalDamage: 0
   validTargets: []
   isHealing: 0
 --- !u!114 &6228306730393676796
@@ -80,6 +85,7 @@ MonoBehaviour:
   sound: {fileID: 0}
   soundVolumeScale: 1
   pitchRange: {x: 0.8, y: 1.2}
+  abilityReference: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
   effects:
   - {fileID: -7109469485392114589}
@@ -98,10 +104,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ef0c17aa3409d4697804b51b818819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VFX: {fileID: 1525665169395181317, guid: df44b6c718240354db9aca261c78b5ec, type: 3}
+  VFX: {fileID: 5426657453501564879, guid: cd2d3c70036c85246ad9e818effdabd9, type: 3}
   sound: {fileID: 8300000, guid: 33f28354b441e1c46a2a90e1fffe4ef4, type: 3}
   soundVolumeScale: 1
   pitchRange: {x: 0.7, y: 1.3}
+  abilityReference: {fileID: 0}
   offset: {x: 0, y: 1, z: 0}
   defaultDamage: 0
 --- !u!114 &-7109469485392114589
@@ -120,4 +127,5 @@ MonoBehaviour:
   sound: {fileID: 0}
   soundVolumeScale: 1
   pitchRange: {x: 1, y: 1}
+  abilityReference: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}

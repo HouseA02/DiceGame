@@ -9,14 +9,14 @@ public class DealDamage : Effect
     public override void Activate(Character source, Character target, float value)
     {
         int preHP = target.HP;
-        target.TakeDamage((int)(value + source.power));
+        target.TakeDamage((int)(value + source.power), (target.transform.position - source.transform.position));
         ReturnDamage(preHP - target.HP);
         base.Activate(source, target, value);
     }
 
     public override void Activate(Character source, Character target)
     {
-        target.TakeDamage(defaultDamage + source.power);
+        target.TakeDamage(defaultDamage + source.power, (target.transform.position - source.transform.position));
         base.Activate(source, target);
     }
 
