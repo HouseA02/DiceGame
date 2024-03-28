@@ -5,7 +5,7 @@ using UnityEngine;
 public class MultiReward : GrantReward
 {
     public List<Reward> Rewards;
-    public override void Activate()
+    public override void Activate(float value)
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         Debug.Log("Activated");

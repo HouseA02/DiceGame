@@ -70,6 +70,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
         type: 3}
+      propertyPath: Options.Array.data[0]
+      value: 
+      objectReference: {fileID: 4873604255172013578}
+    - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      propertyPath: Options.Array.data[1]
+      value: 
+      objectReference: {fileID: 2255033181554894631}
+    - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
       propertyPath: Options.Array.data[0].text
       value: Go through it. (Party takes 2 damage)
       objectReference: {fileID: 0}
@@ -88,91 +98,188 @@ PrefabInstance:
       propertyPath: Options.Array.data[1].effects.Array.size
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
-        type: 3}
-      propertyPath: Options.Array.data[0].effects.Array.data[0]
-      value: 
-      objectReference: {fileID: 9054401507313036253}
-    - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
-        type: 3}
-      propertyPath: Options.Array.data[1].effects.Array.data[0]
-      value: 
-      objectReference: {fileID: 9054401507313036253}
-    - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
-        type: 3}
-      propertyPath: Options.Array.data[1].effects.Array.data[1]
-      value: 
-      objectReference: {fileID: 9054401507313036253}
-    - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
-        type: 3}
-      propertyPath: Options.Array.data[1].effects.Array.data[2]
-      value: 
-      objectReference: {fileID: 8570037802096173093}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4621839566999463741, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+    - targetCorrespondingSourceObject: {fileID: 653091386514087832, guid: bc8e31d9e0b21924a9c7dcd131f86576,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 9054401507313036253}
-    - targetCorrespondingSourceObject: {fileID: 4621839566999463741, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+      addedObject: {fileID: 2255033181554894631}
+    - targetCorrespondingSourceObject: {fileID: 653091386514087832, guid: bc8e31d9e0b21924a9c7dcd131f86576,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7388867982555916588}
-    - targetCorrespondingSourceObject: {fileID: 4621839566999463741, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+      addedObject: {fileID: 5497235448046397105}
+    - targetCorrespondingSourceObject: {fileID: 653091386514087832, guid: bc8e31d9e0b21924a9c7dcd131f86576,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8570037802096173093}
+      addedObject: {fileID: 5375466125472854741}
+    - targetCorrespondingSourceObject: {fileID: 653091386514087832, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1284996431832772940}
+    - targetCorrespondingSourceObject: {fileID: 8666970822355370447, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4873604255172013578}
+    - targetCorrespondingSourceObject: {fileID: 8666970822355370447, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1905679035335433860}
+    - targetCorrespondingSourceObject: {fileID: 8666970822355370447, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5612988561735337008}
   m_SourcePrefab: {fileID: 100100000, guid: bc8e31d9e0b21924a9c7dcd131f86576, type: 3}
---- !u!1 &4634951363878631553 stripped
+--- !u!1 &677380576094814244 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 4621839566999463741, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+  m_CorrespondingSourceObject: {fileID: 653091386514087832, guid: bc8e31d9e0b21924a9c7dcd131f86576,
     type: 3}
   m_PrefabInstance: {fileID: 33413249528209340}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9054401507313036253
+--- !u!114 &2255033181554894631
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4634951363878631553}
+  m_GameObject: {fileID: 677380576094814244}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa83094fed1ec09478e61fbe6c5dd367, type: 3}
+  m_Script: {fileID: 11500000, guid: 426f8a6181af8d845bacedacdf1901b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect: {fileID: 7388867982555916588}
-  targetsEnemies: 0
-  targetsAllies: 1
-  targetsSelf: 0
---- !u!114 &7388867982555916588
+  text: Scavenge (Party takes 4 damage + ??)
+  effects:
+  - {fileID: 5375466125472854741}
+  - {fileID: 5497235448046397105}
+--- !u!114 &5497235448046397105
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4634951363878631553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8ef0c17aa3409d4697804b51b818819, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultDamage: 2
---- !u!114 &8570037802096173093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4634951363878631553}
+  m_GameObject: {fileID: 677380576094814244}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 578b1f4a9d63d3e48807cffd24e2729e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: {fileID: 427940669570293032, guid: ce4e042dee7d6e446b769b335e054556, type: 3}
+  VFX: {fileID: 0}
+  sound: {fileID: 0}
+  soundVolumeScale: 1
+  pitchRange: {x: 0.7, y: 1.3}
+  abilityReference: {fileID: 0}
+  offset: {x: 0, y: 1, z: 0}
+  rewards: []
+  reward: {fileID: 7145488905630927966, guid: d5339cb68faffa44885cbcecb96da4fe, type: 3}
   potentialRewards:
   - {fileID: 427940669570293032, guid: ce4e042dee7d6e446b769b335e054556, type: 3}
   - {fileID: 7145488905630927966, guid: d5339cb68faffa44885cbcecb96da4fe, type: 3}
+--- !u!114 &5375466125472854741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677380576094814244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa83094fed1ec09478e61fbe6c5dd367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VFX: {fileID: 0}
+  sound: {fileID: 0}
+  soundVolumeScale: 1
+  pitchRange: {x: 0.7, y: 1.3}
+  abilityReference: {fileID: 0}
+  offset: {x: 0, y: 1, z: 0}
+  effects:
+  - effect: {fileID: 1284996431832772940}
+    value: 4
+  targetsEnemies: 0
+  targetsAllies: 1
+  targetsSelf: 0
+--- !u!114 &1284996431832772940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677380576094814244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ef0c17aa3409d4697804b51b818819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VFX: {fileID: 0}
+  sound: {fileID: 0}
+  soundVolumeScale: 1
+  pitchRange: {x: 0.7, y: 1.3}
+  abilityReference: {fileID: 0}
+  offset: {x: 0, y: 1, z: 0}
+  defaultDamage: 4
+--- !u!1 &8660968710326017651 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8666970822355370447, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+    type: 3}
+  m_PrefabInstance: {fileID: 33413249528209340}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4873604255172013578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8660968710326017651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 426f8a6181af8d845bacedacdf1901b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Go through it (Party takes 2 damage)
+  effects:
+  - {fileID: 1905679035335433860}
+--- !u!114 &1905679035335433860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8660968710326017651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa83094fed1ec09478e61fbe6c5dd367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VFX: {fileID: 0}
+  sound: {fileID: 0}
+  soundVolumeScale: 1
+  pitchRange: {x: 0.7, y: 1.3}
+  abilityReference: {fileID: 0}
+  offset: {x: 0, y: 1, z: 0}
+  effects:
+  - effect: {fileID: 5612988561735337008}
+    value: 2
+  targetsEnemies: 0
+  targetsAllies: 1
+  targetsSelf: 0
+--- !u!114 &5612988561735337008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8660968710326017651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ef0c17aa3409d4697804b51b818819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VFX: {fileID: 0}
+  sound: {fileID: 0}
+  soundVolumeScale: 1
+  pitchRange: {x: 0.7, y: 1.3}
+  abilityReference: {fileID: 0}
+  offset: {x: 0, y: 1, z: 0}
+  defaultDamage: 2

@@ -14,7 +14,7 @@ public class RelicPlacer : MonoBehaviour
     {
         RelicSlot newRelicSlot = Instantiate(relicSlot, transform.position, Quaternion.identity, relicContainer.transform);
         relic.slot = newRelicSlot;
-        transform.Translate(new Vector3 (100 * GetComponentInParent<Canvas>().scaleFactor, 0, 0));
+        //transform.Translate(new Vector3 (100 * GetComponentInParent<Canvas>().scaleFactor, 0, 0));
     }
 
     private void Update()

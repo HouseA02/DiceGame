@@ -46,15 +46,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7650b1bef1cdb04d864b4d131449bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rewardType: 2
+  id: 0
   abilityName: Taunt
   targetsEnemy: 0
   targetsAlly: 0
   targetsSelf: 0
+  pool: 3
+  rarity: 2
   effects:
   - effect: {fileID: 3047053891247446698}
     value: 6
   - effect: {fileID: 8178659997645234242}
     value: 0
+  cantripEffects: []
   targetingType: 0
   image: {fileID: 2100000, guid: 781f7ae58fac5d344872e663a616fbd3, type: 2}
   UIImage: {fileID: 21300000, guid: 5b053244c21ecda46a1d575e62a455e8, type: 3}
@@ -62,6 +67,9 @@ MonoBehaviour:
   description: Gain 6 block and force all enemies to attack the caster
   gameManager: {fileID: 0}
   characterReference: {fileID: 0}
+  delay: 0.2
+  lastHitDamage: 0
+  totalDamage: 0
 --- !u!114 &3047053891247446698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,6 +82,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1400dcfbfa4bdef41bfa14730d8d02c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VFX: {fileID: 0}
+  sound: {fileID: 0}
+  soundVolumeScale: 1
+  pitchRange: {x: 0.7, y: 1.3}
+  abilityReference: {fileID: 0}
+  offset: {x: 0, y: 1, z: 0}
 --- !u!114 &8178659997645234242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,3 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a1c5051dc0f2dd4295c953128299919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VFX: {fileID: 0}
+  sound: {fileID: 0}
+  soundVolumeScale: 1
+  pitchRange: {x: 0.7, y: 1.3}
+  abilityReference: {fileID: 0}
+  offset: {x: 0, y: 1, z: 0}

@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class EventArenaController : MonoBehaviour
 {
+    public class MapEvent : UnityEvent<Event> { }
     [SerializeField]
     private MapController mapController;
     [SerializeField]
@@ -29,6 +31,7 @@ public class EventArenaController : MonoBehaviour
     public GameObject mainCam;
     public CanvasGroup cg;
 
+    public MapEvent m_mapEvent = new MapEvent();
     public bool fadeIn;
     private Animator mapCamAnim;
     // Start is called before the first frame update
@@ -81,6 +84,7 @@ public class EventArenaController : MonoBehaviour
 
     public void StartEvent(Event e)
     {
+        m_mapEvent.Invoke(e);
         switch(e.eventType)
         {
             case Event.EventType.Combat:

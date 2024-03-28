@@ -44,11 +44,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ed2531114c7934eb9a23f42f373df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rewardType: 0
+  id: 0
   abilityName: Blank
   targetsEnemy: 0
   targetsAlly: 0
   targetsSelf: 0
+  pool: 0
+  rarity: 0
+  isReplacable: 0
   effects: []
+  cantripEffects: []
   targetingType: 0
   image: {fileID: 2100000, guid: de96e80f7504fb04d93ece0e6706fb6f, type: 2}
   UIImage: {fileID: 21300000, guid: f40e6c0f8dd3b50408b50c67c7447d21, type: 3}
@@ -56,3 +62,6 @@ MonoBehaviour:
   description: Does nothing
   gameManager: {fileID: 0}
   characterReference: {fileID: 0}
+  delay: 0.2
+  lastHitDamage: 0
+  totalDamage: 0

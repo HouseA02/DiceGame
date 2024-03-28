@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.Windows;
 using System.Text.RegularExpressions;
 using System;
+using UnityEngine.Events;
 
 public class StoryController : MonoBehaviour
 {

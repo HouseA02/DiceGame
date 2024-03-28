@@ -21,6 +21,10 @@ public class Character : MonoBehaviour
         public StatusEffect effect;
         public int value;
     }
+    public Rigidbody mainRb;
+    public Rigidbody[] rigidbodies;
+    public Collider[] colliders;
+    public Animator anim;
     [SerializeField]
     private Tutorial tutorial;
     [SerializeField]
@@ -211,6 +215,21 @@ public class Character : MonoBehaviour
 
     public virtual void Die(Vector3 dir)
     {
+        if (anim != null)
+        {
+            anim.enabled = false;
+            foreach (Rigidbody rigidbody in rigidbodies)
+            {
+                rigidbody.isKinematic = false;
+                rigidbody.detectCollisions = true;
+            }
+            foreach (Collider collider in colliders)
+            {
+                collider.enabled = true;
+            }
+            mainRb.AddForce((dir * 10) + Vector3.up * 7, ForceMode.Impulse);
+        }
+        Debug.Log(dir);
         isDead = true;
         targetable = false;
         CleanUp();
@@ -224,6 +243,10 @@ public class Character : MonoBehaviour
 
     public void ChangeHP(int value, Vector3 dir)
     {
+        if (isDead && value > 0)
+        {
+            Revive();
+        }
         HP += value;
         HP = Mathf.Clamp(HP, 0, maxHP);
         characterPanel.SetHP(HP);
@@ -242,6 +265,20 @@ public class Character : MonoBehaviour
     }
     public virtual void Die()
     {
+        if (anim != null)
+        {
+            anim.enabled = false;
+            foreach (Rigidbody rigidbody in rigidbodies)
+            {
+                rigidbody.isKinematic = false;
+                rigidbody.detectCollisions = true;
+            }
+            foreach (Collider collider in colliders)
+            {
+                collider.enabled = true;
+                mainRb.AddForce(Vector3.up * 10, ForceMode.Impulse);
+            }
+        }
         isDead = true;
         targetable = false;
         CleanUp();
@@ -253,6 +290,10 @@ public class Character : MonoBehaviour
         //gameObject.SetActive(false);
     }
 
+    public virtual void Revive()
+    {
+        characterPanel.deathOverlay.SetActive(false);
+    }
     public virtual void OnAbilityUsed(Ability ability)
     {
         m_OnAbilityUsed.Invoke(ability);
@@ -334,6 +375,18 @@ public class Character : MonoBehaviour
         {
             abilities[i] = Instantiate(baseAbilities[i], this.transform);
             abilities[i].id = i;
+        }
+        if (anim != null)
+        {
+            foreach (Rigidbody rigidbody in rigidbodies)
+            {
+                rigidbody.isKinematic = true;
+                rigidbody.detectCollisions = false;
+            }
+            foreach (Collider collider in colliders)
+            {
+                collider.enabled = false;
+            }
         }
         power = 0;
     }

@@ -10,10 +10,13 @@ public class Relic : Reward
     public string relicName;
     public string relicDescription;
     public GameManager gameManager;
+    private Player player;
     bool usesValue;
     [SerializeField]
     int initialValue;
+    public int currentValue =0;
     bool onBattleStart = true;
+    public bool stackable;
     [SerializeField]
     public AbilityEffect[] effects;
     public RelicSlot slot;
@@ -24,8 +27,18 @@ public class Relic : Reward
     public virtual void Initialise(GameManager gm)
     {
         gameManager = gm;
+        player = gameManager.player;
+        currentValue = initialValue;
+        foreach(Relic relic in player.relics)
+        {
+            if (relic != null && relic.relicName == this.relicName && stackable)
+            {
+                relic.currentValue += currentValue;
+                Remove();
+            }
+        }
         if (image != null) { slot.imageSlot.sprite = image; }
-        if (usesValue) { slot.valueSlot.gameObject.SetActive(true); slot.valueSlot.text = initialValue.ToString(); }
+        if (usesValue) { slot.valueSlot.gameObject.SetActive(true); slot.valueSlot.text = currentValue.ToString(); }
         slot.descText.text = relicDescription;
         slot.nameText.text = relicName;
         gm.gm_OnBattleStart.AddListener(OnTrueBattleStart);
@@ -62,6 +75,12 @@ public class Relic : Reward
 
     }
 
+    public virtual void Remove()
+    {
+        player.relics.Remove(this);
+        Destroy(slot.gameObject);
+        Destroy(gameObject);
+    }
     protected virtual void UpdateValue()
     {
 

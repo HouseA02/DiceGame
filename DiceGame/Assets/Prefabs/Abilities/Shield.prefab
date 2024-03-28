@@ -45,13 +45,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4acced62494eb22418e11e65e195d5a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rewardType: 2
+  id: 0
   abilityName: Block
   targetsEnemy: 0
   targetsAlly: 1
   targetsSelf: 1
+  pool: 3
+  rarity: 1
   effects:
   - effect: {fileID: 8402490203149703901}
     value: 4
+  cantripEffects: []
   targetingType: 1
   image: {fileID: 2100000, guid: 626aa987e99f31e429a703f6e37cfe2a, type: 2}
   UIImage: {fileID: 21300000, guid: 1d43647d2f3175f44a6a0df0bd6c5a24, type: 3}
@@ -59,6 +64,9 @@ MonoBehaviour:
   description: Apply 4 block to target ally
   gameManager: {fileID: 0}
   characterReference: {fileID: 0}
+  delay: 0.2
+  lastHitDamage: 0
+  totalDamage: 0
   validTargets: []
   isHealing: 0
 --- !u!114 &8402490203149703901
@@ -76,5 +84,7 @@ MonoBehaviour:
   VFX: {fileID: 0}
   sound: {fileID: 8300000, guid: 26f18bfc8b3b1024abccb760ee378dd7, type: 3}
   soundVolumeScale: 1
+  pitchRange: {x: 0.7, y: 1.3}
+  abilityReference: {fileID: 0}
   offset: {x: 0, y: 1, z: 0}
   defaultValue: 0

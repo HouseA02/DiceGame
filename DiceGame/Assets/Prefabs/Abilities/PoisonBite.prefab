@@ -46,15 +46,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4acced62494eb22418e11e65e195d5a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rewardType: 2
+  id: 0
   abilityName: Poison Bite
   targetsEnemy: 1
   targetsAlly: 0
   targetsSelf: 0
+  pool: 1
+  rarity: 2
   effects:
   - effect: {fileID: 6830838571444737313}
     value: 1
   - effect: {fileID: 6917980009876511544}
     value: 2
+  cantripEffects: []
   targetingType: 1
   image: {fileID: 2100000, guid: df1aa9e7af0c88744a848182afb483cb, type: 2}
   UIImage: {fileID: 21300000, guid: 584db495ddf57fb48a8138b80bd37ac6, type: 3}
@@ -62,6 +67,9 @@ MonoBehaviour:
   description: Deal 1 damage and apply 2 poison to target
   gameManager: {fileID: 0}
   characterReference: {fileID: 0}
+  delay: 0.2
+  lastHitDamage: 0
+  totalDamage: 0
   validTargets: []
   isHealing: 0
 --- !u!114 &6830838571444737313
@@ -80,6 +88,7 @@ MonoBehaviour:
   sound: {fileID: 8300000, guid: a280c39633ade0a48abdeebe5da263e7, type: 3}
   soundVolumeScale: 1
   pitchRange: {x: 0.7, y: 1.3}
+  abilityReference: {fileID: 0}
   offset: {x: 0, y: 1, z: 0}
   defaultDamage: 0
 --- !u!114 &6917980009876511544
@@ -98,6 +107,7 @@ MonoBehaviour:
   sound: {fileID: 0}
   soundVolumeScale: 1
   pitchRange: {x: 1, y: 1}
+  abilityReference: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
   status: {fileID: 5283018372578735935, guid: 00301d577caf05c44b3b2176a9b45637, type: 3}
   defaultValue: 0

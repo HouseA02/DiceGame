@@ -98,6 +98,16 @@ PrefabInstance:
       propertyPath: Options.Array.data[1].effects.Array.data[1]
       value: 
       objectReference: {fileID: 3381086015773149934}
+    - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      propertyPath: Options.Array.data[1].effects.Array.data[0].effect
+      value: 
+      objectReference: {fileID: -8292365160426125201}
+    - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      propertyPath: Options.Array.data[1].effects.Array.data[1].effect
+      value: 
+      objectReference: {fileID: 3381086015773149934}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -129,6 +139,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 578b1f4a9d63d3e48807cffd24e2729e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VFX: {fileID: 0}
+  sound: {fileID: 0}
+  soundVolumeScale: 1
+  pitchRange: {x: 0.7, y: 1.3}
+  abilityReference: {fileID: 0}
+  offset: {x: 0, y: 1, z: 0}
+  rewards: []
   reward: {fileID: 7145488905630927966, guid: d5339cb68faffa44885cbcecb96da4fe, type: 3}
   potentialRewards:
   - {fileID: 7145488905630927966, guid: d5339cb68faffa44885cbcecb96da4fe, type: 3}
@@ -145,4 +162,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8a8c1b58a7c0044bbf4eec6804b2fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VFX: {fileID: 0}
+  sound: {fileID: 0}
+  soundVolumeScale: 1
+  pitchRange: {x: 0.7, y: 1.3}
+  abilityReference: {fileID: 0}
+  offset: {x: 0, y: 1, z: 0}
   combatData: {fileID: 11400000, guid: 2d70754f37c78c74b96e52532f6213d3, type: 2}

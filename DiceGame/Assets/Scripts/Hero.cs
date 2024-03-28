@@ -13,6 +13,7 @@ public class Hero : Character
     public enum Class
     {
         None,
+        Enemy,
         Rogue,
         Knight,
         Mage
@@ -27,6 +28,12 @@ public class Hero : Character
         }
     }
 
+    public override void Revive()
+    {
+        transform.position = gameManager.heroPositions[id].position;
+        transform.rotation = gameManager.heroPositions[id].rotation;
+        base.Revive();
+    }
     public override void OnAbilityUsed(Ability ability)
     {
         base.OnAbilityUsed(ability);

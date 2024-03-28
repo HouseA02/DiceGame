@@ -47,11 +47,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4acced62494eb22418e11e65e195d5a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rewardType: 2
   id: 0
   abilityName: Coin
   targetsEnemy: 1
   targetsAlly: 0
   targetsSelf: 0
+  pool: 2
+  rarity: 2
+  isReplacable: 1
   effects:
   - effect: {fileID: 6228306730393676796}
     value: 6

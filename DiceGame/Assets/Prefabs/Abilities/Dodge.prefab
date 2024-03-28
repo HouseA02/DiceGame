@@ -46,11 +46,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7650b1bef1cdb04d864b4d131449bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rewardType: 2
   id: 0
   abilityName: Dodge
   targetsEnemy: 0
   targetsAlly: 0
   targetsSelf: 0
+  pool: 2
+  rarity: 1
+  isReplacable: 1
   effects:
   - effect: {fileID: -4209475679863651743}
     value: 1

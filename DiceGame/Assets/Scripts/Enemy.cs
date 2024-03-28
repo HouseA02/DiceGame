@@ -6,27 +6,10 @@ using UnityEngine;
 public class Enemy : Character
 {
     public Character target;
-    public Rigidbody mainRb;
-    public Rigidbody[] rigidbodies;
-    public Collider[] colliders;
-    public Animator anim;
 
     protected override void Awake()
     {
-        if (anim != null)
-        {
-            foreach (Rigidbody rigidbody in rigidbodies)
-            {
-                rigidbody.isKinematic = true;
-                rigidbody.detectCollisions = false;
-            }
-            foreach (Collider collider in colliders)
-            {
-                collider.enabled = false;
-            }
-        }
         base.Awake();
-
     }
     public override void SetAbility(int value)
     {
@@ -47,7 +30,7 @@ public class Enemy : Character
             }
             else
             {
-                transform.LookAt(enemies[id].transform);
+                transform.LookAt(transform);
             }
         }
         else
@@ -148,42 +131,20 @@ public class Enemy : Character
     public override void Die()
     {
         characterPanel.targetContainer.SetActive(false);
-        if (anim != null)
-        {
-            anim.enabled = false;
-            foreach (Rigidbody rigidbody in rigidbodies)
-            {
-                rigidbody.isKinematic = false;
-                rigidbody.detectCollisions = true;
-            }
-            foreach (Collider collider in colliders)
-            {
-                collider.enabled = true;
-                mainRb.AddForce(Vector3.up * 10, ForceMode.Impulse);
-            }
-        }
         base.Die();
     }
 
     public override void Die(Vector3 dir)
     {
         characterPanel.targetContainer.SetActive(false);
-        if(anim != null)
-        {
-            anim.enabled = false;
-            foreach (Rigidbody rigidbody in rigidbodies)
-            {
-                rigidbody.isKinematic = false;
-                rigidbody.detectCollisions = true;
-            }
-            foreach (Collider collider in colliders)
-            {
-                collider.enabled = true;
-            }
-            mainRb.AddForce((dir * 10) + Vector3.up * 7, ForceMode.Impulse);
-        }
-        Debug.Log(dir);
         base.Die(dir);
+    }
+
+    public override void Revive()
+    {
+        transform.position = gameManager.enemyPositions[id].position;
+        transform.rotation = gameManager.enemyPositions[id].rotation;
+        base.Revive();
     }
     public override void Initialise(Character temp)
     {

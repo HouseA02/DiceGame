@@ -37,6 +37,13 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Tab))
+        {
+            relics[0].Remove();
+        }
+    }
     public void ChangeSouls(int amount)
     {
         souls += amount;

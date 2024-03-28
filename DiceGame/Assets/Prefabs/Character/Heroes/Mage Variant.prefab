@@ -321,6 +321,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4472070bc848b4248b58fd4792ef0941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainRb: {fileID: 0}
+  rigidbodies: []
+  colliders: []
+  anim: {fileID: 0}
+  tutorial: {fileID: 0}
   model: {fileID: 7714905743706476617}
   targetSprite: {fileID: 659877048316126653}
   characterName: Mage
@@ -356,12 +361,14 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  resetAbilities: []
   characterPanel: {fileID: 0}
   currentAbility: {fileID: 0}
   targetable: 1
   isFirstRoll: 1
   canRoll: 1
   isDead: 0
+  isBlind: 0
   instance: {fileID: 0}
   indicator: {fileID: 5543420666366335268}
   gameManager: {fileID: 0}
@@ -385,8 +392,12 @@ MonoBehaviour:
   m_OnResult:
     m_PersistentCalls:
       m_Calls: []
+  m_OnAbilityUsed:
+    m_PersistentCalls:
+      m_Calls: []
   hasActed: 0
-  m_Class: 03000000
+  parentModel: {fileID: 0}
+  m_Class: 04000000
 --- !u!65 &2532658161053458275
 BoxCollider:
   m_ObjectHideFlags: 0

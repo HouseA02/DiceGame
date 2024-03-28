@@ -46,12 +46,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rewardType: 1
   relicName: 
+  relicDescription: 
   gameManager: {fileID: 0}
   initialValue: 0
+  currentValue: 0
+  stackable: 0
   effects: []
   slot: {fileID: 0}
   image: {fileID: 0}
   r_OnTurnStart:
+    m_PersistentCalls:
+      m_Calls: []
+  r_OnBattleStart:
     m_PersistentCalls:
       m_Calls: []
   r_OnTurnEnd:

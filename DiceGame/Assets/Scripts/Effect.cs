@@ -39,7 +39,7 @@ public class Effect : MonoBehaviour
             {
                 effectInstance = varEffectInstance.GetComponentInChildren<VisualEffect>();
             }
-            if (effectInstance.HasVector3("Direction"))
+            if (effectInstance.GetComponent<AbilityVFX>().isDirectional)
             {
                 effectInstance.SetVector3("Direction", (target.transform.position - source.transform.position));
             }

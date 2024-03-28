@@ -45,20 +45,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4acced62494eb22418e11e65e195d5a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rewardType: 2
+  id: 0
   abilityName: Strike
   targetsEnemy: 1
   targetsAlly: 0
   targetsSelf: 0
+  pool: 0
+  rarity: 1
   effects:
   - effect: {fileID: -981031962479951513}
     value: 2
+  cantripEffects: []
   targetingType: 1
-  image: {fileID: 2100000, guid: 0a1466e1db37f9c47a1ecb68a9377db7, type: 2}
-  UIImage: {fileID: 21300000, guid: 8c5210a6e08b1924e840cc46886b8a34, type: 3}
+  image: {fileID: 2100000, guid: 00766adb0d9cb2945a22e62a76879ef5, type: 2}
+  UIImage: {fileID: 21300000, guid: 4a7d1de9f0ab99b46b058cdcac0d944f, type: 3}
   decal: {fileID: 0}
   description: Deal 2 damage to target enemy
   gameManager: {fileID: 0}
   characterReference: {fileID: 0}
+  delay: 0.2
+  lastHitDamage: 0
+  totalDamage: 0
   validTargets: []
   isHealing: 0
 --- !u!114 &-981031962479951513
@@ -77,5 +85,6 @@ MonoBehaviour:
   sound: {fileID: 8300000, guid: a280c39633ade0a48abdeebe5da263e7, type: 3}
   soundVolumeScale: 0.6
   pitchRange: {x: 0.7, y: 1.3}
+  abilityReference: {fileID: 0}
   offset: {x: 0, y: 1, z: 0}
   defaultDamage: 0

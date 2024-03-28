@@ -16,6 +16,6 @@ MonoBehaviour:
   storyDescription: 'Come with me little ones and rest here with me, Come with me
     little ones and I will help you Vanquish your foes, Come with me little ones
     and I will give you something no one else can '
-  storyArt: {fileID: 0}
+  storyArt: {fileID: 21300000, guid: 12078d8932a3daa49aed246ab998646e, type: 3}
   storyOptions: {fileID: 7785611719946470518, guid: ae68b0747b788d841bc58d4b16f5bc9b,
     type: 3}

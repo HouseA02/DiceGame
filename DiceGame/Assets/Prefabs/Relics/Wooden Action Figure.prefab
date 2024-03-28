@@ -140,7 +140,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa83094fed1ec09478e61fbe6c5dd367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect: {fileID: 1100496726137100205}
+  VFX: {fileID: 0}
+  sound: {fileID: 0}
+  soundVolumeScale: 1
+  pitchRange: {x: 0.7, y: 1.3}
+  abilityReference: {fileID: 0}
+  offset: {x: 0, y: 1, z: 0}
+  effects:
+  - effect: {fileID: 1100496726137100205}
+    value: 1
   targetsEnemies: 0
   targetsAllies: 1
   targetsSelf: 0
@@ -156,5 +164,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d6c845cd4cf914badfef85a5ad15a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VFX: {fileID: 0}
+  sound: {fileID: 0}
+  soundVolumeScale: 1
+  pitchRange: {x: 0.7, y: 1.3}
+  abilityReference: {fileID: 0}
+  offset: {x: 0, y: 1, z: 0}
   status: {fileID: 3275389678381531474, guid: 1837a24d3378dea4f8881b6769276c14, type: 3}
   defaultValue: 1

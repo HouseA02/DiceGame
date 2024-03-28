@@ -46,11 +46,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4acced62494eb22418e11e65e195d5a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rewardType: 2
   id: 0
   abilityName: Poisoned Tips
   targetsEnemy: 1
   targetsAlly: 0
   targetsSelf: 0
+  pool: 2
+  rarity: 2
   effects:
   - effect: {fileID: 7401836906271883021}
     value: 6
@@ -58,8 +61,8 @@ MonoBehaviour:
     value: 3
   cantripEffects: []
   targetingType: 1
-  image: {fileID: 2100000, guid: df1aa9e7af0c88744a848182afb483cb, type: 2}
-  UIImage: {fileID: 21300000, guid: 584db495ddf57fb48a8138b80bd37ac6, type: 3}
+  image: {fileID: 2100000, guid: 45b28058dc7ec7a4f87598e63ec026fb, type: 2}
+  UIImage: {fileID: 21300000, guid: a52423ad387e81b43975dedb839934df, type: 3}
   decal: {fileID: 0}
   description: Deal 6 damage and apply 3 poison to target
   gameManager: {fileID: 0}

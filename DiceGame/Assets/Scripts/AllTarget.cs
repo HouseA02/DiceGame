@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using static Unity.VisualScripting.Member;
 using static UnityEngine.Rendering.DebugUI;
@@ -15,11 +16,12 @@ public class AllTarget : Effect
     public override void Activate(Character source, Character target, float value)
     {
         List<Character> targets = new List<Character>();
-        if (targetsEnemies) { targets.AddRange(source.enemies); }
-        if (targetsAllies) {  targets.AddRange(source.allies); }
+        if (targetsEnemies) { targets.AddRange(source.enemies.Where(e => e.isDead == false)); }
+        if (targetsAllies) {  targets.AddRange(source.allies.Where(h => h.isDead == false)); }
         if (targetsSelf) { targets.Add(source); }
         foreach(AbilityEffect effect in effects) 
         {
+            effect.value = value;
             targets.ForEach(t => effect.Activate(source, t));
         }
     }
@@ -27,11 +29,12 @@ public class AllTarget : Effect
     public override void Activate(float value)
     {
         List<Character> targets = new List<Character>();
-        if (targetsEnemies) { targets.AddRange(gameManager.activeEnemies); }
-        if (targetsAllies) { targets.AddRange(gameManager.activeHeroes); }
+        if (targetsEnemies) { targets.AddRange(gameManager.activeEnemies.Where(e => e.isDead == false)); }
+        if (targetsAllies) { targets.AddRange(gameManager.activeHeroes.Where(h => h.isDead == false)); }
         Debug.Log("List Count" + targets.Count);
         foreach(AbilityEffect effect in effects)
         {
+            effect.value = value;
             targets.ForEach(t => effect.Activate(t));
         }
     }
@@ -40,8 +43,8 @@ public class AllTarget : Effect
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         List<Character> targets = new List<Character>();
-        if (targetsEnemies) { targets.AddRange(gameManager.activeEnemies); }
-        if (targetsAllies) { targets.AddRange(gameManager.activeHeroes); }
+        if (targetsEnemies) { targets.AddRange(gameManager.activeEnemies.Where(e => e.isDead == false)); }
+        if (targetsAllies) { targets.AddRange(gameManager.activeHeroes.Where(h => h.isDead == false)); }
         foreach (AbilityEffect effect in effects)
         {
             targets.ForEach(t => effect.Activate(t));

@@ -65,6 +65,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
         type: 3}
+      propertyPath: Options.Array.data[0]
+      value: 
+      objectReference: {fileID: 7501042564709309288}
+    - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
       propertyPath: Options.Array.data[0].text
       value: Rest a while ( 5 HP Party Heal )
       objectReference: {fileID: 0}
@@ -73,56 +78,84 @@ PrefabInstance:
       propertyPath: Options.Array.data[0].effects.Array.size
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7816764301475879882, guid: bc8e31d9e0b21924a9c7dcd131f86576,
-        type: 3}
-      propertyPath: Options.Array.data[0].effects.Array.data[0]
-      value: 
-      objectReference: {fileID: 4475706187451423267}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4621839566999463741, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+    - targetCorrespondingSourceObject: {fileID: 8666970822355370447, guid: bc8e31d9e0b21924a9c7dcd131f86576,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: -3114433224871072325}
-    - targetCorrespondingSourceObject: {fileID: 4621839566999463741, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+      addedObject: {fileID: 7501042564709309288}
+    - targetCorrespondingSourceObject: {fileID: 8666970822355370447, guid: bc8e31d9e0b21924a9c7dcd131f86576,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4475706187451423267}
+      addedObject: {fileID: 3488958001936102658}
+    - targetCorrespondingSourceObject: {fileID: 8666970822355370447, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2394151819774631937}
   m_SourcePrefab: {fileID: 100100000, guid: bc8e31d9e0b21924a9c7dcd131f86576, type: 3}
---- !u!1 &4634951363878631553 stripped
+--- !u!1 &8660968710326017651 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 4621839566999463741, guid: bc8e31d9e0b21924a9c7dcd131f86576,
+  m_CorrespondingSourceObject: {fileID: 8666970822355370447, guid: bc8e31d9e0b21924a9c7dcd131f86576,
     type: 3}
   m_PrefabInstance: {fileID: 33413249528209340}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-3114433224871072325
+--- !u!114 &7501042564709309288
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4634951363878631553}
+  m_GameObject: {fileID: 8660968710326017651}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c6a46af205dd25469af828fb99b2656, type: 3}
+  m_Script: {fileID: 11500000, guid: 426f8a6181af8d845bacedacdf1901b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 5
---- !u!114 &4475706187451423267
+  text: Rest a While
+  effects:
+  - {fileID: 3488958001936102658}
+--- !u!114 &3488958001936102658
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4634951363878631553}
+  m_GameObject: {fileID: 8660968710326017651}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa83094fed1ec09478e61fbe6c5dd367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect: {fileID: -3114433224871072325}
+  VFX: {fileID: 0}
+  sound: {fileID: 0}
+  soundVolumeScale: 1
+  pitchRange: {x: 0.7, y: 1.3}
+  abilityReference: {fileID: 0}
+  offset: {x: 0, y: 1, z: 0}
+  effects:
+  - effect: {fileID: 2394151819774631937}
+    value: 5
   targetsEnemies: 0
   targetsAllies: 1
   targetsSelf: 0
+--- !u!114 &2394151819774631937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8660968710326017651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c6a46af205dd25469af828fb99b2656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VFX: {fileID: 0}
+  sound: {fileID: 0}
+  soundVolumeScale: 1
+  pitchRange: {x: 0.7, y: 1.3}
+  abilityReference: {fileID: 0}
+  offset: {x: 0, y: 1, z: 0}
+  value: 5

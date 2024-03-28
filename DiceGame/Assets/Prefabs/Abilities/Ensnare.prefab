@@ -45,11 +45,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4acced62494eb22418e11e65e195d5a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rewardType: 2
   id: 0
   abilityName: Ensnare
   targetsEnemy: 1
   targetsAlly: 0
   targetsSelf: 0
+  pool: 1
+  rarity: 2
+  face: {fileID: 0}
   effects:
   - effect: {fileID: 1111287981090582293}
     value: 0

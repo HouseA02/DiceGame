@@ -1,0 +1,227 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7262292059656235444
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3779562413222193278, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      propertyPath: relicName
+      value: Supply of Herbs
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779562413222193278, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      propertyPath: initialValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779562413222193278, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      propertyPath: relicDescription
+      value: Restore 1 additional HP per stack when resting
+      objectReference: {fileID: 0}
+    - target: {fileID: 6378266649676763751, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      propertyPath: m_Name
+      value: Supply of Herbs Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067956561346034717, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.6370677
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067956561346034717, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2342551
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067956561346034717, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.832865
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067956561346034717, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067956561346034717, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067956561346034717, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067956561346034717, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067956561346034717, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067956561346034717, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067956561346034717, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3779562413222193278, guid: 845fbe5dbfae78a4183e5981f973f2f0, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6378266649676763751, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9014575152096362686}
+    - targetCorrespondingSourceObject: {fileID: 6378266649676763751, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6157188449473868993}
+    - targetCorrespondingSourceObject: {fileID: 6378266649676763751, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7355241667443387551}
+    - targetCorrespondingSourceObject: {fileID: 6378266649676763751, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7637343466471541673}
+  m_SourcePrefab: {fileID: 100100000, guid: 845fbe5dbfae78a4183e5981f973f2f0, type: 3}
+--- !u!1 &4345128802465577939 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6378266649676763751, guid: 845fbe5dbfae78a4183e5981f973f2f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 7262292059656235444}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9014575152096362686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4345128802465577939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 305a7d7acd01f264991b54afdc0e54cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rewardType: 1
+  relicName: Supply of Herbs
+  relicDescription: Restore 1 additional HP per stack when resting
+  gameManager: {fileID: 0}
+  initialValue: 1
+  currentValue: 0
+  stackable: 1
+  effects: []
+  slot: {fileID: 0}
+  image: {fileID: 0}
+  r_OnTurnStart:
+    m_PersistentCalls:
+      m_Calls: []
+  r_OnBattleStart:
+    m_PersistentCalls:
+      m_Calls: []
+  r_OnTurnEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  r_onRest:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7637343466471541673}
+        m_TargetAssemblyTypeName: UseValue, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  r_onCombat:
+    m_PersistentCalls:
+      m_Calls: []
+  r_onElite:
+    m_PersistentCalls:
+      m_Calls: []
+  r_onStory:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6157188449473868993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4345128802465577939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa83094fed1ec09478e61fbe6c5dd367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VFX: {fileID: 0}
+  sound: {fileID: 0}
+  soundVolumeScale: 1
+  pitchRange: {x: 0.7, y: 1.3}
+  abilityReference: {fileID: 0}
+  offset: {x: 0, y: 1, z: 0}
+  effects:
+  - effect: {fileID: 7355241667443387551}
+    value: 0
+  targetsEnemies: 0
+  targetsAllies: 1
+  targetsSelf: 0
+--- !u!114 &7355241667443387551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4345128802465577939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c6a46af205dd25469af828fb99b2656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VFX: {fileID: 0}
+  sound: {fileID: 0}
+  soundVolumeScale: 1
+  pitchRange: {x: 0.7, y: 1.3}
+  abilityReference: {fileID: 0}
+  offset: {x: 0, y: 1, z: 0}
+  value: 0
+--- !u!114 &7637343466471541673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4345128802465577939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cffe4a03e6daa2f45aeaa44d5a1e663a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VFX: {fileID: 0}
+  sound: {fileID: 0}
+  soundVolumeScale: 1
+  pitchRange: {x: 0.7, y: 1.3}
+  abilityReference: {fileID: 0}
+  offset: {x: 0, y: 1, z: 0}
+  effects:
+  - {fileID: 6157188449473868993}
+  value: 0

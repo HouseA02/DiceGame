@@ -6,7 +6,6 @@ using UnityEngine;
 public class GrantReward : Effect
 {
     [SerializeField]
-    public Reward[] rewards;
     public Reward reward;
     public override void Activate()
     {
@@ -18,16 +17,12 @@ public class GrantReward : Effect
                 gameManager.player.AddRelic((Relic)reward);
                 break;
             case Reward.RewardType.Face:
-                LootScreen lootScreen = FindFirstObjectByType<LootScreen>();
-                lootScreen.ClaimFace((FaceReward)reward);
+                LootScreen lootScreen = gameManager.lootScreen;
+                lootScreen.enabled = true;
+                lootScreen.panel.SetActive(false);
+                lootScreen.ClaimFace((Ability)reward);
                 break;
         }
         base.Activate();
-    }
-
-    public override void Activate(float value)
-    {
-        reward = rewards[(int)value];
-        base.Activate(value);
     }
 }

@@ -15,7 +15,7 @@ public class LootScreen : MonoBehaviour
     [SerializeField]
     private Player player;
     [SerializeField]
-    private GameObject panel;
+    public GameObject panel;
     [SerializeField]
     private Button[] buttons;
     [SerializeField]
@@ -25,7 +25,7 @@ public class LootScreen : MonoBehaviour
     [SerializeField]
     private LootManager lootManager;
     private int soulsToGet;
-    private LootManager.LootFace faceToLoot;
+    private Ability faceToLoot;
     private Hero validHero = null;
     public void FindLoot(CombatData combatData)
     {
@@ -54,7 +54,7 @@ public class LootScreen : MonoBehaviour
         buttons[0].onClick.AddListener(ClaimSouls);
         buttons[1].gameObject.SetActive(true);
         faceToLoot = lootManager.facePool[Random.Range(0, lootManager.facePool.Count)];
-        buttonImage[1].sprite = faceToLoot.face.UIImage;
+        buttonImage[1].sprite = faceToLoot.UIImage;
         buttonText[1].text = faceToLoot.name;
         buttons[1].onClick.AddListener(ClaimFace);
     }
@@ -87,8 +87,9 @@ public class LootScreen : MonoBehaviour
         }
     }
 
-    public void ClaimFace(FaceReward faceToLoot)
+    public void ClaimFace(Ability rewardFace)
     {
+        faceToLoot = rewardFace;
         foreach (Hero hero in gameManager.activeHeroes)
         {
             if (hero.m_Class.Contains(faceToLoot.pool))
@@ -106,11 +107,14 @@ public class LootScreen : MonoBehaviour
 
     public void AddFace(int faceTarget)
     {
-        validHero.AddAbility(faceToLoot.face , faceTarget);
-        validHero = null;
-        faceToLoot = null;
-        addFacePanel.SetActive(false);
-        buttons[1].onClick.RemoveAllListeners();
-        buttons[1].gameObject.SetActive(false);
+        if (validHero.abilities[faceTarget].isReplacable)
+        {
+            validHero.AddAbility(faceToLoot, faceTarget);
+            validHero = null;
+            faceToLoot = null;
+            addFacePanel.SetActive(false);
+            buttons[1].onClick.RemoveAllListeners();
+            buttons[1].gameObject.SetActive(false);
+        }
     }
 }

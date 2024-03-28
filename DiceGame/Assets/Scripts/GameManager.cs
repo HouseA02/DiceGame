@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     private Tutorial tutorial;
     public GameObject mapKey;
     [SerializeField]
-    private LootScreen lootScreen;
+    public LootScreen lootScreen;
     [SerializeField]
     private Button endTurn;
     [SerializeField]
@@ -42,9 +42,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     CharacterPanel[] characterPanelsEnemy;
     [SerializeField]
-    Transform[] heroPositions;
+    public Transform[] heroPositions;
     [SerializeField]
-    Transform[] enemyPositions;
+    public Transform[] enemyPositions;
     [SerializeField]
     public List<Character> heroes = new List<Character>();
     [SerializeField]
@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public int rerolls;
     [SerializeField]
-    TMP_Text rerollText;
+    public TMP_Text rerollText;
     public UnityEvent gm_OnBattleStart = new UnityEvent();
     public UnityEvent gm_OnTurnStart = new UnityEvent();
     public UnityEvent gm_OnTurnEnd = new UnityEvent();
@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
     {
         if (rerolls > 0)
         {
-            foreach (Character character in activeHeroes)
+            foreach (Character character in activeHeroes.Where(h => h.isDead == false))
             {
                 character.Roll();
             }
@@ -222,7 +222,7 @@ public class GameManager : MonoBehaviour
             activeHeroes.ForEach(h => h.CleanUp());
             StartCoroutine(CombatWin());
         }
-        else if (activeHeroes.Count <= 0)
+        else if (!activeHeroes.Where(h => h.isDead == false).Any())
         {
             Debug.Log("Lose");
             mainCamera.SetActive(true);
@@ -241,7 +241,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            lootScreen.gameObject.SetActive(true);
+            lootScreen.panel.SetActive(true);
             lootScreen.FindLoot(combatData);
         }
     }
@@ -265,7 +265,7 @@ public class GameManager : MonoBehaviour
         mapKey.SetActive(true);
         mainCamera.SetActive(true);
         inBattle = false;
-        lootScreen.gameObject.SetActive(false);
+        lootScreen.panel.SetActive(false);
         foreach(CharacterPanel panel in characterPanelsEnemy)
         {
             panel.gameObject.SetActive(false);

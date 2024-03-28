@@ -7,6 +7,7 @@ public class AbilityVFX : MonoBehaviour
 {
     private VisualEffect effect;
     private int timer;
+    public bool isDirectional = false;
     private void Awake()
     {
         effect = GetComponent<VisualEffect>();

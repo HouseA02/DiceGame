@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using static LootManager;
 using static UnityEngine.GraphicsBuffer;
 
-public class Ability : MonoBehaviour
+public class Ability : Reward
 {
     public int id;
     public string abilityName;
@@ -14,6 +15,14 @@ public class Ability : MonoBehaviour
     public bool targetsAlly;
     [SerializeField]
     public bool targetsSelf;
+    public enum Rarity
+    {
+        None,
+        common,
+        uncommon,
+        rare,
+        epic
+    }
     public enum TargetingType
     {
         none,
@@ -22,6 +31,9 @@ public class Ability : MonoBehaviour
         all,
         self
     }
+    public Hero.Class pool;
+    public Rarity rarity;
+    public bool isReplacable = true;
     [SerializeField]
     public List<AbilityEffect> effects = new List<AbilityEffect>();
     public List<AbilityEffect> cantripEffects = new List<AbilityEffect>();

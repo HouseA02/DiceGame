@@ -59,7 +59,7 @@ MonoBehaviour:
   image: {fileID: 2100000, guid: e1e28a54cc8407b48937e0bfea698e9a, type: 2}
   UIImage: {fileID: 21300000, guid: e11129d3935e878418bd07b94876b876, type: 3}
   decal: {fileID: 0}
-  description: When rolled, gain 1 entangle
+  description: 'Cantrip: gain 1 entangle'
   gameManager: {fileID: 0}
   characterReference: {fileID: 0}
   delay: 0.2

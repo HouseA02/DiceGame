@@ -46,11 +46,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7650b1bef1cdb04d864b4d131449bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rewardType: 2
   id: 0
   abilityName: Rally
   targetsEnemy: 0
   targetsAlly: 1
   targetsSelf: 1
+  pool: 3
+  rarity: 2
   effects:
   - effect: {fileID: 7951265529605090933}
     value: 1

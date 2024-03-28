@@ -8,5 +8,6 @@ public class AddReroll : Effect
     {
         Debug.Log("aa");
         gameManager.rerolls += (int)value;
+        gameManager.rerollText.text = new string($"Rerolls: {gameManager.rerolls}");
     }
 }
