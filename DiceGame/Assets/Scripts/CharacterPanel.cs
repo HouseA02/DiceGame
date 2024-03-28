@@ -8,6 +8,8 @@ public class CharacterPanel : MonoBehaviour
 {
     [SerializeField]
     private Tutorial tutorial;
+    [SerializeField]
+    private GameObject profile;
 
     public int HP;
     public TMP_Text nameText;
@@ -35,9 +37,12 @@ public class CharacterPanel : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if(profile.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Selected"))
         {
-            dieSpread.SetActive(false);
+            if (Input.GetMouseButtonDown(1))
+            {
+                profile.GetComponent<Animator>().SetTrigger("Deselect 2");
+            }
         }
     }
     private void Awake()

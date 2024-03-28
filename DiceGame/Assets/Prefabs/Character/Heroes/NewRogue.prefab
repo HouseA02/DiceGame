@@ -290,7 +290,7 @@ MonoBehaviour:
   - {fileID: 1797641122195153370}
   anim: {fileID: 1013333380753271091}
   tutorial: {fileID: 0}
-  model: {fileID: 139927388071581805}
+  model: {fileID: 117082125397232092}
   targetSprite: {fileID: 5582954299069917249}
   characterName: Rogue
   damageNumber: {fileID: 8191174509523100527, guid: f084f7d7b806fb842b5731787320fff1,
@@ -608,6 +608,12 @@ PrefabInstance:
       addedObject: {fileID: 6336192811142382127}
   m_SourcePrefab: {fileID: 8686905464242370237, guid: 83c46e8481f213d418923c40cb971395,
     type: 3}
+--- !u!1 &117082125397232092 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4892753618728056478, guid: 83c46e8481f213d418923c40cb971395,
+    type: 3}
+  m_PrefabInstance: {fileID: 4433379399603880126}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &139927388071581805 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4357118449180629203, guid: 83c46e8481f213d418923c40cb971395,

@@ -163,7 +163,13 @@ public class GameManager : MonoBehaviour
         //activeEnemies.ForEach(e => e.OnTurnEnd());
         //StartTurn();
     }
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            EndTurn();
+        }
+    }
     public IEnumerator EnemyAct()
     {
         yield return new WaitForSeconds(1f);

@@ -6,10 +6,11 @@ using UnityEngine.UI;
 
 public class PauseMenuController : MonoBehaviour
 {
-    public GameObject graphicsMenu;
-
     public TMPro.TMP_Dropdown resolutionDropdown;
     public TMPro.TMP_Dropdown mainMenuResolutionDropdown;
+
+    [SerializeField]
+    private GameObject[] tabs;
 
     private bool isFullscreen;
 
@@ -24,16 +25,16 @@ public class PauseMenuController : MonoBehaviour
             resolutionList.Add(resolution.width + " x " + resolution.height + " @ " + resolution.refreshRateRatio + "Hz");
         }
         resolutionDropdown.AddOptions(resolutionList);
-        mainMenuResolutionDropdown.AddOptions(resolutionList);
+        //mainMenuResolutionDropdown.AddOptions(resolutionList);
 
         Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, false);
         QualitySettings.vSyncCount = 1;
         QualitySettings.SetQualityLevel(3);
     }
 
-    public void GraphicsMenu()
+    public void SettingsMenu(GameObject menu)
     {
-        graphicsMenu.SetActive(true);
+        menu.SetActive(true);
     }
 
     public void SetQuality(int qualityIndex)
@@ -68,5 +69,15 @@ public class PauseMenuController : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+
+    public void TabController(int tabNum)
+    {
+        foreach(var tab in tabs)
+        {
+            tab.SetActive(false);
+        }
+        tabs[tabNum].SetActive(true);
     }
 }
