@@ -1546,6 +1546,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9a2c115c59751c4284a6803c42867bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainRb: {fileID: 4138815544520228552}
+  rigidbodies:
+  - {fileID: 4138815544520228552}
+  - {fileID: 2838122607208524579}
+  - {fileID: 4292193687933467867}
+  - {fileID: 5891526487843451466}
+  - {fileID: 6544990820417158593}
+  - {fileID: 6238236808888425171}
+  - {fileID: 8963350319428555798}
+  - {fileID: 7614463815058396019}
+  - {fileID: 1061290711950766531}
+  - {fileID: 1824456698111985884}
+  - {fileID: 6401883858306714728}
+  colliders:
+  - {fileID: 5054924253730447883}
+  - {fileID: 6092364280949307081}
+  - {fileID: 8718262145511359130}
+  - {fileID: 8391845456247786205}
+  - {fileID: 5448645126756209496}
+  - {fileID: 4774107807813093976}
+  - {fileID: 853274906804340873}
+  - {fileID: 5155610355976892228}
+  - {fileID: 7722069508549236929}
+  - {fileID: 7221143789065930422}
+  - {fileID: 1585703156350705872}
+  anim: {fileID: 2100842238204638348}
   tutorial: {fileID: 0}
   model: {fileID: 4334996497549568159}
   targetSprite: {fileID: 3313201928708467157}
@@ -1599,6 +1625,8 @@ MonoBehaviour:
   instance: {fileID: 0}
   indicator: {fileID: 7511070202160567628}
   gameManager: {fileID: 0}
+  triggerEffect: {fileID: 1271195921766436121, guid: acfe2e24a5591d3408fd44930eca4302,
+    type: 3}
   statusEffects: []
   startingStatuses: []
   m_OnTurnStart:
@@ -1623,32 +1651,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   target: {fileID: 0}
-  mainRb: {fileID: 4138815544520228552}
-  rigidbodies:
-  - {fileID: 4138815544520228552}
-  - {fileID: 2838122607208524579}
-  - {fileID: 4292193687933467867}
-  - {fileID: 5891526487843451466}
-  - {fileID: 6544990820417158593}
-  - {fileID: 6238236808888425171}
-  - {fileID: 8963350319428555798}
-  - {fileID: 7614463815058396019}
-  - {fileID: 1061290711950766531}
-  - {fileID: 1824456698111985884}
-  - {fileID: 6401883858306714728}
-  colliders:
-  - {fileID: 5054924253730447883}
-  - {fileID: 6092364280949307081}
-  - {fileID: 8718262145511359130}
-  - {fileID: 8391845456247786205}
-  - {fileID: 5448645126756209496}
-  - {fileID: 4774107807813093976}
-  - {fileID: 853274906804340873}
-  - {fileID: 5155610355976892228}
-  - {fileID: 7722069508549236929}
-  - {fileID: 7221143789065930422}
-  - {fileID: 1585703156350705872}
-  anim: {fileID: 2100842238204638348}
 --- !u!65 &2826540163473414655
 BoxCollider:
   m_ObjectHideFlags: 0

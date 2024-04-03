@@ -49,6 +49,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4820e1dc99e25740a4c6e8945ac4c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainRb: {fileID: 0}
+  rigidbodies: []
+  colliders: []
+  anim: {fileID: 0}
+  tutorial: {fileID: 0}
+  model: {fileID: 0}
   targetSprite: {fileID: 0}
   characterName: 
   damageNumber: {fileID: 8191174509523100527, guid: f084f7d7b806fb842b5731787320fff1,
@@ -71,14 +77,19 @@ MonoBehaviour:
   portrait: {fileID: 0}
   baseAbilities: []
   abilities: []
+  resetAbilities: []
   characterPanel: {fileID: 0}
   currentAbility: {fileID: 0}
   targetable: 1
   isFirstRoll: 1
   canRoll: 1
+  isDead: 0
+  isBlind: 0
   instance: {fileID: 0}
   indicator: {fileID: 3600828681541781886}
   gameManager: {fileID: 0}
+  triggerEffect: {fileID: 1271195921766436121, guid: acfe2e24a5591d3408fd44930eca4302,
+    type: 3}
   statusEffects: []
   startingStatuses: []
   m_OnTurnStart:
@@ -97,6 +108,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_OnResult:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnAbilityUsed:
     m_PersistentCalls:
       m_Calls: []
 --- !u!82 &3992667656835464666

@@ -240,6 +240,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9a2c115c59751c4284a6803c42867bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainRb: {fileID: 0}
+  rigidbodies: []
+  colliders: []
+  anim: {fileID: 0}
   tutorial: {fileID: 0}
   model: {fileID: 3777254081262008127}
   targetSprite: {fileID: 0}
@@ -276,15 +280,19 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  resetAbilities: []
   characterPanel: {fileID: 0}
   currentAbility: {fileID: 0}
   targetable: 1
   isFirstRoll: 1
   canRoll: 1
   isDead: 0
+  isBlind: 0
   instance: {fileID: 0}
   indicator: {fileID: 6804167986445518513}
   gameManager: {fileID: 0}
+  triggerEffect: {fileID: 1271195921766436121, guid: acfe2e24a5591d3408fd44930eca4302,
+    type: 3}
   statusEffects: []
   startingStatuses:
   - effect: {fileID: 3275389678381531474, guid: 1837a24d3378dea4f8881b6769276c14,
@@ -308,8 +316,10 @@ MonoBehaviour:
   m_OnResult:
     m_PersistentCalls:
       m_Calls: []
+  m_OnAbilityUsed:
+    m_PersistentCalls:
+      m_Calls: []
   target: {fileID: 0}
-  defaultRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &5298210548842144654
 MonoBehaviour:
   m_ObjectHideFlags: 0

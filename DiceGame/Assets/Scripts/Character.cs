@@ -15,7 +15,6 @@ public class Character : MonoBehaviour
     public class IntEvent : UnityEvent<int> { }
 
     [Serializable]
-    
     public class StartStatus
     {
         public StatusEffect effect;
@@ -71,6 +70,7 @@ public class Character : MonoBehaviour
     public Character instance;
     public GameObject indicator;
     public GameManager gameManager;
+    public TriggerEffect triggerEffect;
     public List<StatusEffect> statusEffects = new List<StatusEffect>();
     [SerializeField]
     protected List<StartStatus> startingStatuses = new List<StartStatus>();
@@ -124,6 +124,8 @@ public class Character : MonoBehaviour
             characterPanel.resultImage.gameObject.SetActive(true);
             characterPanel.resultImage.sprite = currentAbility.UIImage;
             characterPanel.resultImage.GetComponent<DieSpreadImage>().Initialise(currentAbility);
+            var effectInstance = Instantiate(triggerEffect, characterPanel.resultImage.transform);
+            effectInstance.image.sprite = abilities[value].UIImage;
             /*if (characterPanel.descContainer != null) 
             { 
                 characterPanel.descContainer.SetActive(true);

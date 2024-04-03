@@ -388,6 +388,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9a2c115c59751c4284a6803c42867bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainRb: {fileID: 4744274176044642903}
+  rigidbodies:
+  - {fileID: 4744274176044642903}
+  - {fileID: 2004514415934390246}
+  colliders:
+  - {fileID: 5539965451294872764}
+  - {fileID: 6069384462524522065}
+  anim: {fileID: 2981843711856949706}
   tutorial: {fileID: 0}
   model: {fileID: 7467229302027400341}
   targetSprite: {fileID: 0}
@@ -435,6 +443,8 @@ MonoBehaviour:
   instance: {fileID: 0}
   indicator: {fileID: 6804167986445518513}
   gameManager: {fileID: 0}
+  triggerEffect: {fileID: 1271195921766436121, guid: acfe2e24a5591d3408fd44930eca4302,
+    type: 3}
   statusEffects: []
   startingStatuses: []
   m_OnTurnStart:
@@ -459,14 +469,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   target: {fileID: 0}
-  mainRb: {fileID: 4744274176044642903}
-  rigidbodies:
-  - {fileID: 4744274176044642903}
-  - {fileID: 2004514415934390246}
-  colliders:
-  - {fileID: 5539965451294872764}
-  - {fileID: 6069384462524522065}
-  anim: {fileID: 2981843711856949706}
 --- !u!114 &5298210548842144654
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -273,6 +273,8 @@ MonoBehaviour:
   instance: {fileID: 0}
   indicator: {fileID: 1668024983549722626}
   gameManager: {fileID: 0}
+  triggerEffect: {fileID: 1271195921766436121, guid: acfe2e24a5591d3408fd44930eca4302,
+    type: 3}
   statusEffects: []
   startingStatuses: []
   m_OnTurnStart:

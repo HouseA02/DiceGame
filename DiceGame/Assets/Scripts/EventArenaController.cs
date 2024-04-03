@@ -13,6 +13,7 @@ public class EventArenaController : MonoBehaviour
     [SerializeField]
     GameManager gameManager;
     public string eventName;
+    public GameObject battleCanvas;
 
     public GameObject[] act1NormalEnemies;
     public GameObject[] act1EliteEnemies;
@@ -135,12 +136,23 @@ public class EventArenaController : MonoBehaviour
         //mapCamAnim.SetTrigger("Activate");
         fadeIn = true;
         eventName = null;
+        mainCam.gameObject.SetActive(false);
+        gameManager.battleCamera.enabled = true;
+        gameManager.mapKey.SetActive(false);
+        battleCanvas.SetActive(false);
         gameManager.GetComponent<StoryController>().StartStory(e.storyData);
         //currentEncounter = Instantiate(Act1Encounters[Random.Range(0, Act1Encounters.Length)], encounterCardPos.position, Quaternion.identity, encounterParent.transform);
     }
 
     public void fadeOut()
     {
+        if(!gameManager.inBattle)
+        {
+            mainCam.gameObject.SetActive(true);
+            //gameManager.battleCamera.enabled = false;
+            gameManager.mapKey.SetActive(true);
+            battleCanvas.SetActive(true);
+        }
         fadeIn = false;
         Destroy(currentEncounter);
     }

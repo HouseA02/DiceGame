@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 [CreateAssetMenu(fileName = "New Story", menuName = "ScriptableObjects/Story", order = 2)]
 public class StoryData : ScriptableObject
 {

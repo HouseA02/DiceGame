@@ -292,6 +292,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9a2c115c59751c4284a6803c42867bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainRb: {fileID: 0}
+  rigidbodies: []
+  colliders: []
+  anim: {fileID: 0}
   tutorial: {fileID: 0}
   model: {fileID: 4334996497549568159}
   targetSprite: {fileID: 3313201928708467157}
@@ -345,6 +349,8 @@ MonoBehaviour:
   instance: {fileID: 0}
   indicator: {fileID: 7511070202160567628}
   gameManager: {fileID: 0}
+  triggerEffect: {fileID: 1271195921766436121, guid: acfe2e24a5591d3408fd44930eca4302,
+    type: 3}
   statusEffects: []
   startingStatuses: []
   m_OnTurnStart:
@@ -369,7 +375,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   target: {fileID: 0}
-  defaultRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &2826540163473414655
 BoxCollider:
   m_ObjectHideFlags: 0

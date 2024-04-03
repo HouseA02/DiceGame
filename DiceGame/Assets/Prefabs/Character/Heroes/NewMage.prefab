@@ -1513,6 +1513,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4472070bc848b4248b58fd4792ef0941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainRb: {fileID: 0}
+  rigidbodies: []
+  colliders: []
+  anim: {fileID: 0}
   tutorial: {fileID: 0}
   model: {fileID: 0}
   targetSprite: {fileID: 659877048316126653}
@@ -1560,6 +1564,8 @@ MonoBehaviour:
   instance: {fileID: 0}
   indicator: {fileID: 5543420666366335268}
   gameManager: {fileID: 0}
+  triggerEffect: {fileID: 1271195921766436121, guid: acfe2e24a5591d3408fd44930eca4302,
+    type: 3}
   statusEffects: []
   startingStatuses: []
   m_OnTurnStart:

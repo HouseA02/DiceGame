@@ -48,6 +48,7 @@ public class CharacterPanel : MonoBehaviour
     private void Awake()
     {
         defaultPosition = portraitSlot.transform.position;
+        tutorial = FindAnyObjectByType<Tutorial>();
     }
     public void Initialise(Character newCharacter)
     {

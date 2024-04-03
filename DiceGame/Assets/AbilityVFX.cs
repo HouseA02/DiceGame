@@ -8,12 +8,12 @@ public class AbilityVFX : MonoBehaviour
     private VisualEffect effect;
     private int timer;
     public bool isDirectional = false;
+
     private void Awake()
     {
         effect = GetComponent<VisualEffect>();
         timer = 60;
     }
-
     private void Update()
     {
         if (effect.aliveParticleCount == 0 && timer <= 0)

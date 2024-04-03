@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 77918521662216510}
   - component: {fileID: 1517523048961840399}
   - component: {fileID: 1762630957466625501}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TreeCombine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 934f0d51b3e737a438410b72c0f784bc, type: 2}
+  - {fileID: 2100000, guid: 5c6d83f43df04be48a3f7b7dea577e64, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,7 +93,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7439263828774853711}
   - component: {fileID: 1855202785513786198}
-  m_Layer: 0
+  - component: {fileID: 7213335585432619667}
+  - component: {fileID: 7589622263891801056}
+  m_Layer: 8
   m_Name: TreeCombine1 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,3 +145,48 @@ LODGroup:
     renderers:
     - renderer: {fileID: 1762630957466625501}
   m_Enabled: 1
+--- !u!136 &7213335585432619667
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7871325079131689697}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6185185
+  m_Height: 4.083849
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.5419245, z: -0.11851849}
+--- !u!64 &7589622263891801056
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7871325079131689697}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 7cdf19c7ff8573743b9e74900e48eb99, type: 2}

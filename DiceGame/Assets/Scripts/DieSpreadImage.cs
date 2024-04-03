@@ -18,6 +18,7 @@ public class DieSpreadImage : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        Debug.Log("Entered");
         description.SetActive(true);
         transform.SetAsLastSibling();
     }
