@@ -6,6 +6,7 @@ using System.Collections.Generic;
 
 public static class MeshSaverEditor {
 
+	/*
 	[MenuItem("CONTEXT/MeshFilter/Save Mesh...")]
 	public static void SaveMeshInPlace (MenuCommand menuCommand) {
 		MeshFilter mf = menuCommand.context as MeshFilter;
@@ -34,5 +35,5 @@ public static class MeshSaverEditor {
 		AssetDatabase.CreateAsset(meshToSave, path);
 		AssetDatabase.SaveAssets();
 	}
-	
+	*/
 }
